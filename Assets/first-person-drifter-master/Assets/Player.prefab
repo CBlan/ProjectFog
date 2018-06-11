@@ -41,6 +41,7 @@ GameObject:
   - component: {fileID: 114543010102900670}
   - component: {fileID: 114548399897332368}
   - component: {fileID: 114477464501311156}
+  - component: {fileID: 114720854446211592}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -359,7 +360,7 @@ MonoBehaviour:
   walkSpeed: 14
   runSpeed: 20
   enableRunning: 0
-  jumpSpeed: 5
+  jumpSpeed: 6
   gravity: 15
   slideWhenOverSlopeLimit: 0
   slideOnTaggedObjects: 0
@@ -379,11 +380,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   axes: 1
-  invertY: 1
+  invertY: 0
   sensitivityX: 10
   sensitivityY: 9
   minimumX: -360
   maximumX: 360
-  minimumY: -85
-  maximumY: 85
+  minimumY: -360
+  maximumY: 360
   framesOfSmoothing: 5
+--- !u!114 &114720854446211592
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100002}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14a636b26e7c441ff9eda2ed2de55809, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resetBelowThisY: -100
+  fadeInOnReset: 1
