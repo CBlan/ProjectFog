@@ -38,7 +38,9 @@ public class FirstPersonDrifter: MonoBehaviour
  
     // Player must be grounded for at least this many physics frames before being able to jump again; set to 0 to allow bunny hopping
     public int antiBunnyHopFactor = 1;
- 
+
+    public AnimationCurve walk;
+
     private Vector3 moveDirection = Vector3.zero;
     private bool grounded = false;
     private CharacterController controller;
@@ -52,6 +54,9 @@ public class FirstPersonDrifter: MonoBehaviour
     private ControllerColliderHit contactPoint;
     private bool playerControl = false;
     private int jumpTimer;
+    private Vector3 reflect;
+    private Vector3 currentDir;
+    private Vector3 inputDir;
  
     void Start()
     {
@@ -63,7 +68,8 @@ public class FirstPersonDrifter: MonoBehaviour
         jumpTimer = antiBunnyHopFactor;
     }
  
-    void FixedUpdate() {
+    void FixedUpdate()
+    {
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
         // If both horizontal and vertical are used simultaneously, limit speed (if allowed), so the total doesn't exceed normal move speed
@@ -110,8 +116,10 @@ public class FirstPersonDrifter: MonoBehaviour
                 moveDirection = new Vector3(inputX * inputModifyFactor, -antiBumpFactor, inputY * inputModifyFactor);
                 moveDirection = myTransform.TransformDirection(moveDirection) * speed;
                 playerControl = true;
+                currentDir = myTransform.InverseTransformDirection(moveDirection);
+
             }
- 
+
             // Jump! But only if the jump button has been released and player has been grounded for a given number of frames
             if (Input.GetButtonDown("Jump"))
                 jumpTimer++;
@@ -129,9 +137,11 @@ public class FirstPersonDrifter: MonoBehaviour
  
             // If air control is allowed, check movement but don't touch the y component
             if (airControl && playerControl) {
-                moveDirection.x = (inputX * speed * inputModifyFactor) * 0.5f;
-                moveDirection.z = (inputY * speed * inputModifyFactor) * 0.5f;
+                moveDirection.x = Mathf.Lerp(currentDir.x, inputX * speed * inputModifyFactor, Time.deltaTime* 10);// * speed * inputModifyFactor;
+                moveDirection.z = Mathf.Lerp(currentDir.z, inputY * speed * inputModifyFactor, Time.deltaTime * 10); //* speed;// * inputModifyFactor; 
+                //currentDir = moveDirection;
                 moveDirection = myTransform.TransformDirection(moveDirection);
+                //print(moveDirection);
             }
 
             if((controller.collisionFlags & CollisionFlags.Sides) != 0)
@@ -141,7 +151,14 @@ public class FirstPersonDrifter: MonoBehaviour
                     jumpTimer++;
                 else if (jumpTimer >= antiBunnyHopFactor)
                 {
-                    moveDirection = new Vector3(contactPoint.normal.x, contactPoint.normal.y+0.5f, contactPoint.normal.z) * jumpSpeed;
+
+                    reflect = Vector3.Reflect(moveDirection, contactPoint.normal);
+                    inputDir = new Vector3(inputX * inputModifyFactor, 2f, inputY * inputModifyFactor);
+                    inputDir = myTransform.TransformDirection(inputDir) * speed;
+                    moveDirection = (reflect + inputDir) /2;
+                    //Debug.DrawRay(contactPoint.point, new Vector3(reflect.x, reflect.y + 2f, reflect.z), Color.red, 1000f);
+
+                    //moveDirection = new Vector3(reflect.x, reflect.y + 2f, reflect.z);
 
                     jumpTimer = 0;
                 }
@@ -155,7 +172,7 @@ public class FirstPersonDrifter: MonoBehaviour
         grounded = (controller.Move(moveDirection * Time.deltaTime) & CollisionFlags.Below) != 0;
 
     }
- 
+
     // Store point that we're in contact with for use in FixedUpdate if needed
     void OnControllerColliderHit (ControllerColliderHit hit) {
         contactPoint = hit;
