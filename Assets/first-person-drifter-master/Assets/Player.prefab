@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 11400004}
   - component: {fileID: 114543010102900670}
   - component: {fileID: 114548399897332368}
-  - component: {fileID: 114477464501311156}
   - component: {fileID: 114720854446211592}
   m_Layer: 0
   m_Name: Player
@@ -69,7 +68,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 31, y: 2.3, z: -46.9}
+  m_LocalPosition: {x: 10.2, y: 2.3, z: 80.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400000}
@@ -319,8 +318,8 @@ CharacterController:
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_SlopeLimit: 55
+  m_StepOffset: 0.5
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
@@ -335,17 +334,6 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 100002}
   m_IsPrefabParent: 1
---- !u!114 &114477464501311156
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef01e28af6314ec28e3f36f85bd39fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114543010102900670
 MonoBehaviour:
   m_ObjectHideFlags: 1
