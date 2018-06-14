@@ -153,10 +153,10 @@ public class FirstPersonDrifter: MonoBehaviour
                 {
 
                     reflect = Vector3.Reflect(moveDirection, contactPoint.normal);
-                    inputDir = new Vector3(inputX * inputModifyFactor, 2f, inputY * inputModifyFactor);
-                    inputDir = myTransform.TransformDirection(inputDir) * speed;
-                    moveDirection = (reflect + inputDir) /2;
-                    //Debug.DrawRay(contactPoint.point, new Vector3(reflect.x, reflect.y + 2f, reflect.z), Color.red, 1000f);
+                    inputDir = new Vector3(inputX * inputModifyFactor, 0, inputY * inputModifyFactor);
+                    inputDir = myTransform.TransformDirection(inputDir) * jumpSpeed;
+                    moveDirection = reflect + inputDir/2;
+                    Debug.DrawRay(contactPoint.point, new Vector3(reflect.x, reflect.y + 2f, reflect.z), Color.red, 1000f);
 
                     //moveDirection = new Vector3(reflect.x, reflect.y + 2f, reflect.z);
 
