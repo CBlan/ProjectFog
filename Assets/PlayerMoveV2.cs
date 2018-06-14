@@ -22,6 +22,10 @@ public class PlayerMoveV2 : MonoBehaviour
     private bool sliding;
     public float dashSpeed = 100f;
     public float antiBumpFactor = 0.6f;
+    private bool dash;
+    public float dashForce = 2000f;
+    public float dashLength = 0.1f;
+    private bool normalJumpDown;
 
 
 
@@ -37,6 +41,11 @@ public class PlayerMoveV2 : MonoBehaviour
     {
         float inputX = Input.GetAxis("Horizontal");
         float inputY = Input.GetAxis("Vertical");
+
+        if (dash)
+        {
+            return;
+        }
 
         if (IsOnGround())
         {
@@ -57,6 +66,7 @@ public class PlayerMoveV2 : MonoBehaviour
             // Jump
             if (canJump && Input.GetButtonDown("Jump"))
             {
+                normalJumpDown = true;
                 rB.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed() + antiBumpFactor*3, velocity.z);
             }
         }
@@ -67,10 +77,11 @@ public class PlayerMoveV2 : MonoBehaviour
 
             if (canJump && Input.GetButtonDown("Jump"))
             {
+                normalJumpDown = false;
                 sliding = true;
             }
 
-            if (canJump && Input.GetButtonUp("Jump"))
+            if (canJump && Input.GetButtonUp("Jump") && !normalJumpDown)
             {
                 Vector3 targetVelocity = new Vector3(inputX, 0, inputY);
                 targetVelocity = transform.TransformDirection(targetVelocity);
@@ -85,7 +96,7 @@ public class PlayerMoveV2 : MonoBehaviour
         {
             rB.AddForce(new Vector3(0, -gravity * rB.mass, 0));
 
-            if (canJump && Input.GetButtonUp("Jump"))
+            if (canJump && Input.GetButtonUp("Jump") && !normalJumpDown)
             {
                 Vector3 targetVelocity = new Vector3(inputX, 0, inputY);
                 targetVelocity = transform.TransformDirection(targetVelocity);
@@ -109,8 +120,16 @@ public class PlayerMoveV2 : MonoBehaviour
 
 
             rB.AddForce(new Vector3(targetVelocity.x, -gravity * rB.mass, targetVelocity.z));
+
+
         }
 
+        if (Input.GetButtonDown("Run"))
+        {
+            dash = true;
+            rB.velocity = Vector3.zero;
+            StartCoroutine(DashTime());
+        }
         // We apply gravity manually for more tuning control
         //rB.AddForce(new Vector3(0, -gravity * rB.mass, 0));
 
@@ -158,5 +177,14 @@ public class PlayerMoveV2 : MonoBehaviour
         // From the jump height and gravity we deduce the upwards speed 
         // for the character to reach at the apex.
         return Mathf.Sqrt(2 * jumpHeight * gravity);
+    }
+
+    IEnumerator DashTime()
+    {
+        rB.AddForce(Camera.main.transform.forward * dashForce, ForceMode.Impulse);
+        yield return new WaitForSeconds(dashLength);
+        rB.velocity = Vector3.zero;
+        dash = false;
+        yield break;
     }
 }
