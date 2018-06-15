@@ -30,8 +30,8 @@ public class PlayerMoveV2 : MonoBehaviour
     public float bulletTime = 10f;
     public float bulletTimeCooldown = 5f;
     private bool bulletTimeReady;
-
-
+    public ParticleSystem dashEffect;
+    public AnimationCurve animCurve;
 
     void Awake()
     {
@@ -53,8 +53,10 @@ public class PlayerMoveV2 : MonoBehaviour
             return;
         }
 
+        //print(IsOnGround());
         if (IsOnGround())
         {
+            
             anchored = false;
             // Calculate how fast we should be moving
             Vector3 targetVelocity = new Vector3(inputX, 0, inputY);
@@ -153,8 +155,26 @@ public class PlayerMoveV2 : MonoBehaviour
 
     public bool IsOnGround()
     {
+        //RaycastHit hit;
+        //float rayDistance = (capsule.height / 2) + (capsule.radius/2);
+        //if (Physics.SphereCast(transform.position, capsule.radius, -Vector3.up, out hit, rayDistance))
+        //{
+        //    if (Vector3.Angle(hit.normal, Vector3.up) < slopeLimit)
+        //    {
+        //        return true;
+        //    }
+        //    else
+        //    {
+        //        print("here");
+        //        return false;
+        //    }
+        //}
+
+        //else return false;
+
         RaycastHit hit;
-        float rayDistance = (capsule.height / 2) + capsule.radius;
+        RaycastHit hit1;
+        float rayDistance = (capsule.height / 2) + (capsule.radius);
         if (Physics.Raycast(transform.position, -Vector3.up, out hit, rayDistance))
         {
             if (Vector3.Angle(hit.normal, Vector3.up) < slopeLimit)
@@ -163,6 +183,19 @@ public class PlayerMoveV2 : MonoBehaviour
             }
             else
             {
+                //print("here");
+                return false;
+            }
+        }
+        else if (Physics.SphereCast(transform.position, capsule.radius + 0.1f, -Vector3.up, out hit1, rayDistance))
+        {
+            if (Vector3.Angle(hit1.normal, Vector3.up) < slopeLimit)
+            {
+                return true;
+            }
+            else
+            {
+                //print("here1");
                 return false;
             }
         }
@@ -172,7 +205,11 @@ public class PlayerMoveV2 : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        anchored = true;
+        if (!IsOnGround())
+        {
+            anchored = true;
+        }
+        //anchored = true;
     }
 
     private void OnCollisionExit(Collision collision)
@@ -194,10 +231,12 @@ public class PlayerMoveV2 : MonoBehaviour
 
     IEnumerator DashTime()
     {
+        dashEffect.Play();
         rB.AddForce(Camera.main.transform.forward * dashForce, ForceMode.Impulse);
         yield return new WaitForSeconds(dashLength);
         rB.velocity = Vector3.zero;
         dash = false;
+        dashEffect.Stop();
         yield return new WaitForSecondsRealtime(dashCooldown);
         dashReady = true;
         yield break;
