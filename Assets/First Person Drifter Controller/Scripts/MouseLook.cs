@@ -54,8 +54,8 @@ public class MouseLook : MonoBehaviour
 		if (axes == RotationAxes.MouseX)
 		{			
 			rotAverageX = 0f;
- 
-			rotationX += Input.GetAxis("Mouse X") * sensitivityX * Time.timeScale;
+
+            rotationX += Input.GetAxis("Mouse X") * sensitivityX; //* Time.timeScale;
  
 			rotArrayX.Add(rotationX);
  
@@ -82,7 +82,7 @@ public class MouseLook : MonoBehaviour
  			{
  				invertFlag = -1f;
  			}
-			rotationY += Input.GetAxis("Mouse Y") * sensitivityY * invertFlag * Time.timeScale;
+            rotationY += Input.GetAxis("Mouse Y") * sensitivityY * invertFlag; //* Time.timeScale;
 			
 			rotationY = Mathf.Clamp(rotationY, minimumY, maximumY);
  	

@@ -20,12 +20,16 @@ public class PlayerMoveV2 : MonoBehaviour
     private Collision hitPoint;
     private Vector3 reflect;
     private bool sliding;
-    public float dashSpeed = 100f;
     public float antiBumpFactor = 0.6f;
     private bool dash;
-    public float dashForce = 2000f;
+    public float dashForce = 500f;
     public float dashLength = 0.1f;
     private bool normalJumpDown;
+    public float dashCooldown = 3f;
+    private bool dashReady;
+    public float bulletTime = 10f;
+    public float bulletTimeCooldown = 5f;
+    private bool bulletTimeReady;
 
 
 
@@ -35,6 +39,8 @@ public class PlayerMoveV2 : MonoBehaviour
         rB = GetComponent<Rigidbody>();
         rB.freezeRotation = true;
         rB.useGravity = false;
+        dashReady = true;
+        bulletTimeReady = true;
     }
 
     void FixedUpdate()
@@ -124,14 +130,21 @@ public class PlayerMoveV2 : MonoBehaviour
 
         }
 
-        if (Input.GetButtonDown("Run"))
+        if (Input.GetButtonDown("Run") && !dash && dashReady)
         {
             dash = true;
+            dashReady = false;
             rB.velocity = Vector3.zero;
             StartCoroutine(DashTime());
         }
         // We apply gravity manually for more tuning control
         //rB.AddForce(new Vector3(0, -gravity * rB.mass, 0));
+
+        if (Input.GetButtonDown("BulletTime") && bulletTimeReady)
+        {
+            bulletTimeReady = false;
+            StartCoroutine(BulletTimeTimer());
+        }
 
 
 
@@ -185,6 +198,16 @@ public class PlayerMoveV2 : MonoBehaviour
         yield return new WaitForSeconds(dashLength);
         rB.velocity = Vector3.zero;
         dash = false;
+        yield return new WaitForSecondsRealtime(dashCooldown);
+        dashReady = true;
+        yield break;
+    }
+
+    IEnumerator BulletTimeTimer()
+    {
+        yield return new WaitForSecondsRealtime(bulletTime);
+        yield return new WaitForSecondsRealtime(bulletTimeCooldown);
+        bulletTimeReady = true;
         yield break;
     }
 }
