@@ -32,7 +32,6 @@ public class PlayerMoveV2 : MonoBehaviour
     private bool bulletTimeReady;
     public ParticleSystem dashTrail;
     public ParticleSystem dashCameraEffect;
-    public AnimationCurve animCurve;
 
     void Awake()
     {
