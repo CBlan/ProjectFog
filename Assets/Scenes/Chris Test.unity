@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -532,7 +532,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 80602125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.66, y: 5.1401367, z: 26.801514}
+  m_LocalPosition: {x: 27.27, y: 1.82, z: 26.801514}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -909,10 +909,10 @@ MonoBehaviour:
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 2048
-  gridWorldSize: {x: 100, y: 110, z: 100}
-  nodeRadius: 2
+  gridWorldSize: {x: 100, y: 9.41, z: 100}
+  nodeRadius: 0.5
   visualiseVolume: 1
-  visualiseCollision: 0
+  visualiseCollision: 1
 --- !u!4 &128859558
 Transform:
   m_ObjectHideFlags: 0
@@ -937,6 +937,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74111adb808b28447960399d115bfd8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  seeker: {fileID: 80602129}
+  target: {fileID: 1052788776}
 --- !u!1 &134767732
 GameObject:
   m_ObjectHideFlags: 0
@@ -7098,6 +7100,11 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8aa931c4bf805e74692973fc7f8e4384, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1052788776 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4440594278949904, guid: 8aa931c4bf805e74692973fc7f8e4384,
+    type: 2}
+  m_PrefabInternal: {fileID: 1052788775}
 --- !u!1 &1068257421
 GameObject:
   m_ObjectHideFlags: 0

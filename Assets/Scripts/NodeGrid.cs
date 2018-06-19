@@ -94,6 +94,8 @@ public class NodeGrid : MonoBehaviour {
         return grid[x, y, z];
     }
 
+    public List<Node> path;
+
     private void OnDrawGizmos()
     {
         if (visualiseVolume)
@@ -109,6 +111,13 @@ public class NodeGrid : MonoBehaviour {
                 foreach (Node n in grid)
                 {
                     Gizmos.color = (n.walkable) ? Color.green : Color.red;
+                    if (path != null)
+                    {
+                        if (path.Contains(n))
+                        {
+                            Gizmos.color = Color.black;
+                        }
+                    }
                     //if (playerNode == n)
                     //{
                     //    Gizmos.color = Color.blue;
