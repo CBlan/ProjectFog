@@ -9,6 +9,8 @@ public class GrenadeThrower : MonoBehaviour {
     public AnimationCurve powerCurve;
     float throwPower;
     public float maxThrowPower;
+    public float cooldown;
+    private float timer;
 
     // Use this for initialization
     void Start () {
@@ -17,11 +19,14 @@ public class GrenadeThrower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && timer <= 0)
         {
             StartCoroutine(CalculateThrowStrength());
+            timer = cooldown;
         }
-	}
+        timer -= Time.deltaTime;
+        transform.LookAt(TargetObject.tarObj.hitPoint);
+    }
 
     IEnumerator CalculateThrowStrength() //increases hitpower overtime.
     {

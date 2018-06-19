@@ -6,8 +6,10 @@ public class StickyGrenade : MonoBehaviour {
 
     private bool hasCollided = false;
     public float explodeTime = 5;
+    public float damage;
     public GameObject explosion;
     private Rigidbody rB;
+    private int grenadeCount;
 
     private void Start()
     {
@@ -31,7 +33,22 @@ public class StickyGrenade : MonoBehaviour {
     {
         yield return new WaitForSeconds(explodeTime);
         Instantiate(explosion, transform.position, Quaternion.identity);
+        AddDescendantsWithTag(gameObject.transform);
+        damage = damage * (grenadeCount + 1);
+        //print(damage);
         Destroy(gameObject);
         yield break;
+    }
+
+    private void AddDescendantsWithTag(Transform parent)
+    {
+        foreach (Transform child in parent)
+        {
+            if (child.gameObject.tag == "Grenade")
+            {
+                grenadeCount++;
+            }
+            AddDescendantsWithTag(child);
+        }
     }
 }

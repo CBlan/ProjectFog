@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 33818903741448192}
   - component: {fileID: 23476265552277990}
   - component: {fileID: 135205693637297514}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: StickyGrenade
-  m_TagString: Untagged
+  m_TagString: Grenade
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -113,6 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explodeTime: 5
+  damage: 10
   explosion: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 2}
 --- !u!135 &135205693637297514
 SphereCollider:
