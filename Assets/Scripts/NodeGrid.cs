@@ -5,6 +5,7 @@ using UnityEngine;
 public class NodeGrid : MonoBehaviour {
 
     //public Transform player;
+    public LayerMask unwalkableMask;
     public Vector3 gridWorldSize;
     public float nodeRadius;
     Node[,,] grid;
@@ -37,7 +38,7 @@ public class NodeGrid : MonoBehaviour {
                 for (int z = 0; z < gridSizeZ; z++)
                 {
                     Vector3 worldPoint = worldBottomBottomLeft + (Vector3.right * (x * nodeDiameter + nodeRadius)) + (Vector3.up * (y * nodeDiameter + nodeRadius)) + (Vector3.forward * (z * nodeDiameter + nodeRadius));
-                    bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius));
+                    bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
                     grid[x, y, z] = new Node(walkable, worldPoint);
                 }
             }
