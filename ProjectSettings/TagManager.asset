@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - Grenade
+  - Enemy
   layers:
   - Default
   - TransparentFX
