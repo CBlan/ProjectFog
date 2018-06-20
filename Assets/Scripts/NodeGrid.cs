@@ -9,8 +9,10 @@ public class NodeGrid : MonoBehaviour {
     public Vector3 gridWorldSize;
     public float nodeRadius;
     Node[,,] grid;
+
     public bool visualiseVolume;
     public bool visualiseCollision;
+    public bool visualisePath;
 
     float nodeDiameter;
     int gridSizeX, gridSizeY, gridSizeZ;
@@ -25,6 +27,14 @@ public class NodeGrid : MonoBehaviour {
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
         gridSizeZ = Mathf.RoundToInt(gridWorldSize.z / nodeDiameter);
         CreateGrid();
+    }
+
+    public int MaxSize
+    {
+        get
+        {
+            return gridSizeX * gridSizeY * gridSizeZ;
+        }
     }
 
     void CreateGrid()
@@ -101,6 +111,18 @@ public class NodeGrid : MonoBehaviour {
         if (visualiseVolume)
         {
             Gizmos.DrawWireCube(transform.position, gridWorldSize);
+        }
+
+        if (visualisePath)
+        {
+            if (path != null)
+            {
+                foreach (Node n in path)
+                {
+                    Gizmos.color = Color.black;
+                    Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
+                }
+            }
         }
 
         if (visualiseCollision)

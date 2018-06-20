@@ -532,7 +532,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 80602125}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.27, y: 1.82, z: 26.801514}
+  m_LocalPosition: {x: 3.6, y: 15.8, z: -36.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -909,10 +909,11 @@ MonoBehaviour:
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 2048
-  gridWorldSize: {x: 100, y: 9.41, z: 100}
+  gridWorldSize: {x: 100, y: 43.78, z: 100}
   nodeRadius: 0.5
   visualiseVolume: 1
-  visualiseCollision: 1
+  visualiseCollision: 0
+  visualisePath: 1
 --- !u!4 &128859558
 Transform:
   m_ObjectHideFlags: 0
