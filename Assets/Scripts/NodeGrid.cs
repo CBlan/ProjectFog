@@ -8,6 +8,10 @@ public class NodeGrid : MonoBehaviour {
     public LayerMask unwalkableMask;
     public Vector3 gridWorldSize;
     public float nodeRadius;
+    public TerrainType[] walkableRegions;
+    LayerMask walkableMask;
+    Dictionary<int, int> walkableRegionsDictionary = new Dictionary<int, int>();
+
     Node[,,] grid;
 
     public bool visualiseVolume;
@@ -25,6 +29,13 @@ public class NodeGrid : MonoBehaviour {
         gridSizeX = Mathf.RoundToInt(gridWorldSize.x / nodeDiameter);
         gridSizeY = Mathf.RoundToInt(gridWorldSize.y / nodeDiameter);
         gridSizeZ = Mathf.RoundToInt(gridWorldSize.z / nodeDiameter);
+
+        foreach (TerrainType region in walkableRegions)
+        {
+            walkableMask.value |= region.terrainMask.value;
+            walkableRegionsDictionary.Add((int)Mathf.Log(region.terrainMask.value, 2), region.terrainPenalty);
+        }
+
         CreateGrid();
     }
 
@@ -40,8 +51,7 @@ public class NodeGrid : MonoBehaviour {
     {
         grid = new Node[gridSizeX, gridSizeY, gridSizeZ];
         Vector3 worldBottomBottomLeft = transform.position - (Vector3.right * gridWorldSize.x / 2) - (Vector3.up * gridWorldSize.y / 2) - (Vector3.forward * gridWorldSize.z / 2);
-        //Vector3 worldTopBottomLeft = transform.position - (Vector3.right * gridWorldSize.x / 2) - (Vector3.up * gridWorldSize.y / 2) + (Vector3.forward * gridWorldSize.z / 2);
-
+        
 
         for (int x = 0; x < gridSizeX; x++)
         {
@@ -51,7 +61,22 @@ public class NodeGrid : MonoBehaviour {
                 {
                     Vector3 worldPoint = worldBottomBottomLeft + (Vector3.right * (x * nodeDiameter + nodeRadius)) + (Vector3.up * (y * nodeDiameter + nodeRadius)) + (Vector3.forward * (z * nodeDiameter + nodeRadius));
                     bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
-                    grid[x, y, z] = new Node(walkable, worldPoint, x, y, z);
+
+                    int movementPenalty = 0;
+
+                    //checksphere
+                    if (walkable)
+                    {
+                        Ray ray = new Ray(worldPoint, Vector3.up); 
+                        RaycastHit hit;
+                        if (Physics.SphereCast(ray, nodeRadius, out hit, walkableMask))
+                        {
+                            walkableRegionsDictionary.TryGetValue(hit.collider.gameObject.layer, out movementPenalty);
+                            //print(hit.collider.gameObject.layer + " : " + movementPenalty);
+                        }
+                    }
+
+                    grid[x, y, z] = new Node(walkable, worldPoint, x, y, z, movementPenalty);
                 }
             }
         }
@@ -123,5 +148,12 @@ public class NodeGrid : MonoBehaviour {
             }
         }
 
+    }
+
+    [System.Serializable]
+    public class TerrainType
+    {
+        public LayerMask terrainMask;
+        public int terrainPenalty;
     }
 }
