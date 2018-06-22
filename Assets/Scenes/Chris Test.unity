@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -825,12 +825,14 @@ MonoBehaviour:
   unwalkableMask:
     serializedVersion: 2
     m_Bits: 2048
-  gridWorldSize: {x: 106.8, y: 66.5, z: 125.6}
+  gridWorldSize: {x: 101.2, y: 64.1, z: 104.2}
   nodeRadius: 0.5
+  weightBlurSize: 3
   walkableMask:
     serializedVersion: 2
     m_Bits: 4096
   walkableMaskMomentPenalty: 10
+  obsticleProximityPenalty: 2
   visualiseVolume: 1
   visualiseCollision: 0
 --- !u!4 &128859558
@@ -8984,8 +8986,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1504037162}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.1, y: -15.299999, z: 6.6}
-  m_LocalScale: {x: 19.15188, y: 18.253443, z: 26.360739}
+  m_LocalPosition: {x: 2, y: -15.299999, z: 4.8}
+  m_LocalScale: {x: 47.1103, y: 30.263569, z: 26.360739}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -9893,7 +9895,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1581818177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.1, y: -9.999999, z: -26.11}
+  m_LocalPosition: {x: -29.5, y: -23.4, z: -30.49}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

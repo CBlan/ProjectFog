@@ -11,7 +11,15 @@ public class Unit : MonoBehaviour {
 
     private void Start()
     {
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+    }
+
+    public void Update()
+    {
+        if (Input.GetButtonDown("Fire2"))
+        {
+            PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        }
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -35,6 +43,7 @@ public class Unit : MonoBehaviour {
                 targetIndex++;
                 if (targetIndex >= path.Length)
                 {
+                    print("brokehere");
                     yield break;
                 }
                 currentWaypoint = path[targetIndex];

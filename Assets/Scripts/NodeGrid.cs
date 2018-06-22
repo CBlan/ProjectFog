@@ -9,8 +9,10 @@ public class NodeGrid : MonoBehaviour {
     public Vector3 gridWorldSize;
     public float nodeRadius;
     //public TerrainType[] walkableRegions;
+    public int weightBlurSize = 2;
     public LayerMask walkableMask;
     public int walkableMaskMomentPenalty;
+    public int obsticleProximityPenalty = 1;
     //Dictionary<int, int> walkableRegionsDictionary = new Dictionary<int, int>();
 
     Node[,,] grid;
@@ -20,6 +22,9 @@ public class NodeGrid : MonoBehaviour {
 
     float nodeDiameter;
     int gridSizeX, gridSizeY, gridSizeZ;
+
+    //int penaltyMin = int.MaxValue;
+    //int penaltyMax = int.MinValue;
 
     //public static NodeGrid nodeGrid;
 
@@ -82,10 +87,101 @@ public class NodeGrid : MonoBehaviour {
                         }
                     }
 
+                    if (!walkable)
+                    {
+                        movementPenalty += obsticleProximityPenalty;
+                    }
+
                     grid[x, y, z] = new Node(walkable, worldPoint, x, y, z, movementPenalty);
                 }
             }
         }
+
+        BlurPenaltyMap(weightBlurSize);
+    }
+
+    void BlurPenaltyMap(int blurSize)
+    {
+        int kernelSize = blurSize * 2 + 1;
+        int kernelExtents = (kernelSize - 1) / 2;
+
+        int[,,] penaltiesHorisontalPass = new int[gridSizeX, gridSizeY, gridSizeZ];
+        int[,,] penaltiesVerticalPass = new int[gridSizeX, gridSizeY, gridSizeZ];
+        int[,,] penaltiesDepthPass = new int[gridSizeX, gridSizeY, gridSizeZ];
+
+        for (int y = 0; y < gridSizeY; y++)
+        {
+            for (int z = 0; z < gridSizeZ; z++)
+            {
+                for (int x = -kernelExtents; x <= kernelExtents; x++)
+                {
+                    int sampleX = Mathf.Clamp(x, 0, kernelExtents);
+                    penaltiesHorisontalPass[0, y, z] += grid[sampleX, y, z].movmentPenalty;
+                }
+
+                for (int x =1; x < gridSizeX; x++)
+                {
+                    int removeIndex = Mathf.Clamp( x - kernelExtents - 1, 0, gridSizeX);
+                    int addIndex = Mathf.Clamp(x + kernelExtents, 0, gridSizeX - 1);
+
+                    penaltiesHorisontalPass[x, y, z] = penaltiesHorisontalPass[x-1, y, z] - grid[removeIndex, y, z].movmentPenalty + grid[addIndex, y, z].movmentPenalty;
+                }
+            }
+        }
+
+
+        for (int x = 0; x < gridSizeX; x++)
+        {
+            for (int z = 0; z < gridSizeZ; z++)
+            {
+                for (int y = -kernelExtents; y <= kernelExtents; y++)
+                {
+                    int sampleY = Mathf.Clamp(y, 0, kernelExtents);
+                    penaltiesVerticalPass[x, 0, z] += penaltiesHorisontalPass[x, sampleY, z];
+                }
+
+                for (int y = 1; y < gridSizeY; y++)
+                {
+                    int removeIndex = Mathf.Clamp(y - kernelExtents - 1, 0, gridSizeY);
+                    int addIndex = Mathf.Clamp(y + kernelExtents, 0, gridSizeY - 1);
+
+                    penaltiesVerticalPass[x, y, z] = penaltiesVerticalPass[x, y - 1, z] - penaltiesHorisontalPass[x, removeIndex, z] + penaltiesHorisontalPass[x, addIndex, z];
+                }
+            }
+        }
+
+        for (int x = 0; x < gridSizeX; x++)
+        {
+            for (int y = 0; y < gridSizeY; y++)
+            {
+                for (int z = -kernelExtents; z <= kernelExtents; z++)
+                {
+                    int sampleZ = Mathf.Clamp(z, 0, kernelExtents);
+                    penaltiesDepthPass[x, y, 0] += penaltiesHorisontalPass[x, y, sampleZ];
+                }
+
+                for (int z = 1; z < gridSizeZ; z++)
+                {
+                    int removeIndex = Mathf.Clamp(z - kernelExtents - 1, 0, gridSizeZ);
+                    int addIndex = Mathf.Clamp(z + kernelExtents, 0, gridSizeZ - 1);
+
+                    penaltiesDepthPass[x, y, z] = penaltiesDepthPass[x, y, z - 1] - penaltiesVerticalPass[x, y, removeIndex] + penaltiesVerticalPass[x, y, addIndex];
+
+                    int blurredPenalty = Mathf.RoundToInt((float)penaltiesDepthPass[x, y, z] / (kernelSize * kernelSize));
+                    grid[x, y, z].movmentPenalty = blurredPenalty;
+
+                    //if (blurredPenalty > penaltyMax)
+                    //{
+                    //    penaltyMax = blurredPenalty;
+                    //}
+                    //if (blurredPenalty < penaltyMin)
+                    //{
+                    //    penaltyMin = blurredPenalty;
+                    //}
+                }
+            }
+        }
+
     }
 
     public List<Node> GetNeighbours(Node node)
@@ -148,7 +244,9 @@ public class NodeGrid : MonoBehaviour {
             {
                 foreach (Node n in grid)
                 {
-                    Gizmos.color = (n.walkable) ? Color.green : Color.red;
+                    //Gizmos.color = Color.Lerp(Color.white, Color.black, Mathf.InverseLerp(penaltyMin, penaltyMax, n.movmentPenalty));
+
+                    Gizmos.color = (n.walkable) ? Color.white : Color.red;
                     Gizmos.DrawCube(n.worldPosition, Vector3.one * (nodeDiameter - 0.1f));
                 }
             }
