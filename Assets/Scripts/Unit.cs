@@ -38,7 +38,7 @@ public class Unit : MonoBehaviour {
         {
             yield return new WaitForSeconds(0.5f);
         }
-        PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
 
         float sqrMoveThreshhold = pathUpdateMoveThreshhold * pathUpdateMoveThreshhold;
         Vector3 targetPosOld = target.position;
@@ -48,7 +48,7 @@ public class Unit : MonoBehaviour {
             yield return new WaitForSeconds(minPathUpdateTime);
             if ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
             {
-                PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+                PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
                 targetPosOld = target.position;
             }
 
@@ -57,22 +57,17 @@ public class Unit : MonoBehaviour {
 
     IEnumerator FollowPath()
     {
-        if (path == null)
-        {
-            yield return null;
-        }
-        Vector3 currentWaypoint = path[0];
         bool followingPath = true;
         int pathIndex = 0;
         int pathFinishIndex = path.Length-1;
 
-        Quaternion startRotation = Quaternion.LookRotation(path[pathIndex] - transform.position);
-        //transform.LookAt(path[0]);
-        while (Quaternion.Angle(transform.rotation, startRotation) < 1)
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * turnSpeed);
-            yield return null;
-        }
+        //Quaternion startRotation = Quaternion.LookRotation(path[pathIndex] - transform.position);
+        transform.LookAt(path[0]);
+        //while (Quaternion.Angle(transform.rotation, startRotation) < 1)
+        //{
+        //    transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * turnSpeed);
+        //    yield return null;
+        //}
 
         while (followingPath)
         {
@@ -100,25 +95,25 @@ public class Unit : MonoBehaviour {
         }
     }
 
-    public void OnDrawGizmos()
-    {
-        if (path != null)
-        {
-            for (int i = targetIndex; i < path.Length; i++)
-            {
-                Gizmos.color = Color.black;
-                Gizmos.DrawCube(path[i], Vector3.one);
+    //public void OnDrawGizmos()
+    //{
+    //    if (path != null)
+    //    {
+    //        for (int i = targetIndex; i < path.Length; i++)
+    //        {
+    //            Gizmos.color = Color.black;
+    //            Gizmos.DrawCube(path[i], Vector3.one);
 
 
-                //if (i == targetIndex)
-                //{
-                //    Gizmos.DrawLine(transform.position, path[i]);
-                //}
-                //else
-                //{
-                //    Gizmos.DrawLine(path[i-1], path[i]);
-                //}
-            }
-        }
-    }
+    //            //if (i == targetIndex)
+    //            //{
+    //            //    Gizmos.DrawLine(transform.position, path[i]);
+    //            //}
+    //            //else
+    //            //{
+    //            //    Gizmos.DrawLine(path[i-1], path[i]);
+    //            //}
+    //        }
+    //    }
+    //}
 }
