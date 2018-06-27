@@ -8,17 +8,19 @@ public class Unit : MonoBehaviour {
     public float[] minPathUpdateTime = new float[2] {0.3f, 0.1f};
 
     public Transform target;
-    public float speed = 20;
+    public float speed = 7;
 
-    public float turnDistance = 5;
-    public float turnSpeed = 3;
+    public float turnDistance = 1;
+    public float turnSpeed = 5;
 
     Vector3[] path;
     int targetIndex;
+    private Rigidbody rB;
 
     private void Start()
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        rB = GetComponent<Rigidbody>();
         StartCoroutine(UpdatePath());
     }
 
@@ -89,7 +91,8 @@ public class Unit : MonoBehaviour {
             {
                 Quaternion targetRotation = Quaternion.LookRotation(path[pathIndex] - transform.position);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
-                transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
+                //transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
+                rB.AddForce(transform.forward * speed, ForceMode.VelocityChange);
             }
             yield return null;
         }
