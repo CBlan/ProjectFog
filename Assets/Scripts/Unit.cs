@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
-    const float pathUpdateMoveThreshhold = 0.5f;
-    const float minPathUpdateTime = 0.5f;
+    public float pathUpdateMoveThreshhold = 0.5f;
+    public float[] minPathUpdateTime = new float[2] {0.3f, 0.1f};
 
     public Transform target;
     public float speed = 20;
@@ -45,7 +45,7 @@ public class Unit : MonoBehaviour {
 
         while (true)
         {
-            yield return new WaitForSeconds(minPathUpdateTime);
+            yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
             if ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
             {
                 PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
@@ -61,13 +61,13 @@ public class Unit : MonoBehaviour {
         int pathIndex = 0;
         int pathFinishIndex = path.Length-1;
 
-        //Quaternion startRotation = Quaternion.LookRotation(path[pathIndex] - transform.position);
-        transform.LookAt(path[0]);
-        //while (Quaternion.Angle(transform.rotation, startRotation) < 1)
-        //{
-        //    transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * turnSpeed);
-        //    yield return null;
-        //}
+        Quaternion startRotation = Quaternion.LookRotation(path[pathIndex] - transform.position);
+        //transform.LookAt(path[0]);
+        if (Quaternion.Angle(transform.rotation, startRotation) < 1 && followingPath)
+        {
+            transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * turnSpeed);
+            yield return null;
+        }
 
         while (followingPath)
         {

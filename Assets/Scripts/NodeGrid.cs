@@ -9,6 +9,7 @@ public class NodeGrid : MonoBehaviour {
     public Vector3 gridWorldSize;
     public float nodeRadius;
     //public TerrainType[] walkableRegions;
+    public bool weightBlur;
     public int weightBlurSize = 2;
     public LayerMask walkableMask;
     public int walkableMaskMomentPenalty;
@@ -97,7 +98,10 @@ public class NodeGrid : MonoBehaviour {
             }
         }
 
-        BlurPenaltyMap(weightBlurSize);
+        if (weightBlur)
+        {
+            BlurPenaltyMap(weightBlurSize);
+        }
     }
 
     void BlurPenaltyMap(int blurSize)
