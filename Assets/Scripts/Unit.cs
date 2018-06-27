@@ -17,11 +17,14 @@ public class Unit : MonoBehaviour {
     int targetIndex;
     private Rigidbody rB;
 
+    private float stucktimer;
+
     private void Start()
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
         rB = GetComponent<Rigidbody>();
         StartCoroutine(UpdatePath());
+        StartCoroutine(CheckIfStuck());
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -91,8 +94,23 @@ public class Unit : MonoBehaviour {
             {
                 Quaternion targetRotation = Quaternion.LookRotation(path[pathIndex] - transform.position);
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
-                //transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
-                rB.AddForce(transform.forward * speed, ForceMode.VelocityChange);
+                transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
+                //rB.AddForce(transform.forward * speed, ForceMode.VelocityChange);
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator CheckIfStuck()
+    {
+        Vector3 checkPos;
+        while (true)
+        {
+            checkPos = transform.position;
+            yield return new WaitForSeconds(2f);
+            if (Vector3.Distance(checkPos, transform.position) < 0.1f)
+            {
+                Destroy(gameObject);
             }
             yield return null;
         }
