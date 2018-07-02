@@ -62,9 +62,9 @@ public class NodeGrid : MonoBehaviour {
 
         for (int x = 0; x < gridSizeX; x++)
         {
-            for (int y = 0; y < gridSizeY; y++)
+            for (int z = 0; z < gridSizeZ; z++)
             {
-                for (int z = 0; z < gridSizeZ; z++)
+                for (int y = 0; y < gridSizeY; y++)
                 {
                     Vector3 worldPoint = worldBottomBottomLeft + (Vector3.right * (x * nodeDiameter + nodeRadius)) + (Vector3.up * (y * nodeDiameter + nodeRadius)) + (Vector3.forward * (z * nodeDiameter + nodeRadius));
                     bool walkable = !(Physics.CheckSphere(worldPoint, nodeRadius, unwalkableMask));
