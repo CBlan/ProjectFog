@@ -6606,6 +6606,62 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 940011584}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &940243554
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 41.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -13.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -26.94
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.9495293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.31367844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: patrolArea
+      value: 
+      objectReference: {fileID: 214104022}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: minPatrolDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781625977368912, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_Name
+      value: MeleeEnemy (3)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &961358997
 GameObject:
   m_ObjectHideFlags: 0
@@ -6946,6 +7002,62 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 986750650}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1012096643
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -38.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -13.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 24.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.9495293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.31367844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: patrolArea
+      value: 
+      objectReference: {fileID: 214104022}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: minPatrolDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781625977368912, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_Name
+      value: MeleeEnemy (1)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1013751817
 GameObject:
   m_ObjectHideFlags: 0
@@ -8098,6 +8210,62 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1322198987}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1340207351
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 40.47
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -22.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.9495293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.31367844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_RootOrder
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: patrolArea
+      value: 
+      objectReference: {fileID: 214104022}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: minPatrolDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781625977368912, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_Name
+      value: MeleeEnemy (5)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1346006082
 GameObject:
   m_ObjectHideFlags: 0
@@ -9458,6 +9626,62 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1535946960}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1537315317
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 6.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -22.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -27.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.9495293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.31367844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: patrolArea
+      value: 
+      objectReference: {fileID: 214104022}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: minPatrolDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781625977368912, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_Name
+      value: MeleeEnemy (4)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1539203132
 GameObject:
   m_ObjectHideFlags: 0
@@ -12791,6 +13015,62 @@ Transform:
   m_Father: {fileID: 214947988}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2096459682
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 27.63
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -23.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 25.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.9495293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.31367844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4187223320068070, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: patrolArea
+      value: 
+      objectReference: {fileID: 214104022}
+    - target: {fileID: 114193895991206046, guid: 0d81062068b838944866a37a0d2df248,
+        type: 2}
+      propertyPath: minPatrolDistance
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1781625977368912, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+      propertyPath: m_Name
+      value: MeleeEnemy (2)
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0d81062068b838944866a37a0d2df248, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &2116994230
 GameObject:
   m_ObjectHideFlags: 0
