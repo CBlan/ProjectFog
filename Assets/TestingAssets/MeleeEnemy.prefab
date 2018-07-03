@@ -132,6 +132,12 @@ MonoBehaviour:
   speed: 7
   turnDistance: 1
   turnSpeed: 5
+  patrolArea: {fileID: 0}
+  minPatrolDistance: 1
+  alertDistance: 2
+  sightRange: 20
+  fieldOfView: 60
+  alertStatus: 0
 --- !u!114 &114733877010809226
 MonoBehaviour:
   m_ObjectHideFlags: 1

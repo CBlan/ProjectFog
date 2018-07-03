@@ -15,6 +15,7 @@ public class Unit_Melee : MonoBehaviour {
     public float turnSpeed = 5;
 
     public GameObject patrolArea;
+    public float minPatrolDistance = 3;
     private PatrolArea patArea;
 
     public float alertDistance = 5;
@@ -29,17 +30,21 @@ public class Unit_Melee : MonoBehaviour {
 
     private float stucktimer;
 
+    //private Vector3 pathCheck;
+
     private void Start()
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
         GameManager.instance.enemies.Add(gameObject);
         fieldOfViewRangeInHalf = fieldOfView / 2;
         player = GameManager.instance.player.transform;
+        target = GameManager.instance.player.transform;
         alertStatus = false;
         rB = GetComponent<Rigidbody>();
         patArea = patrolArea.GetComponent<PatrolArea>();
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
+        StartCoroutine(CheckIfAlerted());
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -72,11 +77,7 @@ public class Unit_Melee : MonoBehaviour {
             {
                 alertStatus = true;
             }
-
-            if (alertStatus)
-            {
-                target = player;
-            }
+            yield return null;
         }
     }
 
@@ -86,40 +87,48 @@ public class Unit_Melee : MonoBehaviour {
         {
             yield return new WaitForSeconds(0.5f);
         }
-        Vector3 newPatPoint = patArea.GetPatrolPoint();
-        PathRequestManager.RequestPath(new PathRequest(transform.position, newPatPoint, OnPathFound));
+        Vector3 newPatPoint = Vector3.zero;
+        //PathRequestManager.RequestPath(new PathRequest(transform.position, newPatPoint, OnPathFound));
 
         float sqrMoveThreshhold = pathUpdateMoveThreshhold * pathUpdateMoveThreshhold;
         Vector3 targetPosOld = target.position;
         Vector3 unitPosOld = transform.position;
 
-        while (alertStatus)
-        {
-            yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
-            if ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
+        while (true) {
+
+            while (alertStatus)
             {
-                PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
-                targetPosOld = target.position;
+                //yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
+                if ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
+                {
+                    PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
+                    targetPosOld = target.position;
+                }
+
+                else if ((transform.position - unitPosOld).sqrMagnitude > sqrMoveThreshhold)
+                {
+                    PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
+                    unitPosOld = target.position;
+                }
+
+                yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
             }
 
-            else if ((transform.position - unitPosOld).sqrMagnitude > sqrMoveThreshhold)
+            while (!alertStatus)
             {
-                PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
-                unitPosOld = target.position;
+
+                yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
+                if (Vector3.Distance(transform.position, newPatPoint) < minPatrolDistance || newPatPoint == Vector3.zero)
+                {
+                    //print("here");
+                    newPatPoint = patArea.GetPatrolPoint();
+                    PathRequestManager.RequestPath(new PathRequest(transform.position, newPatPoint, OnPathFound));
+                    targetPosOld = newPatPoint;
+                    //pathCheck = newPatPoint;
+                }
+                //print(Vector3.Distance(transform.position, newPatPoint) + " < " + minPatrolDistance);
             }
-
-        }
-
-        while (!alertStatus)
-        {
-
-            yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
-            if ((target.position - targetPosOld).sqrMagnitude < sqrMoveThreshhold)
-            {
-                newPatPoint = patArea.GetPatrolPoint();
-                PathRequestManager.RequestPath(new PathRequest(transform.position, newPatPoint, OnPathFound));
-                targetPosOld = newPatPoint;
-            }
+            yield return null;
         }
     }
 
@@ -128,14 +137,6 @@ public class Unit_Melee : MonoBehaviour {
         bool followingPath = true;
         int pathIndex = 0;
         int pathFinishIndex = path.Length-1;
-
-        Quaternion startRotation = Quaternion.LookRotation(path[pathIndex] - transform.position);
-        //transform.LookAt(path[0]);
-        if (Quaternion.Angle(transform.rotation, startRotation) < 1 && followingPath)
-        {
-            transform.rotation = Quaternion.Lerp(transform.rotation, startRotation, Time.deltaTime * turnSpeed);
-            yield return null;
-        }
 
         while (followingPath)
         {
@@ -156,9 +157,14 @@ public class Unit_Melee : MonoBehaviour {
             if (followingPath)
             {
                 Quaternion targetRotation = Quaternion.LookRotation(path[pathIndex] - transform.position);
+                while (Quaternion.Angle(transform.rotation, targetRotation) > 50)
+                {
+                    print(Quaternion.Angle(transform.rotation, targetRotation) + " > 50");
+                    transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
+                    yield return null;
+                }
                 transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
                 transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
-                //rB.AddForce(transform.forward * speed, ForceMode.VelocityChange);
             }
             yield return null;
         }
@@ -235,5 +241,11 @@ public class Unit_Melee : MonoBehaviour {
     //            //}
     //        }
     //    }
+    //}
+
+    //public void OnDrawGizmos()
+    //{
+    //    Gizmos.color = Color.black;
+    //    Gizmos.DrawCube(pathCheck, Vector3.one);
     //}
 }
