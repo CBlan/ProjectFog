@@ -7,7 +7,6 @@ public class Unit_Melee : MonoBehaviour {
     public float pathUpdateMoveThreshhold = 0.5f;
     public float[] minPathUpdateTime = new float[2] {0.3f, 0.7f};
 
-    private Transform target;
     private Transform player;
     public float speed = 7;
 
@@ -21,7 +20,6 @@ public class Unit_Melee : MonoBehaviour {
     public float alertDistance = 5;
     public float sightRange = 20;
     public float fieldOfView = 60;
-    public bool alertStatus;
     private float fieldOfViewRangeInHalf;
 
     Vector3[] path;
@@ -29,6 +27,8 @@ public class Unit_Melee : MonoBehaviour {
     private Rigidbody rB;
 
     private float stucktimer;
+
+    private AlertStatus alertStatus;
 
     //private Vector3 pathCheck;
 
@@ -38,8 +38,7 @@ public class Unit_Melee : MonoBehaviour {
         GameManager.instance.enemies.Add(gameObject);
         fieldOfViewRangeInHalf = fieldOfView / 2;
         player = GameManager.instance.player.transform;
-        target = GameManager.instance.player.transform;
-        alertStatus = false;
+        alertStatus = GetComponent<AlertStatus>();
         rB = GetComponent<Rigidbody>();
         patArea = patrolArea.GetComponent<PatrolArea>();
         StartCoroutine(UpdatePath());
@@ -67,15 +66,15 @@ public class Unit_Melee : MonoBehaviour {
         while (true)
         {
             //check if player is within short range
-            if (!alertStatus && (Vector3.Distance(player.position, transform.position) < alertDistance))
+            if (!alertStatus.alerted && (Vector3.Distance(player.position, transform.position) < alertDistance))
             {
-                alertStatus = true;
+                alertStatus.alerted = true;
             }
 
             //check if player is within sight
-            if (!alertStatus && CanSeePlayer())
+            if (!alertStatus.alerted && CanSeePlayer())
             {
-                alertStatus = true;
+                alertStatus.alerted = true;
             }
             yield return null;
         }
@@ -91,30 +90,30 @@ public class Unit_Melee : MonoBehaviour {
         //PathRequestManager.RequestPath(new PathRequest(transform.position, newPatPoint, OnPathFound));
 
         float sqrMoveThreshhold = pathUpdateMoveThreshhold * pathUpdateMoveThreshhold;
-        Vector3 targetPosOld = target.position;
+        Vector3 targetPosOld = player.position;
         Vector3 unitPosOld = transform.position;
 
         while (true) {
 
-            while (alertStatus)
+            while (alertStatus.alerted)
             {
                 //yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
-                if ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
+                if ((player.position - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
                 {
-                    PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
-                    targetPosOld = target.position;
+                    PathRequestManager.RequestPath(new PathRequest(transform.position, player.position, OnPathFound));
+                    targetPosOld = player.position;
                 }
 
                 else if ((transform.position - unitPosOld).sqrMagnitude > sqrMoveThreshhold)
                 {
-                    PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
-                    unitPosOld = target.position;
+                    PathRequestManager.RequestPath(new PathRequest(transform.position, player.position, OnPathFound));
+                    unitPosOld = transform.position;
                 }
 
                 yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
             }
 
-            while (!alertStatus)
+            while (!alertStatus.alerted)
             {
 
                 yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
@@ -159,7 +158,7 @@ public class Unit_Melee : MonoBehaviour {
                 Quaternion targetRotation = Quaternion.LookRotation(path[pathIndex] - transform.position);
                 while (Quaternion.Angle(transform.rotation, targetRotation) > 50)
                 {
-                    print(Quaternion.Angle(transform.rotation, targetRotation) + " > 50");
+                    //print(Quaternion.Angle(transform.rotation, targetRotation) + " > 50");
                     transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, Time.deltaTime * turnSpeed);
                     yield return null;
                 }

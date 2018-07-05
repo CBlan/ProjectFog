@@ -5,13 +5,15 @@ using UnityEngine;
 public class Unit_Scout : MonoBehaviour {
 
     public float pathUpdateMoveThreshhold = 0.5f;
-    public float[] minPathUpdateTime = new float[2] {0.3f, 0.1f};
+    public float[] minPathUpdateTime = new float[2] {0.3f, 0.7f};
 
-    public Transform target;
+    private Transform target;
+    private Transform player;
     public float speed = 7;
 
     public float turnDistance = 1;
     public float turnSpeed = 5;
+    public float sightRange = 5;
 
     Vector3[] path;
     int targetIndex;
@@ -22,7 +24,9 @@ public class Unit_Scout : MonoBehaviour {
     private void Start()
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
+        GameManager.instance.enemies.Add(gameObject);
         rB = GetComponent<Rigidbody>();
+        player = GameManager.instance.player.transform;
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
     }
@@ -37,24 +41,48 @@ public class Unit_Scout : MonoBehaviour {
         }
     }
 
+    private void Update()
+    {
+
+        if (Vector3.Distance(transform.position, player.position) < sightRange + 0.5f)
+        {
+            RaycastHit hit;
+            Vector3 rayDir = player.position - transform.position;
+
+            if (Physics.Raycast(transform.position, rayDir, out hit, sightRange))
+            {
+                if (hit.collider.gameObject.transform == player)
+                {
+                    GameObject closestUnalert;
+                    closestUnalert = FindClosestUnalertEnemy();
+
+                    if (closestUnalert != null)
+                    {
+                        closestUnalert.GetComponent<AlertStatus>().alerted = true;
+                    }
+                }
+            }
+        }
+    }
+
     IEnumerator UpdatePath()
     {
         if (Time.timeSinceLevelLoad < 0.5f)
         {
             yield return new WaitForSeconds(0.5f);
         }
-        PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
+        PathRequestManager.RequestPath(new PathRequest(transform.position, player.position, OnPathFound));
 
         float sqrMoveThreshhold = pathUpdateMoveThreshhold * pathUpdateMoveThreshhold;
-        Vector3 targetPosOld = target.position;
+        Vector3 targetPosOld = player.position;
 
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
-            if ((target.position - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
+            if ((player.position - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
             {
-                PathRequestManager.RequestPath(new PathRequest(transform.position, target.position, OnPathFound));
-                targetPosOld = target.position;
+                PathRequestManager.RequestPath(new PathRequest(transform.position, player.position, OnPathFound));
+                targetPosOld = player.position;
             }
 
         }
@@ -114,6 +142,31 @@ public class Unit_Scout : MonoBehaviour {
             }
             yield return null;
         }
+    }
+
+    public GameObject FindClosestUnalertEnemy()
+    {
+        List<GameObject> nearestEnemies = new List<GameObject> (GameManager.instance.enemies);
+        GameObject closest = null;
+        AlertStatus aS;
+        float distance = Mathf.Infinity;
+        foreach (GameObject enemy in nearestEnemies)
+        {;
+            if (aS  = enemy.GetComponent<AlertStatus>())
+            {
+                if (!aS.alerted)
+                {
+                    Vector3 diff = enemy.transform.position - player.position;
+                    float curDistance = diff.sqrMagnitude;
+                    if (curDistance < distance)
+                    {
+                        closest = enemy;
+                        distance = curDistance;
+                    }
+                }
+            }
+        }
+        return closest;
     }
 
     //public void OnDrawGizmos()
