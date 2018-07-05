@@ -29,6 +29,7 @@ public class Unit_Melee : MonoBehaviour {
     private float stucktimer;
 
     private AlertStatus alertStatus;
+    bool followingPath;
 
     //private Vector3 pathCheck;
 
@@ -44,6 +45,15 @@ public class Unit_Melee : MonoBehaviour {
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
         StartCoroutine(CheckIfAlerted());
+    }
+
+    private void Update()
+    {
+        if (!followingPath && Vector3.Distance(transform.position, player.position) < 0.5f)
+        {
+            transform.LookAt(player);
+
+        }
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -133,7 +143,7 @@ public class Unit_Melee : MonoBehaviour {
 
     IEnumerator FollowPath()
     {
-        bool followingPath = true;
+        followingPath = true;
         int pathIndex = 0;
         int pathFinishIndex = path.Length-1;
 
