@@ -49,10 +49,10 @@ public class Unit_Melee : MonoBehaviour {
 
     private void Update()
     {
-        if (!followingPath && Vector3.Distance(transform.position, player.position) < 0.5f)
+        if (Vector3.Distance(transform.position, player.position) < 1.5f)
         {
             transform.LookAt(player);
-
+            transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
         }
     }
 

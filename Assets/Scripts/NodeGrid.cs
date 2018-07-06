@@ -113,9 +113,9 @@ public class NodeGrid : MonoBehaviour {
         int[,,] penaltiesVerticalPass = new int[gridSizeX, gridSizeY, gridSizeZ];
         int[,,] penaltiesDepthPass = new int[gridSizeX, gridSizeY, gridSizeZ];
 
-        for (int y = 0; y < gridSizeY; y++)
+        for (int z = 0; z < gridSizeZ; z++)
         {
-            for (int z = 0; z < gridSizeZ; z++)
+            for (int y = 0; y < gridSizeY; y++)
             {
                 for (int x = -kernelExtents; x <= kernelExtents; x++)
                 {
@@ -154,14 +154,14 @@ public class NodeGrid : MonoBehaviour {
             }
         }
 
-        for (int x = 0; x < gridSizeX; x++)
+        for (int y = 0; y < gridSizeY; y++)
         {
-            for (int y = 0; y < gridSizeY; y++)
+            for (int x = 0; x < gridSizeX; x++)
             {
                 for (int z = -kernelExtents; z <= kernelExtents; z++)
                 {
                     int sampleZ = Mathf.Clamp(z, 0, kernelExtents);
-                    penaltiesDepthPass[x, y, 0] += penaltiesHorisontalPass[x, y, sampleZ];
+                    penaltiesDepthPass[x, y, 0] += penaltiesVerticalPass[x, y, sampleZ];
                 }
 
                 for (int z = 1; z < gridSizeZ; z++)

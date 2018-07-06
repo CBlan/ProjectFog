@@ -7,13 +7,13 @@ public class Unit_Scout : MonoBehaviour {
     public float pathUpdateMoveThreshhold = 0.5f;
     public float[] minPathUpdateTime = new float[2] {0.3f, 0.7f};
 
-    private Transform target;
-    private Transform player;
+    private Vector3 target;
+    private GameObject player;
     public float speed = 7;
 
     public float turnDistance = 1;
     public float turnSpeed = 5;
-    public float sightRange = 5;
+    public float sightRange = 10;
 
     Vector3[] path;
     int targetIndex;
@@ -26,9 +26,11 @@ public class Unit_Scout : MonoBehaviour {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
         GameManager.instance.enemies.Add(gameObject);
         rB = GetComponent<Rigidbody>();
-        player = GameManager.instance.player.transform;
+        player = GameManager.instance.player;
+        target = player.transform.position;
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
+        StartCoroutine(FindTarget());
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -44,22 +46,17 @@ public class Unit_Scout : MonoBehaviour {
     private void Update()
     {
 
-        if (Vector3.Distance(transform.position, player.position) < sightRange + 0.5f)
+        if (Vector3.Distance(transform.position, player.transform.position) < sightRange + 0.5f)
         {
-            RaycastHit hit;
-            Vector3 rayDir = player.position - transform.position;
 
-            if (Physics.Raycast(transform.position, rayDir, out hit, sightRange))
+            if (CheckLOS(transform.position, player, sightRange))
             {
-                if (hit.collider.gameObject.transform == player)
-                {
-                    GameObject closestUnalert;
-                    closestUnalert = FindClosestUnalertEnemy();
+                GameObject closestUnalert;
+                closestUnalert = FindClosestUnalertEnemy();
 
-                    if (closestUnalert != null)
-                    {
-                        closestUnalert.GetComponent<AlertStatus>().alerted = true;
-                    }
+                if (closestUnalert != null)
+                {
+                    closestUnalert.GetComponent<AlertStatus>().alerted = true;
                 }
             }
         }
@@ -71,18 +68,18 @@ public class Unit_Scout : MonoBehaviour {
         {
             yield return new WaitForSeconds(0.5f);
         }
-        PathRequestManager.RequestPath(new PathRequest(transform.position, player.position, OnPathFound));
+        PathRequestManager.RequestPath(new PathRequest(transform.position, target, OnPathFound));
 
         float sqrMoveThreshhold = pathUpdateMoveThreshhold * pathUpdateMoveThreshhold;
-        Vector3 targetPosOld = player.position;
+        Vector3 targetPosOld = target;
 
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
-            if ((player.position - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
+            if ((target - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
             {
-                PathRequestManager.RequestPath(new PathRequest(transform.position, player.position, OnPathFound));
-                targetPosOld = player.position;
+                PathRequestManager.RequestPath(new PathRequest(transform.position, target, OnPathFound));
+                targetPosOld = target;
             }
 
         }
@@ -135,11 +132,31 @@ public class Unit_Scout : MonoBehaviour {
         while (true)
         {
             checkPos = transform.position;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(5f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
                 Destroy(gameObject);
             }
+            yield return null;
+        }
+    }
+
+    IEnumerator FindTarget()
+    {
+        while (true)
+        {
+            Vector3 targetPosition = player.transform.position + (Random.onUnitSphere * (sightRange - 2));
+
+            if (!Physics.CheckSphere(targetPosition, 0.5f))
+            {
+                if (CheckLOS(targetPosition, player, sightRange))
+                {
+                    target = targetPosition;
+                    //print("target");
+                    yield return new WaitForSeconds(0.5f);
+                }
+            }
+            //print("no target");
             yield return null;
         }
     }
@@ -151,12 +168,12 @@ public class Unit_Scout : MonoBehaviour {
         AlertStatus aS;
         float distance = Mathf.Infinity;
         foreach (GameObject enemy in nearestEnemies)
-        {;
+        {
             if (aS  = enemy.GetComponent<AlertStatus>())
             {
                 if (!aS.alerted)
                 {
-                    Vector3 diff = enemy.transform.position - player.position;
+                    Vector3 diff = enemy.transform.position - player.transform.position;
                     float curDistance = diff.sqrMagnitude;
                     if (curDistance < distance)
                     {
@@ -167,6 +184,22 @@ public class Unit_Scout : MonoBehaviour {
             }
         }
         return closest;
+    }
+
+    bool CheckLOS(Vector3 position, GameObject target, float sightRange)
+    {
+        RaycastHit hit;
+        Vector3 rayDir = target.transform.position - position;
+
+        if (Physics.Raycast(position, rayDir, out hit, sightRange))
+        {
+            if (hit.collider.gameObject == target)
+            {
+                return true;
+            }
+            else return false;
+        }
+        return false;
     }
 
     //public void OnDrawGizmos()

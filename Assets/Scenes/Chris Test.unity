@@ -3096,6 +3096,11 @@ Prefab:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ba9291db7a889344c83c479fbbc8eb55, type: 2}
+    - target: {fileID: 114872328152047642, guid: 2808504fa46cbed4d854c451153c09e7,
+        type: 2}
+      propertyPath: sightRange
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
   m_IsPrefabParent: 0
@@ -7286,11 +7291,6 @@ Prefab:
     - target: {fileID: 4440594278949904, guid: 8aa931c4bf805e74692973fc7f8e4384, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 20813927229688036, guid: 8aa931c4bf805e74692973fc7f8e4384,
-        type: 2}
-      propertyPath: near clip plane
-      value: 0.01
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8aa931c4bf805e74692973fc7f8e4384, type: 2}
