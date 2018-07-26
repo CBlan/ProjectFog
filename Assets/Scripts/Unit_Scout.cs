@@ -14,6 +14,7 @@ public class Unit_Scout : MonoBehaviour {
     public float turnDistance = 1;
     public float turnSpeed = 5;
     public float sightRange = 10;
+    public float alertingEnemyTime = 4f;
 
     Vector3[] path;
     int targetIndex;
@@ -31,6 +32,7 @@ public class Unit_Scout : MonoBehaviour {
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
         StartCoroutine(FindTarget());
+        StartCoroutine(AlertEnemy());
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -43,22 +45,45 @@ public class Unit_Scout : MonoBehaviour {
         }
     }
 
-    private void Update()
+    //private void Update()
+    //{
+
+    //    if (Vector3.Distance(transform.position, player.transform.position) < sightRange + 0.5f)
+    //    {
+
+    //        if (CheckLOS(transform.position, player, sightRange))
+    //        {
+    //            GameObject closestUnalert;
+    //            closestUnalert = FindClosestUnalertEnemy();
+
+    //            if (closestUnalert != null)
+    //            {
+    //                closestUnalert.GetComponent<AlertStatus>().alerted = true;
+    //            }
+    //        }
+    //    }
+    //}
+
+    IEnumerator AlertEnemy()
     {
-
-        if (Vector3.Distance(transform.position, player.transform.position) < sightRange + 0.5f)
+        while (true)
         {
-
-            if (CheckLOS(transform.position, player, sightRange))
+            if (Vector3.Distance(transform.position, player.transform.position) < sightRange + 0.5f)
             {
-                GameObject closestUnalert;
-                closestUnalert = FindClosestUnalertEnemy();
 
-                if (closestUnalert != null)
+                if (CheckLOS(transform.position, player, sightRange))
                 {
-                    closestUnalert.GetComponent<AlertStatus>().alerted = true;
+                    GameObject closestUnalert;
+                    closestUnalert = FindClosestUnalertEnemy();
+
+                    if (closestUnalert != null)
+                    {
+                        closestUnalert.GetComponent<AlertStatus>().alerted = true;
+                        yield return new WaitForSeconds(alertingEnemyTime);
+                    }
                 }
             }
+            yield return null;
         }
     }
 
