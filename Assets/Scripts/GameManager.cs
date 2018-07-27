@@ -8,13 +8,12 @@ public class GameManager : MonoBehaviour {
     public GameObject player;
     public List<GameObject> enemies;
 
+    public PatrolArea rangedPatArea;
+    public PatrolArea meleePatArea;
+
     // Use this for initialization
     void Awake () {
         instance = this;
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

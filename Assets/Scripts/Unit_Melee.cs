@@ -13,7 +13,6 @@ public class Unit_Melee : MonoBehaviour {
     public float turnDistance = 1;
     public float turnSpeed = 5;
 
-    public GameObject patrolArea;
     public float minPatrolDistance = 3;
     private PatrolArea patArea;
 
@@ -41,7 +40,7 @@ public class Unit_Melee : MonoBehaviour {
         player = GameManager.instance.player.transform;
         alertStatus = GetComponent<AlertStatus>();
         rB = GetComponent<Rigidbody>();
-        patArea = patrolArea.GetComponent<PatrolArea>();
+        patArea = GameManager.instance.meleePatArea;
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
         StartCoroutine(CheckIfAlerted());
@@ -191,8 +190,7 @@ public class Unit_Melee : MonoBehaviour {
             yield return new WaitForSeconds(3f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
-                GameManager.instance.enemies.Remove(gameObject);
-                Destroy(gameObject);
+                DestroyEnemy();
             }
             yield return null;
         }
@@ -228,6 +226,12 @@ public class Unit_Melee : MonoBehaviour {
         {
             return false;
         }
+    }
+
+    public void DestroyEnemy()
+    {
+        GameManager.instance.enemies.Remove(gameObject);
+        Destroy(gameObject);
     }
 
     //public void OnDrawGizmos()

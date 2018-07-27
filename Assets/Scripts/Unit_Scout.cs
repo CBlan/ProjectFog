@@ -160,7 +160,7 @@ public class Unit_Scout : MonoBehaviour {
             yield return new WaitForSeconds(5f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
-                Destroy(gameObject);
+                DestroyEnemy();
             }
             yield return null;
         }
@@ -225,6 +225,12 @@ public class Unit_Scout : MonoBehaviour {
             else return false;
         }
         return false;
+    }
+
+    public void DestroyEnemy()
+    {
+        GameManager.instance.enemies.Remove(gameObject);
+        Destroy(gameObject);
     }
 
     //public void OnDrawGizmos()

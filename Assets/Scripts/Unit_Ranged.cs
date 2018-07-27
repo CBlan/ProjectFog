@@ -41,7 +41,7 @@ public class Unit_Ranged : MonoBehaviour {
         player = GameManager.instance.player.transform;
         alertStatus = GetComponent<AlertStatus>();
         rB = GetComponent<Rigidbody>();
-        patArea = patrolArea.GetComponent<PatrolArea>();
+        patArea = GameManager.instance.rangedPatArea;
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
         StartCoroutine(CheckIfAlerted());
@@ -64,7 +64,7 @@ public class Unit_Ranged : MonoBehaviour {
             {
                 if (hit.collider.gameObject == player.gameObject)
                 {
-                    print("shot at player");
+                    //print("shot at player");
                 }
             }
         }
@@ -182,8 +182,7 @@ public class Unit_Ranged : MonoBehaviour {
             yield return new WaitForSeconds(3f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
-                GameManager.instance.enemies.Remove(gameObject);
-                Destroy(gameObject);
+                DestroyEnemy();
             }
             yield return null;
         }
@@ -219,6 +218,12 @@ public class Unit_Ranged : MonoBehaviour {
         {
             return false;
         }
+    }
+
+    public void DestroyEnemy()
+    {
+        GameManager.instance.enemies.Remove(gameObject);
+        Destroy(gameObject);
     }
 
     //public void OnDrawGizmos()
