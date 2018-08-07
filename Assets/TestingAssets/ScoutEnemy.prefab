@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 54036955158914242}
   - component: {fileID: 114692858215931348}
   - component: {fileID: 114872328152047642}
+  - component: {fileID: 114135225848712370}
   m_Layer: 0
   m_Name: ScoutEnemy
   m_TagString: Enemy
@@ -94,7 +95,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1916942036870660}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 2
   m_Drag: 1
   m_AngularDrag: 1
   m_UseGravity: 0
@@ -114,6 +115,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114135225848712370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1916942036870660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0447bb758792da444a6aa73e504e3e00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 100
+  health: 0
+  destroyEffect: {fileID: 100002, guid: 6ecf76dc4f268d340b2666896a954bcc, type: 2}
 --- !u!114 &114692858215931348
 MonoBehaviour:
   m_ObjectHideFlags: 1

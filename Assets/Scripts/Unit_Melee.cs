@@ -30,6 +30,7 @@ public class Unit_Melee : MonoBehaviour {
     private AlertStatus alertStatus;
     bool followingPath;
 
+    private EnemyHealth hP;
     //private Vector3 pathCheck;
 
     private void Start()
@@ -44,6 +45,7 @@ public class Unit_Melee : MonoBehaviour {
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
         StartCoroutine(CheckIfAlerted());
+        hP = GetComponent<EnemyHealth>();
     }
 
     private void Update()
@@ -190,7 +192,7 @@ public class Unit_Melee : MonoBehaviour {
             yield return new WaitForSeconds(3f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
-                DestroyEnemy();
+                hP.DestroySelf();
             }
             yield return null;
         }
@@ -226,12 +228,6 @@ public class Unit_Melee : MonoBehaviour {
         {
             return false;
         }
-    }
-
-    public void DestroyEnemy()
-    {
-        GameManager.instance.enemies.Remove(gameObject);
-        Destroy(gameObject);
     }
 
     //public void OnDrawGizmos()

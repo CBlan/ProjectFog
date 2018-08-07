@@ -64,7 +64,7 @@ public class SpawnManager : MonoBehaviour {
         {
             if (GameManager.instance.enemies.Count < totalEnemies)
             {
-                print("here");
+                //print("here");
                 foreach (GameObject enemy in GameManager.instance.enemies)
                 {
                     if (enemy.GetComponent<Unit_Ranged>())

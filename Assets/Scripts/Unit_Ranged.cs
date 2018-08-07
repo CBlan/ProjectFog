@@ -20,6 +20,10 @@ public class Unit_Ranged : MonoBehaviour {
     public float alertDistance = 5;
     public float sightRange = 50;
     public float fieldOfView = 10;
+    public GameObject weapon;
+    public float weaponRotateSpeed = 2;
+    public float weaponShotInterval = 0.5f;
+    private float cooldown;
     private float fieldOfViewRangeInHalf;
 
     Vector3[] path;
@@ -31,6 +35,8 @@ public class Unit_Ranged : MonoBehaviour {
     private AlertStatus alertStatus;
     bool followingPath;
 
+    private EnemyHealth hP;
+    private RangedWeapon rangedWeapon;
     //private Vector3 pathCheck;
 
     private void Start()
@@ -41,10 +47,12 @@ public class Unit_Ranged : MonoBehaviour {
         player = GameManager.instance.player.transform;
         alertStatus = GetComponent<AlertStatus>();
         rB = GetComponent<Rigidbody>();
+        rangedWeapon = weapon.GetComponent<RangedWeapon>();
         patArea = GameManager.instance.rangedPatArea;
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
         StartCoroutine(CheckIfAlerted());
+        hP = GetComponent<EnemyHealth>();
     }
 
     private void Update()
@@ -53,6 +61,12 @@ public class Unit_Ranged : MonoBehaviour {
         {
             transform.LookAt(player);
             transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
+        }
+
+        cooldown += Time.deltaTime;
+        if (cooldown > 1000)
+        {
+            cooldown = 10;
         }
 
         if (alertStatus.alerted)
@@ -65,8 +79,43 @@ public class Unit_Ranged : MonoBehaviour {
                 if (hit.collider.gameObject == player.gameObject)
                 {
                     //print("shot at player");
+                    Vector3 targetDir = player.position - weapon.transform.position;
+
+                    // The step size is equal to speed times frame time.
+                    float step = weaponRotateSpeed * Time.deltaTime;
+
+                    Vector3 newDir = Vector3.RotateTowards(weapon.transform.forward, targetDir, step, 0.0f);
+                    Debug.DrawRay(weapon.transform.position, newDir, Color.red);
+
+                    // Move our position a step closer to the target.
+                    weapon.transform.rotation = Quaternion.LookRotation(newDir);
+
+                    RaycastHit hit1;
+                    if (Physics.Raycast(weapon.transform.position, weapon.transform.forward, out hit1, sightRange))
+                    {
+                        if (hit1.collider.gameObject == player.gameObject)
+                        {
+                            if (cooldown > weaponShotInterval)
+                            {
+                                //print("shoot");
+                                rangedWeapon.Shoot();
+                                alertStatus.alerted = false;
+                                cooldown = 0;
+                            }
+
+                        }
+                    }
+
+                }
+                else
+                {
+                    weapon.transform.rotation = Quaternion.Lerp(weapon.transform.rotation, transform.rotation, Time.deltaTime * weaponRotateSpeed);
                 }
             }
+        }
+        else
+        {
+            weapon.transform.rotation = Quaternion.Lerp(weapon.transform.rotation, transform.rotation, Time.deltaTime * weaponRotateSpeed);
         }
     }
 
@@ -113,7 +162,7 @@ public class Unit_Ranged : MonoBehaviour {
         Vector3 newPatPoint = Vector3.zero;
         //PathRequestManager.RequestPath(new PathRequest(transform.position, newPatPoint, OnPathFound));
 
-        float sqrMoveThreshhold = pathUpdateMoveThreshhold * pathUpdateMoveThreshhold;
+        //float sqrMoveThreshhold = pathUpdateMoveThreshhold * pathUpdateMoveThreshhold;
         Vector3 targetPosOld = player.position;
         Vector3 unitPosOld = transform.position;
 
@@ -182,7 +231,7 @@ public class Unit_Ranged : MonoBehaviour {
             yield return new WaitForSeconds(3f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
-                DestroyEnemy();
+                hP.DestroySelf();
             }
             yield return null;
         }
@@ -218,12 +267,6 @@ public class Unit_Ranged : MonoBehaviour {
         {
             return false;
         }
-    }
-
-    public void DestroyEnemy()
-    {
-        GameManager.instance.enemies.Remove(gameObject);
-        Destroy(gameObject);
     }
 
     //public void OnDrawGizmos()

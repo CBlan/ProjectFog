@@ -22,11 +22,14 @@ public class Unit_Scout : MonoBehaviour {
 
     private float stucktimer;
 
+    private EnemyHealth hP;
+
     private void Start()
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
         GameManager.instance.enemies.Add(gameObject);
         rB = GetComponent<Rigidbody>();
+        hP = GetComponent<EnemyHealth>();
         player = GameManager.instance.player;
         target = player.transform.position;
         StartCoroutine(UpdatePath());
@@ -160,7 +163,7 @@ public class Unit_Scout : MonoBehaviour {
             yield return new WaitForSeconds(5f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
-                DestroyEnemy();
+                hP.DestroySelf();
             }
             yield return null;
         }
@@ -188,11 +191,11 @@ public class Unit_Scout : MonoBehaviour {
 
     public GameObject FindClosestUnalertEnemy()
     {
-        List<GameObject> nearestEnemies = new List<GameObject> (GameManager.instance.enemies);
+        //List<GameObject> nearestEnemies = new List<GameObject> (GameManager.instance.enemies);
         GameObject closest = null;
         AlertStatus aS;
         float distance = Mathf.Infinity;
-        foreach (GameObject enemy in nearestEnemies)
+        foreach (GameObject enemy in GameManager.instance.enemies)
         {
             if (aS  = enemy.GetComponent<AlertStatus>())
             {
@@ -225,12 +228,6 @@ public class Unit_Scout : MonoBehaviour {
             else return false;
         }
         return false;
-    }
-
-    public void DestroyEnemy()
-    {
-        GameManager.instance.enemies.Remove(gameObject);
-        Destroy(gameObject);
     }
 
     //public void OnDrawGizmos()

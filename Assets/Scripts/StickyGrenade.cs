@@ -6,7 +6,9 @@ public class StickyGrenade : MonoBehaviour {
 
     private bool hasCollided = false;
     public float explodeTime = 5;
-    public float damage;
+    public float damage = 20;
+    public float radius = 5.0F;
+    public float power = 10.0F;
     public GameObject explosion;
     private Rigidbody rB;
     private int grenadeCount;
@@ -32,10 +34,26 @@ public class StickyGrenade : MonoBehaviour {
     IEnumerator Explode()
     {
         yield return new WaitForSeconds(explodeTime);
-        Instantiate(explosion, transform.position, Quaternion.identity);
         AddDescendantsWithTag(gameObject.transform);
         damage = damage * (grenadeCount + 1);
+        Vector3 explosionPos = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+        foreach (Collider hit in colliders)
+        {
+            Rigidbody rB;
+            EnemyHealth hP;
+
+            if (rB = hit.GetComponent<Rigidbody>())
+            {
+                rB.AddExplosionForce(power, explosionPos, radius, 0.0F);
+                if (hP = hit.GetComponent<EnemyHealth>())
+                {
+                    hP.health -= damage;
+                }
+            }
+        }
         //print(damage);
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);
         yield break;
     }
@@ -44,7 +62,7 @@ public class StickyGrenade : MonoBehaviour {
     {
         foreach (Transform child in parent)
         {
-            if (child.gameObject.tag == "Grenade")
+            if (child.gameObject.CompareTag("Grenade"))
             {
                 grenadeCount++;
             }

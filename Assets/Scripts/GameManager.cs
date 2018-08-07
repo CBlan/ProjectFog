@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour {
     public PatrolArea rangedPatArea;
     public PatrolArea meleePatArea;
 
+    public float playerHP = 100;
+
     // Use this for initialization
     void Awake () {
         instance = this;
