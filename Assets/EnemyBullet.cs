@@ -16,7 +16,7 @@ public class EnemyBullet : MonoBehaviour {
     {
         if (collision.gameObject == GameManager.instance.player)
         {
-            GameManager.instance.playerHP -= bulletDamage;
+            GameManager.instance.DamagePlayer(bulletDamage);
         }
         Destroy(gameObject);
     }

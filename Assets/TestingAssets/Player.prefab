@@ -369,7 +369,8 @@ MonoBehaviour:
   maxJetpackFuel: 50
   jetFuelRegenRate: 1
   jetFuel: 0
-  dashForce: 500
+  dash: 0
+  dashForce: 300
   dashLength: 0.1
   dashCooldown: 3
   fallDamageThreshold: 19

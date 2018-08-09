@@ -14,7 +14,7 @@ public class MeleeWeapon : MonoBehaviour {
         {
             if (cooldown > damageInterval)
             {
-                GameManager.instance.playerHP -= damage;
+                GameManager.instance.DamagePlayer(damage);
                 cooldown = 0;
             }
             cooldown += Time.deltaTime; 

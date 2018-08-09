@@ -26,7 +26,7 @@ public class PlayerMoveV3 : MonoBehaviour
     float inputX;
     float inputY;
 
-    private bool dash;
+    public bool dash;
     public float dashForce = 500f;
     public float dashLength = 0.1f;
     private bool normalJumpDown;
@@ -163,7 +163,7 @@ public class PlayerMoveV3 : MonoBehaviour
         {
             if (rB.velocity.y < -fallDamageThreshold)
             {
-                GameManager.instance.playerHP -= 20;
+                GameManager.instance.DamagePlayer(20);
             }
             falling = false;
         }
@@ -197,47 +197,6 @@ public class PlayerMoveV3 : MonoBehaviour
         // From the jump height and gravity we deduce the upwards speed 
         // for the character to reach at the apex.
         return Mathf.Sqrt(2 * jumpHeight * gravity);
-    }
-
-    IEnumerator JetFuelRegen()
-    {
-        while (true)
-        {
-
-            if (Input.GetButton("Jump"))
-            {
-                yield return null;
-            }
-            else
-            {
-                yield return new WaitForSeconds(0.01f);
-                jetFuel += jetFuelRegenRate;
-                jetFuel = Mathf.Clamp(jetFuel, 0, maxJetpackFuel);
-            }
-
-            if (Input.GetButtonUp("Jump"))
-            {
-                yield return new WaitForSeconds(1f);
-            }
-
-            yield return null;
-        }
-    }
-
-    IEnumerator JetFuelDepletion()
-    {
-        while (true)
-        {
-
-            if (Input.GetButton("Jump"))
-            {
-                yield return new WaitForSeconds(0.01f);
-                jetFuel -= jetFuelRegenRate;
-                jetFuel = Mathf.Clamp(jetFuel, 0, maxJetpackFuel);
-            }
-
-            yield return null;
-        }
     }
 
     IEnumerator DashTime()
