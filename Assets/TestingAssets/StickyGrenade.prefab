@@ -115,7 +115,7 @@ MonoBehaviour:
   explodeTime: 2
   damage: 20
   radius: 8
-  power: 400
+  power: 1600
   explosion: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 2}
 --- !u!135 &135205693637297514
 SphereCollider:
