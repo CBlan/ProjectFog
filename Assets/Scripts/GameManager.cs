@@ -13,7 +13,8 @@ public class GameManager : MonoBehaviour {
 
     public float playerHP;
     public float maxPlayerHP = 100;
-    public float regenRate = 1;
+    public float regenRate = 0.5f;
+    private float regenCooldown;
 
     public bool playerDamaged;
     // Use this for initialization
@@ -24,11 +25,23 @@ public class GameManager : MonoBehaviour {
     private void Start()
     {
         playerHP = maxPlayerHP;
-        StartCoroutine(RegenHP());
     }
 
     void Update()
     {
+        if (regenCooldown > 0.1)
+        {
+            playerHP += regenRate;
+            playerHP = Mathf.Clamp(playerHP, 0, maxPlayerHP);
+            regenCooldown = 0;
+        }
+        regenCooldown += Time.deltaTime;
+
+        if (playerDamaged)
+        {
+            regenCooldown = -2;
+        }
+
         playerDamaged = false;
     }
 
@@ -38,21 +51,4 @@ public class GameManager : MonoBehaviour {
         playerHP -= amount;
     }
 
-    IEnumerator RegenHP()
-    {
-        while (true)
-        {
-            if (playerDamaged)
-            {
-                yield return new WaitForSeconds(5);
-            }
-            else
-            {
-                playerHP += regenRate;
-                Mathf.Clamp(playerHP, 0, maxPlayerHP);
-                yield return new WaitForSeconds(0.01f);
-            }
-            yield return null;
-        }
-    }
 }
