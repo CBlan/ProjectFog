@@ -1,0 +1,480 @@
+fileFormatVersion: 2
+guid: df9fc5909aa559b4685abcfc84982ef0
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Building_support_pillars
+    100002: Building_support_pillars1
+    100004: Building_support_pillars1_USE_00206
+    100006: Building_support_pillars2
+    100008: Building_support_pillars2_USE_00195
+    100010: Building_support_pillars2_USE_00210
+    100012: Building_support_pillars_USE_00210
+    100014: Building_support_pillars_USE_00212
+    100016: group2
+    100018: Octogon_POLES
+    100020: Octogon_POLES1
+    100022: polySurface233
+    100024: polySurface234
+    100026: polySurface251
+    100028: polySurface258
+    100030: polySurface265
+    100032: polySurface266
+    100034: pSphere14
+    100036: pSphere15
+    100038: pSphere16
+    100040: pSphere17
+    100042: pSphere18
+    100044: pSphere19
+    100046: Small_building
+    100048: Small_building1
+    100050: //RootNode
+    100052: USE_00135
+    100054: USE_00136
+    100056: USE_00137
+    100058: USE_00138
+    100060: USE_00139
+    100062: USE_00140
+    100064: USE_00141
+    100066: USE_00142
+    100068: USE_00143
+    100070: USE_00146
+    100072: USE_00166
+    100074: USE_00177
+    100076: USE_00179
+    100078: USE_00180
+    100080: USE_00189
+    100082: USE_00191
+    100084: USE_00191 1
+    100086: USE_00191 2
+    100088: USE_00192
+    100090: USE_00192 1
+    100092: USE_00192 2
+    100094: USE_00193
+    100096: USE_00193 1
+    100098: USE_00193 2
+    100100: USE_00194
+    100102: USE_00194 1
+    100104: USE_00194 2
+    100106: USE_00195
+    100108: USE_00197
+    100110: USE_00197 1
+    100112: USE_00197 2
+    100114: USE_00199
+    100116: USE_00199 1
+    100118: USE_00199 2
+    100120: USE_00200
+    100122: USE_00200 1
+    100124: USE_00200 2
+    100126: USE_00202
+    100128: USE_00202 1
+    100130: USE_00202 2
+    100132: USE_00203
+    100134: USE_00203 1
+    100136: USE_00203 2
+    100138: USE_00207
+    100140: USE_00207 1
+    100142: USE_00207 2
+    100144: USE_00209
+    100146: USE_00212
+    100148: USE_00213
+    100150: USE_00215
+    100152: USE_0072
+    100154: USE_0073
+    100156: USE_0074
+    100158: WALK_area_Octogon_LEVELS_001
+    100160: WALK_area_Octogon_LEVELS_002
+    100162: WALK_area_Octogon_LEVELS_003
+    400000: Building_support_pillars
+    400002: Building_support_pillars1
+    400004: Building_support_pillars1_USE_00206
+    400006: Building_support_pillars2
+    400008: Building_support_pillars2_USE_00195
+    400010: Building_support_pillars2_USE_00210
+    400012: Building_support_pillars_USE_00210
+    400014: Building_support_pillars_USE_00212
+    400016: group2
+    400018: Octogon_POLES
+    400020: Octogon_POLES1
+    400022: polySurface233
+    400024: polySurface234
+    400026: polySurface251
+    400028: polySurface258
+    400030: polySurface265
+    400032: polySurface266
+    400034: pSphere14
+    400036: pSphere15
+    400038: pSphere16
+    400040: pSphere17
+    400042: pSphere18
+    400044: pSphere19
+    400046: Small_building
+    400048: Small_building1
+    400050: //RootNode
+    400052: USE_00135
+    400054: USE_00136
+    400056: USE_00137
+    400058: USE_00138
+    400060: USE_00139
+    400062: USE_00140
+    400064: USE_00141
+    400066: USE_00142
+    400068: USE_00143
+    400070: USE_00146
+    400072: USE_00166
+    400074: USE_00177
+    400076: USE_00179
+    400078: USE_00180
+    400080: USE_00189
+    400082: USE_00191
+    400084: USE_00191 1
+    400086: USE_00191 2
+    400088: USE_00192
+    400090: USE_00192 1
+    400092: USE_00192 2
+    400094: USE_00193
+    400096: USE_00193 1
+    400098: USE_00193 2
+    400100: USE_00194
+    400102: USE_00194 1
+    400104: USE_00194 2
+    400106: USE_00195
+    400108: USE_00197
+    400110: USE_00197 1
+    400112: USE_00197 2
+    400114: USE_00199
+    400116: USE_00199 1
+    400118: USE_00199 2
+    400120: USE_00200
+    400122: USE_00200 1
+    400124: USE_00200 2
+    400126: USE_00202
+    400128: USE_00202 1
+    400130: USE_00202 2
+    400132: USE_00203
+    400134: USE_00203 1
+    400136: USE_00203 2
+    400138: USE_00207
+    400140: USE_00207 1
+    400142: USE_00207 2
+    400144: USE_00209
+    400146: USE_00212
+    400148: USE_00213
+    400150: USE_00215
+    400152: USE_0072
+    400154: USE_0073
+    400156: USE_0074
+    400158: WALK_area_Octogon_LEVELS_001
+    400160: WALK_area_Octogon_LEVELS_002
+    400162: WALK_area_Octogon_LEVELS_003
+    2100000: lambert1
+    2100002: WindowsMAT
+    2300000: Building_support_pillars1_USE_00206
+    2300002: Building_support_pillars2_USE_00195
+    2300004: Building_support_pillars2_USE_00210
+    2300006: Building_support_pillars_USE_00210
+    2300008: Building_support_pillars_USE_00212
+    2300010: Octogon_POLES
+    2300012: Octogon_POLES1
+    2300014: polySurface233
+    2300016: polySurface234
+    2300018: polySurface251
+    2300020: polySurface258
+    2300022: polySurface265
+    2300024: polySurface266
+    2300026: pSphere14
+    2300028: pSphere15
+    2300030: pSphere16
+    2300032: pSphere17
+    2300034: pSphere18
+    2300036: pSphere19
+    2300038: Small_building
+    2300040: USE_00135
+    2300042: USE_00136
+    2300044: USE_00137
+    2300046: USE_00138
+    2300048: USE_00139
+    2300050: USE_00140
+    2300052: USE_00141
+    2300054: USE_00142
+    2300056: USE_00143
+    2300058: USE_00146
+    2300060: USE_00166
+    2300062: USE_00177
+    2300064: USE_00179
+    2300066: USE_00180
+    2300068: USE_00189
+    2300070: USE_00191
+    2300072: USE_00191 1
+    2300074: USE_00191 2
+    2300076: USE_00192
+    2300078: USE_00192 1
+    2300080: USE_00192 2
+    2300082: USE_00193
+    2300084: USE_00193 1
+    2300086: USE_00193 2
+    2300088: USE_00194
+    2300090: USE_00194 1
+    2300092: USE_00194 2
+    2300094: USE_00195
+    2300096: USE_00197
+    2300098: USE_00197 1
+    2300100: USE_00197 2
+    2300102: USE_00199
+    2300104: USE_00199 1
+    2300106: USE_00199 2
+    2300108: USE_00200
+    2300110: USE_00200 1
+    2300112: USE_00200 2
+    2300114: USE_00202
+    2300116: USE_00202 1
+    2300118: USE_00202 2
+    2300120: USE_00203
+    2300122: USE_00203 1
+    2300124: USE_00203 2
+    2300126: USE_00207
+    2300128: USE_00207 1
+    2300130: USE_00207 2
+    2300132: USE_00209
+    2300134: USE_00212
+    2300136: USE_00213
+    2300138: USE_00215
+    2300140: USE_0072
+    2300142: USE_0073
+    2300144: USE_0074
+    2300146: WALK_area_Octogon_LEVELS_001
+    2300148: WALK_area_Octogon_LEVELS_002
+    2300150: WALK_area_Octogon_LEVELS_003
+    3300000: Building_support_pillars1_USE_00206
+    3300002: Building_support_pillars2_USE_00195
+    3300004: Building_support_pillars2_USE_00210
+    3300006: Building_support_pillars_USE_00210
+    3300008: Building_support_pillars_USE_00212
+    3300010: Octogon_POLES
+    3300012: Octogon_POLES1
+    3300014: polySurface233
+    3300016: polySurface234
+    3300018: polySurface251
+    3300020: polySurface258
+    3300022: polySurface265
+    3300024: polySurface266
+    3300026: pSphere14
+    3300028: pSphere15
+    3300030: pSphere16
+    3300032: pSphere17
+    3300034: pSphere18
+    3300036: pSphere19
+    3300038: Small_building
+    3300040: USE_00135
+    3300042: USE_00136
+    3300044: USE_00137
+    3300046: USE_00138
+    3300048: USE_00139
+    3300050: USE_00140
+    3300052: USE_00141
+    3300054: USE_00142
+    3300056: USE_00143
+    3300058: USE_00146
+    3300060: USE_00166
+    3300062: USE_00177
+    3300064: USE_00179
+    3300066: USE_00180
+    3300068: USE_00189
+    3300070: USE_00191
+    3300072: USE_00191 1
+    3300074: USE_00191 2
+    3300076: USE_00192
+    3300078: USE_00192 1
+    3300080: USE_00192 2
+    3300082: USE_00193
+    3300084: USE_00193 1
+    3300086: USE_00193 2
+    3300088: USE_00194
+    3300090: USE_00194 1
+    3300092: USE_00194 2
+    3300094: USE_00195
+    3300096: USE_00197
+    3300098: USE_00197 1
+    3300100: USE_00197 2
+    3300102: USE_00199
+    3300104: USE_00199 1
+    3300106: USE_00199 2
+    3300108: USE_00200
+    3300110: USE_00200 1
+    3300112: USE_00200 2
+    3300114: USE_00202
+    3300116: USE_00202 1
+    3300118: USE_00202 2
+    3300120: USE_00203
+    3300122: USE_00203 1
+    3300124: USE_00203 2
+    3300126: USE_00207
+    3300128: USE_00207 1
+    3300130: USE_00207 2
+    3300132: USE_00209
+    3300134: USE_00212
+    3300136: USE_00213
+    3300138: USE_00215
+    3300140: USE_0072
+    3300142: USE_0073
+    3300144: USE_0074
+    3300146: WALK_area_Octogon_LEVELS_001
+    3300148: WALK_area_Octogon_LEVELS_002
+    3300150: WALK_area_Octogon_LEVELS_003
+    4300000: WALK_area_Octogon_LEVELS_001
+    4300002: pSphere14
+    4300004: Octogon_POLES
+    4300006: WALK_area_Octogon_LEVELS_002
+    4300008: pSphere15
+    4300010: pSphere16
+    4300012: pSphere17
+    4300014: pSphere18
+    4300016: pSphere19
+    4300018: WALK_area_Octogon_LEVELS_003
+    4300020: polySurface233
+    4300022: polySurface234
+    4300024: Small_building
+    4300026: USE_00139
+    4300028: USE_00140
+    4300030: USE_00138
+    4300032: USE_0072
+    4300034: USE_0074
+    4300036: USE_0073
+    4300038: USE_00143
+    4300040: USE_00136
+    4300042: USE_00142
+    4300044: USE_00141
+    4300046: USE_00137
+    4300048: USE_00135
+    4300050: USE_00146
+    4300052: USE_00166
+    4300054: USE_00177
+    4300056: USE_00179
+    4300058: USE_00180
+    4300060: USE_00189
+    4300062: USE_00207
+    4300064: USE_00202
+    4300066: USE_00203
+    4300068: USE_00199
+    4300070: USE_00197
+    4300072: USE_00194
+    4300074: USE_00193
+    4300076: USE_00191
+    4300078: USE_00200
+    4300080: USE_00192
+    4300082: USE_00207
+    4300084: USE_00202
+    4300086: USE_00203
+    4300088: USE_00199
+    4300090: USE_00197
+    4300092: USE_00194
+    4300094: USE_00193
+    4300096: USE_00191
+    4300098: USE_00200
+    4300100: USE_00192
+    4300102: USE_00207
+    4300104: USE_00202
+    4300106: USE_00203
+    4300108: USE_00199
+    4300110: USE_00197
+    4300112: USE_00194
+    4300114: USE_00193
+    4300116: USE_00191
+    4300118: USE_00200
+    4300120: USE_00192
+    4300122: USE_00215
+    4300124: Octogon_POLES1
+    4300126: Building_support_pillars_USE_00210
+    4300128: Building_support_pillars2_USE_00210
+    4300130: USE_00209
+    4300132: Building_support_pillars1_USE_00206
+    4300134: Building_support_pillars2_USE_00195
+    4300136: USE_00195
+    4300138: Building_support_pillars_USE_00212
+    4300140: USE_00213
+    4300142: USE_00212
+    4300144: polySurface251
+    4300146: polySurface258
+    4300148: polySurface265
+    4300150: polySurface266
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
