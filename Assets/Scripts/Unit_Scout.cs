@@ -81,7 +81,7 @@ public class Unit_Scout : MonoBehaviour {
 
                     if (closestUnalert != null)
                     {
-                        closestUnalert.GetComponent<AlertStatus>().alerted = true;
+                        closestUnalert.GetComponent<AlertStatus>().SetAlert();
                         yield return new WaitForSeconds(alertingEnemyTime);
                     }
                 }
@@ -193,22 +193,21 @@ public class Unit_Scout : MonoBehaviour {
     {
         //List<GameObject> nearestEnemies = new List<GameObject> (GameManager.instance.enemies);
         GameObject closest = null;
-        AlertStatus aS;
-        float distance = Mathf.Infinity;
+        float distance = 10000;
         foreach (GameObject enemy in GameManager.instance.enemies)
         {
-            if (aS  = enemy.GetComponent<AlertStatus>())
+
+            if (enemy.layer == LayerMask.NameToLayer("Enemy"))
             {
-                if (!aS.alerted)
+
+                Vector3 diff = enemy.transform.position - player.transform.position;
+                float curDistance = diff.sqrMagnitude;
+                if (curDistance < distance)
                 {
-                    Vector3 diff = enemy.transform.position - player.transform.position;
-                    float curDistance = diff.sqrMagnitude;
-                    if (curDistance < distance)
-                    {
-                        closest = enemy;
-                        distance = curDistance;
-                    }
+                    closest = enemy;
+                    distance = curDistance;
                 }
+
             }
         }
         return closest;

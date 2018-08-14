@@ -27,9 +27,9 @@ GameObject:
   - component: {fileID: 114733877010809226}
   - component: {fileID: 114284893387338246}
   - component: {fileID: 114807813365703670}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: MeleeEnemy
-  m_TagString: Enemy
+  m_TagString: Melee
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 4038641340044710}
   - component: {fileID: 136679509656293584}
   - component: {fileID: 114090589955373070}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: MeleeWeapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}

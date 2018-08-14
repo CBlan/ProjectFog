@@ -11,11 +11,6 @@ public class GrenadeThrower : MonoBehaviour {
     public float maxThrowPower;
     public float cooldown;
     private float timer;
-
-    // Use this for initialization
-    void Start () {
-		
-	}
 	
 	// Update is called once per frame
 	void Update () {

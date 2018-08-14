@@ -99,7 +99,7 @@ public class Unit_Ranged : MonoBehaviour {
                             {
                                 //print("shoot");
                                 rangedWeapon.Shoot();
-                                alertStatus.alerted = false;
+                                alertStatus.SetNotAlert();
                                 cooldown = 0;
                             }
 
@@ -141,13 +141,13 @@ public class Unit_Ranged : MonoBehaviour {
             //check if player is within short range
             if (!alertStatus.alerted && (Vector3.Distance(player.position, transform.position) < alertDistance))
             {
-                alertStatus.alerted = true;
+                alertStatus.SetAlert();
             }
 
             //check if player is within sight
             if (!alertStatus.alerted && CanSeePlayer())
             {
-                alertStatus.alerted = true;
+                alertStatus.SetAlert();
             }
             yield return null;
         }

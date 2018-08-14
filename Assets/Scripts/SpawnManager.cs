@@ -67,12 +67,12 @@ public class SpawnManager : MonoBehaviour {
                 //print("here");
                 foreach (GameObject enemy in GameManager.instance.enemies)
                 {
-                    if (enemy.GetComponent<Unit_Ranged>())
+                    if (enemy.CompareTag("Ranged"))
                     {
                         currentRanged++;
                     }
 
-                    else if (enemy.GetComponent<Unit_Melee>())
+                    else if (enemy.CompareTag("Melee"))
                     {
                         currentMelee++;
                     }

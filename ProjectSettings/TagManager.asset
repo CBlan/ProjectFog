@@ -7,6 +7,9 @@ TagManager:
   - Grenade
   - Enemy
   - FxTemporaire
+  - Melee
+  - Ranged
+  - Scout
   layers:
   - Default
   - TransparentFX
@@ -21,8 +24,8 @@ TagManager:
   - Grenade
   - Environment
   - Storm
-  - 
-  - 
+  - Enemy
+  - AlertEnemy
   - 
   - 
   - 
