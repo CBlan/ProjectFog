@@ -1,8 +1,7 @@
 fileFormatVersion: 2
-guid: 8af13b4904cd6164ba2e540583579f7c
+guid: 1fdf0141c3c7f954a9a9cdb96133634e
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Helmet_Bottom
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -39,13 +38,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 990}
+  spriteBorder: {x: 0, y: 22, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -136,31 +135,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Helmet_Bottom
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 2024
-        height: 497
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3ee2dce42be17340bf8ca34ab1e4ed7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a7204cd045ca7734085d2e7178eb5bf7
+    spriteID: ccf8b6b63e97dc34587ca50b18058b42
     vertices: []
     indices: 
     edges: []

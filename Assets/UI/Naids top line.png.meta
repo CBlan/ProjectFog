@@ -1,9 +1,7 @@
 fileFormatVersion: 2
-guid: dd31aec1e5898584fa8f94d19d7aa5b4
+guid: aee9df1333027f048a172df3e03da6c3
 TextureImporter:
-  fileIDToRecycleName:
-    21300000: Mid UI_L
-    21300002: Mid UI_R
+  fileIDToRecycleName: {}
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -32,7 +30,7 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: -1
-    aniso: 1
+    aniso: -1
     mipBias: -1
     wrapU: 1
     wrapV: 1
@@ -40,13 +38,13 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 14, y: 29, z: 17, w: 20}
+  spriteBorder: {x: 24, y: 30, z: 24, w: 38}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -137,51 +135,11 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: Mid UI_L
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 29
-        width: 215
-        height: 473
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8964db904134ebd46a021914ea3faccd
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Mid UI_R
-      rect:
-        serializedVersion: 2
-        x: 1838
-        y: 29
-        width: 209
-        height: 473
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7537b04825a9b84ba9cf57629253045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 859cf39f36c470d4186cd049df4cc075
+    spriteID: 41288692930cd1c49866d864ed2f2575
     vertices: []
     indices: 
     edges: []
