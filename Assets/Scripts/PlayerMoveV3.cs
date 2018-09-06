@@ -176,7 +176,7 @@ public class PlayerMoveV3 : MonoBehaviour
     {
         RaycastHit hit;
         float rayDistance = (capsule.height / 2) - (capsule.radius - 0.2f);
-        if (Physics.SphereCast(transform.position, capsule.radius, -Vector3.up, out hit, rayDistance))
+        if (Physics.SphereCast(transform.position, capsule.radius-0.01f, -Vector3.up, out hit, rayDistance))
         {
             if (Vector3.Angle(hit.normal, Vector3.up) < slopeLimit)
             {

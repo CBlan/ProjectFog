@@ -17,8 +17,8 @@ public class HUDMovment : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        print(Input.GetAxis("Mouse X"));
-        print(Input.GetAxis("Mouse Y"));
+        //print(Input.GetAxis("Mouse X"));
+        //print(Input.GetAxis("Mouse Y"));
 
         targetPosition.x = (-Input.GetAxis("Mouse X"))*moveAmmount;
         targetPosition.y = (-Input.GetAxis("Mouse Y"))*moveAmmount;

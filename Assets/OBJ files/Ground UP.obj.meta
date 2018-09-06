@@ -5,12 +5,18 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Ground
     100002: //RootNode
+    100004: Ground_MAIN
     400000: Ground
     400002: //RootNode
+    400004: Ground_MAIN
     2100000: GroundMat
+    2100002: Ground_MAINMat
     2300000: Ground
+    2300002: Ground_MAIN
     3300000: Ground
+    3300002: Ground_MAIN
     4300000: Ground
+    4300002: Ground_MAIN
   externalObjects: {}
   materials:
     importMaterials: 1
