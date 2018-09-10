@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 33700246013012464}
   - component: {fileID: 23732013560948300}
   - component: {fileID: 64809354561157822}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Empty_house_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4006814992364678
 Transform:
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1167275392254770}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.25751877, y: -36.04042, z: -13.672386}
+  m_LocalScale: {x: 0.016870996, y: 0.01687098, z: 0.01687098}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

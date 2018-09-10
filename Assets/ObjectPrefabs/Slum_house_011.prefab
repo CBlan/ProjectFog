@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 33525647086202454}
   - component: {fileID: 23441433767312806}
   - component: {fileID: 64366203150644364}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Slum_house_011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4977365978292670
 Transform:
@@ -35,13 +35,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1218707896559692}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 1, z: -0, w: 0}
+  m_LocalPosition: {x: -4.5146675, y: -54.294937, z: 10.648098}
+  m_LocalScale: {x: 0.008504149, y: 0.0066211987, z: 0.010384508}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!23 &23441433767312806
 MeshRenderer:
   m_ObjectHideFlags: 1

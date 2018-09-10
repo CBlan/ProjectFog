@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 33814473526135380}
   - component: {fileID: 23563989497320716}
   - component: {fileID: 64819330462368390}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Collection_to_bar_area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4958607552449624
 Transform:
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1303671474498926}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.019392014, y: -36.040405, z: 1.1079102}
+  m_LocalScale: {x: 0.013262002, y: 0.013261988, z: 0.016717609}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

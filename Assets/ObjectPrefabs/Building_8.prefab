@@ -30,12 +30,12 @@ GameObject:
   - component: {fileID: 65176133682247060}
   - component: {fileID: 65460574868958690}
   - component: {fileID: 65877171149103946}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Building_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4955662926176168
 Transform:
@@ -44,8 +44,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1684603853042828}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -20.493805, y: -35.926407, z: -29.473824}
+  m_LocalScale: {x: 0.0045618163, y: 0.0045618126, z: 0.0045618126}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

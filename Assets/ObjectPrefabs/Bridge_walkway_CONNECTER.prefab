@@ -24,12 +24,12 @@ GameObject:
   - component: {fileID: 65819837805070164}
   - component: {fileID: 65716463004060536}
   - component: {fileID: 65617017767186888}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Bridge_walkway_CONNECTER
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4468762504773398
 Transform:
@@ -38,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1363178627309132}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -1.24, y: -35.9, z: 16.64}
+  m_LocalScale: {x: 0.02291891, y: 0.02291891, z: 0.02291891}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0

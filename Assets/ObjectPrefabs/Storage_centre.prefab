@@ -22,12 +22,12 @@ GameObject:
   - component: {fileID: 33350375471492638}
   - component: {fileID: 23747908189690524}
   - component: {fileID: 64019154731698912}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Storage_centre
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4627532959760276
 Transform:
@@ -36,8 +36,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1210153412593220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.2515087, y: -46.97522, z: -4.9488144}
+  m_LocalScale: {x: 0.014000754, y: 0.014000742, z: 0.014000742}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
