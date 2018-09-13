@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class VendingMachine : MonoBehaviour {
 
-    public GameObject dispaly;
+    public GameObject display;
+
     private float maxDistance = 500;
     private bool machineActive;
 
+    public GameObject lookingAt;
+
+
     private void Start()
     {
-        dispaly.SetActive(false);
+        display.SetActive(false);
     }
 
     private void Update()
@@ -21,10 +26,12 @@ public class VendingMachine : MonoBehaviour {
             RaycastHit hit;
             if (Physics.Raycast(Camera.main.transform.position, Camera.main.transform.forward, out hit, maxDistance) && hit.collider.gameObject.CompareTag("Upgrade"))
             {
-
+                lookingAt = hit.collider.gameObject;
 
 
             }
+            else lookingAt = null;
+
         }
     }
 
@@ -32,7 +39,7 @@ public class VendingMachine : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            dispaly.SetActive(true);
+            display.SetActive(true);
             machineActive = true;
 
         }
@@ -42,7 +49,7 @@ public class VendingMachine : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            dispaly.SetActive(false);
+            display.SetActive(false);
             machineActive = false;
         }
     }
