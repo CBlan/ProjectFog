@@ -12,6 +12,7 @@ public class VendingMachine : MonoBehaviour {
     private bool machineActive;
 
     public GameObject lookingAt;
+    public Text displayText;
 
 
     private void Start()
@@ -30,7 +31,11 @@ public class VendingMachine : MonoBehaviour {
 
 
             }
-            else lookingAt = null;
+            else
+            {
+                lookingAt = null;
+                displayText.text = "";
+            }
 
         }
     }

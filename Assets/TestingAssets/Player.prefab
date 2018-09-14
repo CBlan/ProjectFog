@@ -193,7 +193,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1421893006876788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.42, y: -18.46, z: 17.12}
+  m_LocalPosition: {x: 24.28, y: -64.9, z: 44.27}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4318878262822982}
@@ -366,13 +366,13 @@ MonoBehaviour:
   jumpHeight: 2
   grounded: 0
   jetpackThrust: 50
-  maxJetpackFuel: 50
+  maxJetpackFuel: 30
   jetFuelRegenRate: 1
   jetFuel: 0
   dash: 0
   dashForce: 300
   dashLength: 0.1
-  dashCooldown: 3
+  dashCooldown: 5
   fallDamageThreshold: 19
 --- !u!114 &114060412861832048
 MonoBehaviour:
@@ -409,7 +409,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0636734fb8dca942a4720d85be5fbc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  grenade: {fileID: 1797205276480672, guid: 1dc7383fb78749d478d4596adede8104, type: 2}
+  grenades:
+  - {fileID: 1943538124625288, guid: f185dca8e3bb6544c97e3f00df7ca987, type: 2}
+  - {fileID: 1856249660396938, guid: dd2e8807698c5bc488f6b538e353f29c, type: 2}
+  - {fileID: 1097446776561968, guid: a5d4e51d42a5b0248a396ac4f9beba92, type: 2}
+  - {fileID: 1650160160391730, guid: 0bb33c5717b4e1e4e862762337654123, type: 2}
+  - {fileID: 1214138648001636, guid: 7cc26009cbaa86a4da597f7abc7ed2a6, type: 2}
+  currentGrenade: 0
   powerCurve:
     serializedVersion: 2
     m_Curve:

@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UpgradeHP : MonoBehaviour {
+public class UpgradeTeleport : MonoBehaviour {
 
     public VendingMachine vendingScript;
     Image upgradeImage;
-    public float upgradeAmmount = 10;
+    public float upgradeAmmount = 1;
     public float upgradeCost = 100;
     public Color normal;
     public Color mouseOver;
@@ -17,16 +17,18 @@ public class UpgradeHP : MonoBehaviour {
     public Text display;
     private int upgradesUsed;
     // Use this for initialization
-    void Start () {
+    void Start()
+    {
         upgradeImage = GetComponent<Image>();
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
         if (vendingScript.lookingAt == this.gameObject)
         {
             upgradeImage.color = mouseOver;
-            display.text = "Increases shields and regeneration - " + upgradeCost;
+            display.text = "Decreases teleport coldown - " + upgradeCost;
 
             if (Input.GetKey(KeyCode.E))
             {
@@ -44,8 +46,7 @@ public class UpgradeHP : MonoBehaviour {
             {
                 if (upgradeCost <= GameManager.instance.credits)
                 {
-                    GameManager.instance.maxPlayerHP += upgradeAmmount;
-                    GameManager.instance.regenRate += upgradeAmmount / 50;
+                    GameManager.instance.playerScript.dashCooldown -= upgradeAmmount;
                     GameManager.instance.credits -= upgradeCost;
                     upgradesUsed++;
                     upgradeCost += upgradeCost;

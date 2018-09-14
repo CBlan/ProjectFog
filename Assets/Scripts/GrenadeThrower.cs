@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class GrenadeThrower : MonoBehaviour {
 
-    public GameObject grenade;
+    public GameObject[] grenades;
+    public int currentGrenade;
     private GameObject thrownGrenade;
     public AnimationCurve powerCurve;
     float throwPower;
     public float maxThrowPower;
     public float cooldown;
     private float timer;
+    private Rigidbody thrownGrenadeRB;
 	
 	// Update is called once per frame
 	void Update () {
@@ -35,8 +37,11 @@ public class GrenadeThrower : MonoBehaviour {
             throwPower = maxThrowPower * CurvePosition;
             yield return null;
         }
-        thrownGrenade = Instantiate(grenade, transform.position, Quaternion.identity);
-        thrownGrenade.GetComponent<Rigidbody>().AddForce(transform.forward * throwPower, ForceMode.Impulse);
+        thrownGrenade = Instantiate(grenades[currentGrenade], transform.position, Quaternion.identity);
+        thrownGrenadeRB = thrownGrenade.GetComponent<Rigidbody>();
+        thrownGrenadeRB.AddForce(transform.forward * throwPower, ForceMode.Impulse);
+        thrownGrenadeRB.angularVelocity = new Vector3(Random.Range(-500, 500), Random.Range(-500, 500), Random.Range(-500, 500));
+
         yield break;
     }
 }

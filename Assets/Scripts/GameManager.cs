@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager instance;
     public GameObject player;
+    public PlayerMoveV3 playerScript;
     public List<GameObject> enemies;
 
     public PatrolArea rangedPatArea;
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour {
     public float regenRate = 0.5f;
     private float regenCooldown;
 
+    public float credits = 100;
+
     public bool playerDamaged;
     // Use this for initialization
     void Awake () {
@@ -25,6 +28,7 @@ public class GameManager : MonoBehaviour {
     private void Start()
     {
         playerHP = maxPlayerHP;
+        playerScript = player.GetComponent<PlayerMoveV3>();
     }
 
     void Update()
