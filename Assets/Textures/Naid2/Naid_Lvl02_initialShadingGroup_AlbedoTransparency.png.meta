@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
 guid: ef8a8979dd0103a4fa465499b527a5fa
+=======
+guid: c8613d4623be5fe48af37abeaa0bc77f
+>>>>>>> Stashed changes
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
@@ -58,6 +62,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 2
     buildTarget: DefaultTexturePlatform
+<<<<<<< Updated upstream
     maxTextureSize: 256
     resizeAlgorithm: 0
     textureFormat: -1
@@ -125,6 +130,9 @@ TextureImporter:
   - serializedVersion: 2
     buildTarget: WebGL
     maxTextureSize: 256
+=======
+    maxTextureSize: 2048
+>>>>>>> Stashed changes
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
