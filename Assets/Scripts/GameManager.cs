@@ -17,6 +17,11 @@ public class GameManager : MonoBehaviour {
     public float regenRate = 0.5f;
     private float regenCooldown;
 
+    public float maxOxygen = 100;
+    public float oxygen;
+    public float oxygenDegenRate = 0.1f;
+    private float oxygenCooldown;
+
     public float credits = 100;
 
     public bool playerDamaged;
@@ -27,6 +32,7 @@ public class GameManager : MonoBehaviour {
 
     private void Start()
     {
+        oxygen = maxOxygen;
         playerHP = maxPlayerHP;
         playerScript = player.GetComponent<PlayerMoveV3>();
     }
@@ -47,6 +53,14 @@ public class GameManager : MonoBehaviour {
         }
 
         playerDamaged = false;
+
+        if (oxygenCooldown > 0.1)
+        {
+            oxygen -= oxygenDegenRate;
+            oxygen = Mathf.Clamp(oxygen, 0, maxOxygen);
+            oxygenCooldown = 0;
+        }
+        oxygenCooldown += Time.deltaTime;
     }
 
     public void DamagePlayer(float amount)
@@ -54,5 +68,7 @@ public class GameManager : MonoBehaviour {
         playerDamaged = true;
         playerHP -= amount;
     }
+
+
 
 }
