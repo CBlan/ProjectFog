@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class UpgradeGrenade : MonoBehaviour {
 
     public VendingMachine vendingScript;
-    Image upgradeImage;
+    public Material buttonMaterial;
     public float upgradeCost = 100;
     public GrenadeThrower grenadeThrowerScript;
     public Color normal;
@@ -15,51 +15,72 @@ public class UpgradeGrenade : MonoBehaviour {
     public Color disabled;
     public Color noCredits;
     public Text display;
+    public TW_Regular TWScript;
+    private bool TWStarted;
     private int upgradesUsed;
-    // Use this for initialization
-    void Start()
-    {
-        upgradeImage = GetComponent<Image>();
-    }
 
-    // Update is called once per frame
+
     void Update()
     {
-        if (vendingScript.lookingAt == this.gameObject)
+        if (vendingScript.display.activeSelf)
         {
-            upgradeImage.color = mouseOver;
-            display.text = "Upgrades grenade damage - " + upgradeCost;
-
-            if (Input.GetKey(KeyCode.E))
+            if (vendingScript.lookingAt == this.gameObject)
             {
-                if (upgradeCost <= GameManager.instance.credits)
+                
+                buttonMaterial.SetColor("_EmissionColor", mouseOver * Mathf.PingPong(Time.time * 3, 3));
+                if (!TWStarted)
                 {
-                    upgradeImage.color = clicked;
+                    display.text = "Upgrade <b>Grenade</b> damage\n ---------------\n " + upgradeCost + " Units";
+                    TWScript.StartTypewriter();
+                    TWStarted = true;
                 }
-                else
-                {
-                    upgradeImage.color = noCredits;
-                    display.text = "Insufficient funds!";
-                }
-            }
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                if (upgradeCost <= GameManager.instance.credits)
-                {
-                    grenadeThrowerScript.currentGrenade += 1;
-                    grenadeThrowerScript.cooldown -= 0.3f;
 
-                    GameManager.instance.credits -= upgradeCost;
-                    upgradesUsed++;
-                    upgradeCost += upgradeCost;
-                    if (upgradesUsed == 4)
+
+                if (Input.GetKey(KeyCode.E))
+                {
+                    if (upgradeCost <= GameManager.instance.credits)
                     {
-                        upgradeImage.color = disabled;
-                        this.enabled = false;
+                        buttonMaterial.SetColor("_EmissionColor", clicked * 3);
+                    }
+                    else
+                    {
+                        buttonMaterial.SetColor("_EmissionColor", noCredits * 3);
+                        display.text = "Insufficient funds!";
+                    }
+                }
+                if (Input.GetKeyUp(KeyCode.E))
+                {
+                    if (upgradeCost <= GameManager.instance.credits)
+                    {
+                        grenadeThrowerScript.currentGrenade += 1;
+                        grenadeThrowerScript.cooldown -= 0.3f;
+
+                        GameManager.instance.credits -= upgradeCost;
+                        upgradesUsed++;
+                        upgradeCost += upgradeCost;
+
+                        TWStarted = false;
+                        if (!TWStarted)
+                        {
+                            display.text = "Upgrade <b>Grenade</b> damage\n ---------------\n" + upgradeCost + " Units";
+                            TWScript.StartTypewriter();
+                            TWStarted = true;
+                        }
+
+                        if (upgradesUsed == 4)
+                        {
+                            buttonMaterial.SetColor("_EmissionColor", disabled);
+                            this.enabled = false;
+                        }
                     }
                 }
             }
+            else
+            {
+                buttonMaterial.SetColor("_EmissionColor", normal * Mathf.PingPong(Time.time * 3, 3));
+                TWStarted = false;
+            }
         }
-        else upgradeImage.color = normal;
+        else buttonMaterial.SetColor("_EmissionColor", disabled);
     }
 }
