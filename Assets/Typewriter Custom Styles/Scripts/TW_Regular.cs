@@ -110,7 +110,7 @@ public class TW_Regular : MonoBehaviour {
             TEXT = InsertNewLine(TEXT, List);
             gameObject.GetComponent<Text>().text = TEXT;
             time += 1f;
-            yield return new WaitForSeconds(0.0001f);
+            yield return new WaitForEndOfFrame();
             CharIndexPlus();
             start = true;
         }

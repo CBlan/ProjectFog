@@ -52,7 +52,7 @@ LightmapSettings:
     m_AlbedoBoost: 1
     m_TemporalCoherenceThreshold: 1
     m_EnvironmentLightingMode: 0
-    m_EnableBakedLightmaps: 1
+    m_EnableBakedLightmaps: 0
     m_EnableRealtimeLightmaps: 1
   m_LightmapEditorSettings:
     serializedVersion: 10
@@ -10635,6 +10635,48 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!1001 &440246207
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4460769304416070, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -29.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460769304416070, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -12.48
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460769304416070, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -30.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460769304416070, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460769304416070, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0.9495293
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460769304416070, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460769304416070, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 0.31367844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4460769304416070, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &442654827 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100422, guid: 17b42d83c634b0740ad320cbcf839a64, type: 3}
@@ -15535,46 +15577,6 @@ Prefab:
       propertyPath: grenadeThrowerScript
       value: 
       objectReference: {fileID: 1368088666}
-    - target: {fileID: 114801910036256104, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114801910036256104, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: m_Color.r
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114801910036256104, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: m_Color.g
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114801910036256104, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: m_Color.b
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114532810284160264, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: TWScript
-      value: 
-      objectReference: {fileID: 947932261}
-    - target: {fileID: 114798343305011760, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: TWScript
-      value: 
-      objectReference: {fileID: 947932261}
-    - target: {fileID: 114131890248696774, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: TWScript
-      value: 
-      objectReference: {fileID: 947932261}
-    - target: {fileID: 114510265021979638, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: TWScript
-      value: 
-      objectReference: {fileID: 947932261}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
   m_IsPrefabParent: 0
@@ -30297,26 +30299,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4302228, guid: 17b42d83c634b0740ad320cbcf839a64, type: 3}
---- !u!1 &947932259 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1855754009959800, guid: 050bce282e307fc4aa52fc923382f6cc,
-    type: 2}
-  m_PrefabInternal: {fileID: 654452609}
---- !u!114 &947932261
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 947932259}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014f715cfa5c0e2478e44ae3559f6fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LaunchOnStart: 0
-  timeOut: 1
-  pointer: 2
-  ORIGINAL_TEXT: 
 --- !u!1 &948408942 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 101442, guid: 17b42d83c634b0740ad320cbcf839a64, type: 3}
@@ -58199,6 +58181,11 @@ Prefab:
     - target: {fileID: 4907387331543178, guid: b36db99e148941843ba5a5cddf5081fa, type: 2}
       propertyPath: m_RootOrder
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114933729573114654, guid: b36db99e148941843ba5a5cddf5081fa,
+        type: 2}
+      propertyPath: gridWorldSize.y
+      value: 134.72
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b36db99e148941843ba5a5cddf5081fa, type: 2}

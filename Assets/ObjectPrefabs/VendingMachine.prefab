@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4057735830237148}
   - component: {fileID: 33134404541501276}
   - component: {fileID: 23088583197100554}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: polySurface28_vending_machine_OG2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 4530785119845924}
   - component: {fileID: 65509140470632328}
   - component: {fileID: 114798343305011760}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VendingButtonGrenades
   m_TagString: Upgrade
   m_Icon: {fileID: 0}
@@ -55,7 +55,7 @@ GameObject:
   - component: {fileID: 4122874326174068}
   - component: {fileID: 33928671297251122}
   - component: {fileID: 23313110423010216}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: polySurface28_vending_machine_OG2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 224602334025958654}
   - component: {fileID: 222730190661811388}
   - component: {fileID: 114922583121297322}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 4668817687282626}
   - component: {fileID: 33414785664082506}
   - component: {fileID: 23088822012671562}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: vending_machine_OG2_polySurface27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 4373757497679072}
   - component: {fileID: 33947772839294950}
   - component: {fileID: 23597227622472194}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: vending_machine_OG2_polySurface27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 223640983176531072}
   - component: {fileID: 114308037988264932}
   - component: {fileID: 114383763339294556}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Display
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 4708768183979488}
   - component: {fileID: 33763347427158642}
   - component: {fileID: 23571483556745778}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: polySurface28_vending_machine_OG2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -158,7 +158,8 @@ GameObject:
   - component: {fileID: 224890398802922170}
   - component: {fileID: 222931427795355324}
   - component: {fileID: 114801910036256104}
-  m_Layer: 0
+  - component: {fileID: 114844437719625526}
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -175,7 +176,7 @@ GameObject:
   - component: {fileID: 4136658003666008}
   - component: {fileID: 33403044751164140}
   - component: {fileID: 23488366842816432}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: vending_machine_OG2_polySurface27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +193,7 @@ GameObject:
   - component: {fileID: 4300518502114072}
   - component: {fileID: 33999573254230488}
   - component: {fileID: 23565539391003266}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: polySurface28_vending_machine_OG2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -209,7 +210,7 @@ GameObject:
   - component: {fileID: 4012968618892842}
   - component: {fileID: 65745899845356782}
   - component: {fileID: 114532810284160264}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VendingButtonShields
   m_TagString: Upgrade
   m_Icon: {fileID: 0}
@@ -226,7 +227,7 @@ GameObject:
   - component: {fileID: 4899480077242302}
   - component: {fileID: 33790867874456044}
   - component: {fileID: 23113334781093100}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: vending_machine_OG2_polySurface27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -247,7 +248,7 @@ GameObject:
   - component: {fileID: 65422974706877726}
   - component: {fileID: 114295877070682044}
   - component: {fileID: 65439304635167680}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VendingMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +265,7 @@ GameObject:
   - component: {fileID: 4989003132965732}
   - component: {fileID: 65043213807665968}
   - component: {fileID: 114131890248696774}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VendingButtonJetpack
   m_TagString: Upgrade
   m_Icon: {fileID: 0}
@@ -281,7 +282,7 @@ GameObject:
   - component: {fileID: 4765329931258532}
   - component: {fileID: 65480066136708578}
   - component: {fileID: 114510265021979638}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: VendingButtonTeleport
   m_TagString: Upgrade
   m_Icon: {fileID: 0}
@@ -955,6 +956,7 @@ MonoBehaviour:
   disabled: {r: 0, g: 0, b: 0, a: 0}
   noCredits: {r: 1, g: 0, b: 0, a: 1}
   display: {fileID: 114801910036256104}
+  TWScript: {fileID: 114844437719625526}
 --- !u!114 &114295877070682044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1027,6 +1029,7 @@ MonoBehaviour:
   disabled: {r: 0, g: 0, b: 0, a: 0}
   noCredits: {r: 1, g: 0, b: 0, a: 1}
   display: {fileID: 114801910036256104}
+  TWScript: {fileID: 114844437719625526}
 --- !u!114 &114532810284160264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1048,6 +1051,7 @@ MonoBehaviour:
   disabled: {r: 0, g: 0, b: 0, a: 0}
   noCredits: {r: 1, g: 0.1503219, b: 0, a: 1}
   display: {fileID: 114801910036256104}
+  TWScript: {fileID: 114844437719625526}
 --- !u!114 &114798343305011760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1069,6 +1073,7 @@ MonoBehaviour:
   disabled: {r: 0, g: 0, b: 0, a: 0}
   noCredits: {r: 1, g: 0, b: 0, a: 1}
   display: {fileID: 114801910036256104}
+  TWScript: {fileID: 114844437719625526}
 --- !u!114 &114801910036256104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1102,6 +1107,21 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
+--- !u!114 &114844437719625526
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1855754009959800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014f715cfa5c0e2478e44ae3559f6fc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LaunchOnStart: 0
+  timeOut: 1
+  pointer: 2
+  ORIGINAL_TEXT: 
 --- !u!114 &114922583121297322
 MonoBehaviour:
   m_ObjectHideFlags: 1
