@@ -1066,7 +1066,6 @@ MonoBehaviour:
   vendingScript: {fileID: 114295877070682044}
   buttonMaterial: {fileID: 2100000, guid: 0cf3062f9d68b4b42b1d55f602aa4382, type: 2}
   upgradeCost: 100
-  grenadeThrowerScript: {fileID: 0}
   normal: {r: 0, g: 0, b: 1, a: 1}
   mouseOver: {r: 0, g: 1, b: 0, a: 1}
   clicked: {r: 0.2509804, g: 0.65882355, b: 0.35686275, a: 1}
