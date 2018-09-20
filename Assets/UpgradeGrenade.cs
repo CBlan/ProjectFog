@@ -8,7 +8,7 @@ public class UpgradeGrenade : MonoBehaviour {
     public VendingMachine vendingScript;
     public Material buttonMaterial;
     public float upgradeCost = 100;
-    public GrenadeThrower grenadeThrowerScript;
+    private GrenadeThrower grenadeThrowerScript;
     public Color normal;
     public Color mouseOver;
     public Color clicked;
@@ -19,6 +19,10 @@ public class UpgradeGrenade : MonoBehaviour {
     private bool TWStarted;
     private int upgradesUsed;
 
+    private void Start()
+    {
+        grenadeThrowerScript = GameManager.instance.player.GetComponentInChildren<GrenadeThrower>();
+    }
 
     void Update()
     {

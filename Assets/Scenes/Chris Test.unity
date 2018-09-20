@@ -15572,11 +15572,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114798343305011760, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: grenadeThrowerScript
-      value: 
-      objectReference: {fileID: 1368088666}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
   m_IsPrefabParent: 0
@@ -39674,12 +39669,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4301678, guid: 17b42d83c634b0740ad320cbcf839a64, type: 3}
---- !u!114 &1368088666 stripped
-MonoBehaviour:
-  m_PrefabParentObject: {fileID: 114180575079670676, guid: 8aa931c4bf805e74692973fc7f8e4384,
-    type: 2}
-  m_PrefabInternal: {fileID: 1052788775}
-  m_Script: {fileID: 11500000, guid: f0636734fb8dca942a4720d85be5fbc4, type: 3}
 --- !u!1 &1368609767 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100118, guid: 17b42d83c634b0740ad320cbcf839a64, type: 3}
