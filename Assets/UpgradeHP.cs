@@ -25,7 +25,7 @@ public class UpgradeHP : MonoBehaviour {
         {
             if (vendingScript.lookingAt == this.gameObject)
             {
-                
+
                 buttonMaterial.SetColor("_EmissionColor", mouseOver * Mathf.PingPong(Time.time * 3, 3));
                 if (!TWStarted)
                 {
@@ -77,6 +77,9 @@ public class UpgradeHP : MonoBehaviour {
                 TWStarted = false;
             }
         }
-        else buttonMaterial.SetColor("_EmissionColor", disabled);
+        else
+        {
+            buttonMaterial.SetColor("_EmissionColor", disabled);
+        }
     }
 }
