@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: e4a98587878a2464da140a3437351582
+guid: 71751ddbd1ff5174289025b8e41c3ea9
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Oxygen_machine_OBJ
+    100002: polySurface30
     400000: //RootNode
-    400002: Oxygen_machine_OBJ
-    2100000: initialShadingGroup
-    2300000: Oxygen_machine_OBJ
-    3300000: Oxygen_machine_OBJ
-    4300000: Oxygen_machine_OBJ
+    400002: polySurface30
+    2100000: Oxygen_machine_initialShadingGroup
+    2300000: polySurface30
+    3300000: polySurface30
+    4300000: polySurface30
   externalObjects: {}
   materials:
     importMaterials: 1

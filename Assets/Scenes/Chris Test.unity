@@ -12940,6 +12940,48 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4301198, guid: 17b42d83c634b0740ad320cbcf839a64, type: 3}
+--- !u!1001 &532266670
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4008042575637864, guid: 7f063b2c57be0424398f45c0b5bc43fd, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 26.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008042575637864, guid: 7f063b2c57be0424398f45c0b5bc43fd, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -64.894
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008042575637864, guid: 7f063b2c57be0424398f45c0b5bc43fd, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 41.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008042575637864, guid: 7f063b2c57be0424398f45c0b5bc43fd, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008042575637864, guid: 7f063b2c57be0424398f45c0b5bc43fd, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008042575637864, guid: 7f063b2c57be0424398f45c0b5bc43fd, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008042575637864, guid: 7f063b2c57be0424398f45c0b5bc43fd, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4008042575637864, guid: 7f063b2c57be0424398f45c0b5bc43fd, type: 2}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 7f063b2c57be0424398f45c0b5bc43fd, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &534175319 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100904, guid: 17b42d83c634b0740ad320cbcf839a64, type: 3}

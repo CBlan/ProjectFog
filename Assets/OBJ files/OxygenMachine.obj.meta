@@ -1,16 +1,42 @@
 fileFormatVersion: 2
-guid: e4a98587878a2464da140a3437351582
+guid: b3d9b625d59962d44a03809361c1a633
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Oxygen_machine_OBJ
+    100002: polySurface24
+    100004: polySurface37
+    100006: polySurface54
+    100008: polySurface95
+    100010: polySurface150
+    100012: polySurface173
     400000: //RootNode
-    400002: Oxygen_machine_OBJ
-    2100000: initialShadingGroup
-    2300000: Oxygen_machine_OBJ
-    3300000: Oxygen_machine_OBJ
-    4300000: Oxygen_machine_OBJ
+    400002: polySurface24
+    400004: polySurface37
+    400006: polySurface54
+    400008: polySurface95
+    400010: polySurface150
+    400012: polySurface173
+    2100000: Oxygen_machine_initialShadingGroup
+    2100002: Vending_machine_REDO_initialShadingGroup
+    2300000: polySurface24
+    2300002: polySurface37
+    2300004: polySurface54
+    2300006: polySurface95
+    2300008: polySurface150
+    2300010: polySurface173
+    3300000: polySurface24
+    3300002: polySurface37
+    3300004: polySurface54
+    3300006: polySurface95
+    3300008: polySurface150
+    3300010: polySurface173
+    4300000: polySurface24
+    4300002: polySurface37
+    4300004: polySurface54
+    4300006: polySurface95
+    4300008: polySurface150
+    4300010: polySurface173
   externalObjects: {}
   materials:
     importMaterials: 1
