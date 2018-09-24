@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33834825050889404}
   - component: {fileID: 23699977219259334}
   - component: {fileID: 65850625841325986}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Button
   m_TagString: Upgrade
   m_Icon: {fileID: 0}
@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 223292306358716364}
   - component: {fileID: 114921601782534662}
   - component: {fileID: 114887436803854190}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 222643626898417316}
   - component: {fileID: 114415107121810628}
   - component: {fileID: 114621935961467928}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 65749487293352588}
   - component: {fileID: 64078679811878738}
   - component: {fileID: 65967403827750550}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: OxygenMachine
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -1,0 +1,135 @@
+fileFormatVersion: 2
+guid: 1c17fe40d7c1ed64c98575a11f0d58f4
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Eye_Ranged_unit
+    100002: //RootNode
+    100004: Ranged_unit_Horizontal_Rotating_mechanism
+    100006: Ranged_unit_L_arm_gun
+    100008: Ranged_unit_L_upper_arm
+    100010: Ranged_unit_Main_body
+    100012: Ranged_unit_R_arm_gun
+    100014: Ranged_unit_R_upper_arm
+    100016: Ranged_unit_Rotating_mechanism
+    100018: Ranged_unit_Rotating_piece
+    400000: Eye_Ranged_unit
+    400002: //RootNode
+    400004: Ranged_unit_Horizontal_Rotating_mechanism
+    400006: Ranged_unit_L_arm_gun
+    400008: Ranged_unit_L_upper_arm
+    400010: Ranged_unit_Main_body
+    400012: Ranged_unit_R_arm_gun
+    400014: Ranged_unit_R_upper_arm
+    400016: Ranged_unit_Rotating_mechanism
+    400018: Ranged_unit_Rotating_piece
+    2100000: initialShadingGroup
+    2300000: Eye_Ranged_unit
+    2300002: Ranged_unit_Horizontal_Rotating_mechanism
+    2300004: Ranged_unit_L_arm_gun
+    2300006: Ranged_unit_L_upper_arm
+    2300008: Ranged_unit_Main_body
+    2300010: Ranged_unit_R_arm_gun
+    2300012: Ranged_unit_R_upper_arm
+    2300014: Ranged_unit_Rotating_mechanism
+    2300016: Ranged_unit_Rotating_piece
+    3300000: Eye_Ranged_unit
+    3300002: Ranged_unit_Horizontal_Rotating_mechanism
+    3300004: Ranged_unit_L_arm_gun
+    3300006: Ranged_unit_L_upper_arm
+    3300008: Ranged_unit_Main_body
+    3300010: Ranged_unit_R_arm_gun
+    3300012: Ranged_unit_R_upper_arm
+    3300014: Ranged_unit_Rotating_mechanism
+    3300016: Ranged_unit_Rotating_piece
+    4300000: Eye_Ranged_unit
+    4300002: Ranged_unit_Horizontal_Rotating_mechanism
+    4300004: Ranged_unit_L_arm_gun
+    4300006: Ranged_unit_L_upper_arm
+    4300008: Ranged_unit_Main_body
+    4300010: Ranged_unit_R_arm_gun
+    4300012: Ranged_unit_R_upper_arm
+    4300014: Ranged_unit_Rotating_mechanism
+    4300016: Ranged_unit_Rotating_piece
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
