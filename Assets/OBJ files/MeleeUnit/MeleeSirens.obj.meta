@@ -1,33 +1,21 @@
 fileFormatVersion: 2
-guid: 66d6f49b690e86a42aac1e5a41da07ee
+guid: 52e5d4ffba7f8ef45934b69d60cc43dd
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: Body_Melee_unit_OG_polySurface5
-    100002: Melee_unit_OG_Sirens_polySurface5
+    100000: Body_Melee_unit_OG_polySurface5_polySurface7
+    100002: Melee_unit_OG_Sirens_polySurface5_polySurface7
     100004: //RootNode
-    100006: Body_Melee_unit_OG_polySurface5_polySurface12
-    100008: Melee_unit_OG_Sirens_polySurface5_polySurface12
-    400000: Body_Melee_unit_OG_polySurface5
-    400002: Melee_unit_OG_Sirens_polySurface5
+    400000: Body_Melee_unit_OG_polySurface5_polySurface7
+    400002: Melee_unit_OG_Sirens_polySurface5_polySurface7
     400004: //RootNode
-    400006: Body_Melee_unit_OG_polySurface5_polySurface12
-    400008: Melee_unit_OG_Sirens_polySurface5_polySurface12
-    2100000: initialShadingGroup
-    2100002: MeleeInternals_initialShadingGroup
-    2300000: Body_Melee_unit_OG_polySurface5
-    2300002: Melee_unit_OG_Sirens_polySurface5
-    2300004: Body_Melee_unit_OG_polySurface5_polySurface12
-    2300006: Melee_unit_OG_Sirens_polySurface5_polySurface12
-    3300000: Body_Melee_unit_OG_polySurface5
-    3300002: Melee_unit_OG_Sirens_polySurface5
-    3300004: Body_Melee_unit_OG_polySurface5_polySurface12
-    3300006: Melee_unit_OG_Sirens_polySurface5_polySurface12
-    4300000: Body_Melee_unit_OG_polySurface5
-    4300002: Melee_unit_OG_Sirens_polySurface5
-    4300004: Body_Melee_unit_OG_polySurface5_polySurface12
-    4300006: Melee_unit_OG_Sirens_polySurface5_polySurface12
-    2186277476908879412: ImportLogs
+    2100000: MeleeInternals_initialShadingGroup
+    2300000: Body_Melee_unit_OG_polySurface5_polySurface7
+    2300002: Melee_unit_OG_Sirens_polySurface5_polySurface7
+    3300000: Body_Melee_unit_OG_polySurface5_polySurface7
+    3300002: Melee_unit_OG_Sirens_polySurface5_polySurface7
+    4300000: Body_Melee_unit_OG_polySurface5_polySurface7
+    4300002: Melee_unit_OG_Sirens_polySurface5_polySurface7
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -59,7 +47,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.15
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1

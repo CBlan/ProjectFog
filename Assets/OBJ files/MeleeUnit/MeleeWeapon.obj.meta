@@ -5,12 +5,18 @@ ModelImporter:
   fileIDToRecycleName:
     100000: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface1
     100002: //RootNode
+    100004: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface9_polySurface1
     400000: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface1
     400002: //RootNode
+    400004: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface9_polySurface1
     2100000: initialShadingGroup
+    2100002: MeleeWeapon_initialShadingGroup
     2300000: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface1
+    2300002: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface9_polySurface1
     3300000: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface1
+    3300002: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface9_polySurface1
     4300000: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface1
+    4300002: Melee_drill_bit_Melee_unit_OG_polySurface8_polySurface9_polySurface1
   externalObjects: {}
   materials:
     importMaterials: 1
