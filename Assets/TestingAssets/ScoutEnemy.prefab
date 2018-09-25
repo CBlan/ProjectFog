@@ -659,7 +659,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxIntensity: 3
-  pulseTime: 2
+  pulseTime: 6
 --- !u!114 &114592502058058714
 MonoBehaviour:
   m_ObjectHideFlags: 1

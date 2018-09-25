@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: OxygenButton
+  m_Name: BRT
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _EMISSION _METALLICGLOSSMAP _NORMALMAP
   m_LightmapFlags: 1
@@ -19,7 +19,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 8ab421ace677a9e41944af1f07e04d38, type: 3}
+        m_Texture: {fileID: 2800000, guid: 940fa249a6b8d4246bd3191e2307fb64, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -35,15 +35,15 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: 73c60165adaeb4541b3021b48c52e71b, type: 3}
+        m_Texture: {fileID: 2800000, guid: e77ccfc413aff064cb9612a487c11cec, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 5d63f7eaef102bf419c136d26fd705c3, type: 3}
+        m_Texture: {fileID: 2800000, guid: b4602dcbaca03b84c8878bc39ebf6865, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: f6129ca3352d1cf43a3d1eefb122cef7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 31d47a5a20fa98246b8ea41e5f9e2780, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -73,4 +73,4 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 1.9153169, g: 2.0016632, b: 0, a: 2.0016632}
+    - _EmissionColor: {r: 1, g: 1, b: 1, a: 1}
