@@ -6,8 +6,8 @@ public class NeonFlicker : MonoBehaviour {
 
     Renderer rend;
     Material mat;
-    public float maxIntensity = 3.5f;
-    public float minIntensity = 3f;
+    private float maxIntensity = 3.5f;
+    private float minIntensity = 2.5f;
     public float flickerTime = 0.1f;
 
     // Use this for initialization

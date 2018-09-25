@@ -21,13 +21,16 @@ public class StickyGrenade : MonoBehaviour {
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!hasCollided)
+        if (!collision.gameObject.CompareTag("Player"))
         {
-            GameObject emptyObject = new GameObject();
-            emptyObject.transform.SetParent(collision.gameObject.transform);
-            gameObject.transform.SetParent(emptyObject.transform);
-            rB.isKinematic = true;
-            hasCollided = true;
+            if (!hasCollided)
+            {
+                GameObject emptyObject = new GameObject();
+                emptyObject.transform.SetParent(collision.gameObject.transform);
+                gameObject.transform.SetParent(emptyObject.transform);
+                rB.isKinematic = true;
+                hasCollided = true;
+            }
         }
     }
 

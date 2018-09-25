@@ -17,9 +17,9 @@ public class SpawnManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         totalEnemies = meleeEnemies + scoutEnemies + rangedEnemies;
-        StartCoroutine(IncreaseRangedEnemies());
+        //StartCoroutine(IncreaseRangedEnemies());
         StartCoroutine(IncreaseMeleeEnemies());
-        StartCoroutine(IncreaseScoutEnemies());
+        //StartCoroutine(IncreaseScoutEnemies());
         StartCoroutine(SpawnEnemies());
     }
 	

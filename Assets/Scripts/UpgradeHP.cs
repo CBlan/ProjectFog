@@ -79,7 +79,7 @@ public class UpgradeHP : MonoBehaviour {
         }
         else
         {
-            buttonMaterial.SetColor("_EmissionColor", disabled);
+            //buttonMaterial.SetColor("_EmissionColor", disabled);
         }
     }
 }

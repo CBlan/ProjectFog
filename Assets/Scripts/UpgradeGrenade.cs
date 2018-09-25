@@ -85,6 +85,6 @@ public class UpgradeGrenade : MonoBehaviour {
                 TWStarted = false;
             }
         }
-        else buttonMaterial.SetColor("_EmissionColor", disabled);
+        //else buttonMaterial.SetColor("_EmissionColor", disabled);
     }
 }
