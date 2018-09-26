@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour {
     public float credits = 100;
 
     public bool playerDamaged;
+
+    public SpawnManager sM;
+    public ScoutPoints scoutPoints;
     // Use this for initialization
     void Awake () {
         instance = this;

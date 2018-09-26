@@ -10,15 +10,15 @@ public class SpawnManager : MonoBehaviour {
     public float timeIncreaseRanged, timeIncreaseMelee, timeIncreaseScout;
     public Transform[] spawnPositions;
 
-    private int totalEnemies;
+    //private int totalEnemies;
 
-    private int currentMelee, currentRanged, currentScout;
+    public int currentMelee, currentRanged, currentScout;
 
     // Use this for initialization
     void Start () {
-        totalEnemies = meleeEnemies + scoutEnemies + rangedEnemies;
+        //totalEnemies = meleeEnemies + scoutEnemies + rangedEnemies;
         //StartCoroutine(IncreaseRangedEnemies());
-        StartCoroutine(IncreaseMeleeEnemies());
+        //StartCoroutine(IncreaseMeleeEnemies());
         //StartCoroutine(IncreaseScoutEnemies());
         StartCoroutine(SpawnEnemies());
     }
@@ -30,7 +30,7 @@ public class SpawnManager : MonoBehaviour {
         {
             yield return new WaitForSeconds(timeIncreaseRanged);
             rangedEnemies++;
-            totalEnemies++;
+            //totalEnemies++;
             yield return null;
         }
     }
@@ -41,7 +41,7 @@ public class SpawnManager : MonoBehaviour {
         {
             yield return new WaitForSeconds(timeIncreaseMelee);
             meleeEnemies++;
-            totalEnemies++;
+            //totalEnemies++;
             yield return null;
         }
     }
@@ -52,7 +52,7 @@ public class SpawnManager : MonoBehaviour {
         {
             yield return new WaitForSeconds(timeIncreaseScout);
             scoutEnemies++;
-            totalEnemies++;
+            //totalEnemies++;
             yield return null;
         }
     }
@@ -62,55 +62,30 @@ public class SpawnManager : MonoBehaviour {
         yield return new WaitForSeconds(2f);
         while (true)
         {
-            if (GameManager.instance.enemies.Count < totalEnemies)
+
+            if (currentRanged < rangedEnemies)
             {
-                //print("here");
-                foreach (GameObject enemy in GameManager.instance.enemies)
+                for (int i = currentRanged; i < rangedEnemies; i++)
                 {
-                    if (enemy.CompareTag("Ranged"))
-                    {
-                        currentRanged++;
-                    }
-
-                    else if (enemy.CompareTag("Melee"))
-                    {
-                        currentMelee++;
-                    }
-                    
-                    else 
-                    {
-                        currentScout++;
-                    }
+                    SpawnEnemy(rangedPrefab);
+                    yield return new WaitForSeconds(timeBetweenSpawns);
                 }
-
-                if (currentRanged < rangedEnemies)
+            }
+            if (currentMelee < meleeEnemies)
+            {
+                for (int i = currentMelee; i < meleeEnemies; i++)
                 {
-                    for (int i = currentRanged; i < rangedEnemies; i++)
-                    {
-                        SpawnEnemy(rangedPrefab);
-                        yield return new WaitForSeconds(timeBetweenSpawns);
-                    }
+                    SpawnEnemy(meleePrefab);
+                    yield return new WaitForSeconds(timeBetweenSpawns);
                 }
-                if (currentMelee < meleeEnemies)
+            }
+            if (currentScout < scoutEnemies)
+            {
+                for (int i = currentScout; i < scoutEnemies; i++)
                 {
-                    for (int i = currentMelee; i < meleeEnemies; i++)
-                    {
-                        SpawnEnemy(meleePrefab);
-                        yield return new WaitForSeconds(timeBetweenSpawns);
-                    }
+                    SpawnEnemy(scoutPrefab);
+                    yield return new WaitForSeconds(timeBetweenSpawns);
                 }
-                if (currentScout < scoutEnemies)
-                {
-                    for (int i = currentScout; i < scoutEnemies; i++)
-                    {
-                        SpawnEnemy(scoutPrefab);
-                        yield return new WaitForSeconds(timeBetweenSpawns);
-                    }
-                }
-
-                currentScout = 0;
-                currentMelee = 0;
-                currentRanged = 0;
             }
             yield return null;
         }

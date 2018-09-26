@@ -24,6 +24,18 @@ public class EnemyHealth : MonoBehaviour {
     public void DestroySelf()
     {
         GameManager.instance.enemies.Remove(gameObject);
+        if (gameObject.CompareTag("Melee"))
+        {
+            GameManager.instance.sM.currentMelee--;
+        }
+        if (gameObject.CompareTag("Ranged"))
+        {
+            GameManager.instance.sM.currentRanged--;
+        }
+        if (gameObject.CompareTag("Scout"))
+        {
+            GameManager.instance.sM.currentScout--;
+        }
         Instantiate(destroyEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }

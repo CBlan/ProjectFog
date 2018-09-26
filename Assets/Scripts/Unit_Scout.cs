@@ -23,18 +23,21 @@ public class Unit_Scout : MonoBehaviour {
     private float stucktimer;
 
     private EnemyHealth hP;
+    private ScoutPoints patArea;
 
     private void Start()
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
         GameManager.instance.enemies.Add(gameObject);
+        GameManager.instance.sM.currentScout++;
         rB = GetComponent<Rigidbody>();
         hP = GetComponent<EnemyHealth>();
         player = GameManager.instance.player;
-        target = player.transform.position;
+        patArea = GameManager.instance.scoutPoints;
+        target = Vector3.zero;
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
-        StartCoroutine(FindTarget());
+        //StartCoroutine(FindTarget());
         StartCoroutine(AlertEnemy());
     }
 
@@ -96,7 +99,7 @@ public class Unit_Scout : MonoBehaviour {
         {
             yield return new WaitForSeconds(0.5f);
         }
-        PathRequestManager.RequestPath(new PathRequest(transform.position, target, OnPathFound));
+        //PathRequestManager.RequestPath(new PathRequest(transform.position, target, OnPathFound));
 
         float sqrMoveThreshhold = pathUpdateMoveThreshhold * pathUpdateMoveThreshhold;
         Vector3 targetPosOld = target;
@@ -104,9 +107,11 @@ public class Unit_Scout : MonoBehaviour {
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(minPathUpdateTime[0], minPathUpdateTime[1]));
-            if ((target - targetPosOld).sqrMagnitude > sqrMoveThreshhold)
+            if (Vector3.Distance(transform.position, target) < 10 || target == Vector3.zero)
             {
+                target = patArea.GetPatrolPoint();
                 PathRequestManager.RequestPath(new PathRequest(transform.position, target, OnPathFound));
+                print(target);
                 targetPosOld = target;
             }
 
@@ -169,25 +174,26 @@ public class Unit_Scout : MonoBehaviour {
         }
     }
 
-    IEnumerator FindTarget()
-    {
-        while (true)
-        {
-            Vector3 targetPosition = player.transform.position + (Random.onUnitSphere * (sightRange - 2));
+    //IEnumerator FindTarget()
+    //{
+    //    while (true)
+    //    {
+    //        Vector3 targetPosition = player.transform.position + (Random.onUnitSphere * (sightRange - 2));
+    //        //targetPosition.y = Mathf.Abs(targetPosition.y);
 
-            if (!Physics.CheckSphere(targetPosition, 0.5f))
-            {
-                if (CheckLOS(targetPosition, player, sightRange))
-                {
-                    target = targetPosition;
-                    //print("target");
-                    yield return new WaitForSeconds(0.5f);
-                }
-            }
-            //print("no target");
-            yield return null;
-        }
-    }
+    //        if (!Physics.CheckSphere(targetPosition, 0.5f))
+    //        {
+    //            if (CheckLOS(targetPosition, player, sightRange))
+    //            {
+    //                target = targetPosition;
+    //                //print("target");
+    //                yield return new WaitForSeconds(0.5f);
+    //            }
+    //        }
+    //        //print("no target");
+    //        yield return null;
+    //    }
+    //}
 
     public GameObject FindClosestUnalertEnemy()
     {

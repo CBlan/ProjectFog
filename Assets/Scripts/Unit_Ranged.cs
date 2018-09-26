@@ -43,6 +43,7 @@ public class Unit_Ranged : MonoBehaviour {
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
         GameManager.instance.enemies.Add(gameObject);
+        GameManager.instance.sM.currentRanged++;
         fieldOfViewRangeInHalf = fieldOfView / 2;
         player = GameManager.instance.player.transform;
         alertStatus = GetComponent<AlertStatus>();

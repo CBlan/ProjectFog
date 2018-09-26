@@ -7,7 +7,7 @@ public class Unit_Melee : MonoBehaviour {
     public float pathUpdateMoveThreshhold = 0.5f;
     public float[] minPathUpdateTime = new float[2] {0.3f, 0.7f};
 
-    private Transform player;
+    public Transform player;
     public float speed = 7;
 
     public float turnDistance = 1;
@@ -37,6 +37,7 @@ public class Unit_Melee : MonoBehaviour {
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
         GameManager.instance.enemies.Add(gameObject);
+        GameManager.instance.sM.currentMelee++;
         fieldOfViewRangeInHalf = fieldOfView / 2;
         player = GameManager.instance.player.transform;
         alertStatus = GetComponent<AlertStatus>();
