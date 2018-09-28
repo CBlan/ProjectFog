@@ -4,34 +4,47 @@ using UnityEngine;
 
 public class ScoutPoints : MonoBehaviour {
 
-    public Transform[] patrolPoints;
+    public List<Transform> patrolPoints;
 
     void Start()
     {
 
-        patrolPoints = new Transform[transform.childCount];
-
         for (int i = 0; i < transform.childCount; i++)
         {
             Transform trans = transform.GetChild(i);
-            patrolPoints[i] = trans;
+            patrolPoints.Add(trans);
 
         }
     }
 
     public Vector3 GetPatrolPoint()
     {
-        Vector3 patPoint = patrolPoints[Random.Range(0, patrolPoints.Length)].position;
-
-        if (!Physics.CheckSphere(patPoint, 0.5f))
+        foreach (Transform point in patrolPoints)
         {
-            if (CheckLOS(patPoint, GameManager.instance.player, 10))
+            if (!Physics.CheckSphere(point.position, 0.5f))
             {
-                return patPoint;
+                if (CheckLOS(point.position, GameManager.instance.player, 10))
+                {
+                    patrolPoints.Remove(point);
+                    patrolPoints.Add(point);
+                    return point.position;
 
+                }
             }
         }
         return Vector3.zero;
+
+        //Vector3 patPoint = patrolPoints[Random.Range(0, patrolPoints.Length)].position;
+
+        //if (!Physics.CheckSphere(patPoint, 0.5f))
+        //{
+        //    if (CheckLOS(patPoint, GameManager.instance.player, 10))
+        //    {
+        //        return patPoint;
+
+        //    }
+        //}
+        //return Vector3.zero;
 
     }
 
