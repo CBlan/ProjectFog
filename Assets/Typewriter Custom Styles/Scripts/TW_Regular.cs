@@ -92,8 +92,9 @@ public class TW_Regular : MonoBehaviour {
             string TEXT = ORIGINAL.Substring(0, сharIndex);
             if (сharIndex < ORIGINAL.Length) TEXT = TEXT + POINTER + emptyString.Substring(сharIndex);
             gameObject.GetComponent<Text>().text = TEXT;
-            time += 1;
-            yield return new WaitForSeconds(0.0001f);
+            time += 1f;
+            yield return new WaitForEndOfFrame();
+            //yield return new WaitForSeconds(0.0001f);
             CharIndexPlus();
             start = true;
         }
@@ -153,7 +154,7 @@ public class TW_Regular : MonoBehaviour {
 
     private void CharIndexPlus()
     {
-        if (time == timeOut)
+        if (time >= timeOut)
         {
             time = 0f;
             сharIndex += 1;

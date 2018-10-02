@@ -11,13 +11,17 @@ public class HUDController : MonoBehaviour {
     public Image oxygenBar;
     public Image dashCooldownBar1;
     public Image dashCooldownBar2;
+    public Image grenadeCooldownBar;
+    public Text credits;
 
     public Image damageImage;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public float flashSpeed = 5f;
 
     public PlayerMoveV3 playerScript;
+    public GrenadeThrower throwerScript;
 
+    private float grenadeTimer;
     private bool dashed;
 
     //private void Start()
@@ -34,6 +38,8 @@ public class HUDController : MonoBehaviour {
 
         jetFuelBar.fillAmount = playerScript.jetFuel / playerScript.maxJetpackFuel;
 
+        credits.text = GameManager.instance.credits.ToString();
+
         if (playerScript.dash && !dashed)
         {
             StartCoroutine(DashCooldownBar());
@@ -47,6 +53,31 @@ public class HUDController : MonoBehaviour {
         else
         {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+        }
+
+        if (Input.GetButtonUp("Fire1") && grenadeTimer <= 0)
+        {
+            grenadeTimer = throwerScript.cooldown;
+            StartCoroutine(GrenadeCooldownBar());
+        }
+        grenadeTimer -= Time.deltaTime;
+
+
+    }
+
+    IEnumerator GrenadeCooldownBar()
+    {
+        grenadeCooldownBar.fillAmount = 0;
+        float timeRunning = 0;
+        while (true)
+        {
+            timeRunning += Time.deltaTime;
+            grenadeCooldownBar.fillAmount = timeRunning / throwerScript.cooldown;
+            if (grenadeCooldownBar.fillAmount >= 1)
+            {
+                yield break;
+            }
+            yield return null;
         }
     }
 
