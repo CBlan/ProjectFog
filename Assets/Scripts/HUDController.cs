@@ -23,6 +23,7 @@ public class HUDController : MonoBehaviour {
 
     private float grenadeTimer;
     private bool dashed;
+    private bool ignoreButtonUp;
 
     //private void Start()
     //{
@@ -55,7 +56,17 @@ public class HUDController : MonoBehaviour {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
 
-        if (Input.GetButtonUp("Fire1") && grenadeTimer <= 0)
+        if (Input.GetButtonDown("Fire1") && grenadeCooldownBar.fillAmount < 1)
+        {
+            ignoreButtonUp = true;
+        }
+
+        if (Input.GetButtonDown("Fire1") && grenadeCooldownBar.fillAmount >= 1)
+        {
+            ignoreButtonUp = false;
+        }
+
+        if (Input.GetButtonUp("Fire1") && grenadeTimer <= 0 && !ignoreButtonUp)
         {
             grenadeTimer = throwerScript.cooldown;
             StartCoroutine(GrenadeCooldownBar());
