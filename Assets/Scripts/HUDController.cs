@@ -5,17 +5,25 @@ using UnityEngine.UI;
 
 public class HUDController : MonoBehaviour {
 
-    public Image healthBar;
+    public Image healthBar1;
+    public Image healthBar2;
     public Image jetFuelBar;
-    public Image dashCooldownBar;
+    public Image oxygenBar;
+    public Image dashCooldownBar1;
+    public Image dashCooldownBar2;
+    public Image grenadeCooldownBar;
+    public Text credits;
 
     public Image damageImage;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public float flashSpeed = 5f;
 
     public PlayerMoveV3 playerScript;
+    public GrenadeThrower throwerScript;
 
+    private float grenadeTimer;
     private bool dashed;
+    private bool ignoreButtonUp;
 
     //private void Start()
     //{
@@ -24,9 +32,14 @@ public class HUDController : MonoBehaviour {
 
     private void Update()
     {
-        healthBar.fillAmount = GameManager.instance.playerHP / GameManager.instance.maxPlayerHP;
+        healthBar1.fillAmount = GameManager.instance.playerHP / GameManager.instance.maxPlayerHP;
+        healthBar2.fillAmount = GameManager.instance.playerHP / GameManager.instance.maxPlayerHP;
+
+        oxygenBar.fillAmount = GameManager.instance.oxygen / GameManager.instance.maxOxygen;
 
         jetFuelBar.fillAmount = playerScript.jetFuel / playerScript.maxJetpackFuel;
+
+        credits.text = GameManager.instance.credits.ToString();
 
         if (playerScript.dash && !dashed)
         {
@@ -42,19 +55,56 @@ public class HUDController : MonoBehaviour {
         {
             damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
         }
+
+        if (Input.GetButtonDown("Fire1") && grenadeCooldownBar.fillAmount < 1)
+        {
+            ignoreButtonUp = true;
+        }
+
+        if (Input.GetButtonDown("Fire1") && grenadeCooldownBar.fillAmount >= 1)
+        {
+            ignoreButtonUp = false;
+        }
+
+        if (Input.GetButtonUp("Fire1") && grenadeTimer <= 0 && !ignoreButtonUp)
+        {
+            grenadeTimer = throwerScript.cooldown;
+            StartCoroutine(GrenadeCooldownBar());
+        }
+        grenadeTimer -= Time.deltaTime;
+
+
     }
 
-    IEnumerator DashCooldownBar()
+    IEnumerator GrenadeCooldownBar()
     {
-        dashCooldownBar.fillAmount = 0;
+        grenadeCooldownBar.fillAmount = 0;
         float timeRunning = 0;
         while (true)
         {
             timeRunning += Time.deltaTime;
-            dashCooldownBar.fillAmount = timeRunning / playerScript.dashCooldown;
+            grenadeCooldownBar.fillAmount = timeRunning / throwerScript.cooldown;
+            if (grenadeCooldownBar.fillAmount >= 1)
+            {
+                yield break;
+            }
+            yield return null;
+        }
+    }
+
+    IEnumerator DashCooldownBar()
+    {
+        dashCooldownBar1.fillAmount = 0;
+        dashCooldownBar2.fillAmount = 0;
+        float timeRunning = 0;
+        while (true)
+        {
+            timeRunning += Time.deltaTime;
+            dashCooldownBar1.fillAmount = timeRunning / playerScript.dashCooldown;
+            dashCooldownBar2.fillAmount = timeRunning / playerScript.dashCooldown;
             //print(timeRunning + " / " + playerScript.dashCooldown + " = " + dashCooldownBar.fillAmount);
 
-            if(dashCooldownBar.fillAmount >= 1)
+            if (dashCooldownBar1.fillAmount >= 1)
             {
                 dashed = false;
                 yield break;

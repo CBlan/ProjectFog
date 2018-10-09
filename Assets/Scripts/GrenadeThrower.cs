@@ -19,7 +19,6 @@ public class GrenadeThrower : MonoBehaviour {
         if (Input.GetButtonDown("Fire1") && timer <= 0)
         {
             StartCoroutine(CalculateThrowStrength());
-            timer = cooldown;
         }
         timer -= Time.deltaTime;
         transform.LookAt(TargetObject.tarObj.hitPoint);
@@ -37,6 +36,7 @@ public class GrenadeThrower : MonoBehaviour {
             throwPower = maxThrowPower * CurvePosition;
             yield return null;
         }
+        timer = cooldown;
         thrownGrenade = Instantiate(grenades[currentGrenade], transform.position, Quaternion.identity);
         thrownGrenadeRB = thrownGrenade.GetComponent<Rigidbody>();
         thrownGrenadeRB.AddForce(transform.forward * throwPower, ForceMode.Impulse);

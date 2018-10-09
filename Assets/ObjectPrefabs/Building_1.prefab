@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 64787920325415508}
   - component: {fileID: 65867687168655926}
   - component: {fileID: 65956455895997732}
+  - component: {fileID: 65364710862305218}
+  - component: {fileID: 65998605390063834}
   m_Layer: 11
   m_Name: Building_1
   m_TagString: Untagged
@@ -100,6 +102,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: f3d1d1fa5830b364888652c10554ed66, type: 3}
+--- !u!65 &65364710862305218
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148965119341262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 765.9513, y: 2727.08, z: 775.0058}
+  m_Center: {x: -218.69748, y: 1367.6809, z: 0.120596014}
 --- !u!65 &65867687168655926
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -124,3 +138,15 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 416.8291, y: 84.520996, z: 230.94458}
   m_Center: {x: 372.5127, y: 418.604, z: -61.842896}
+--- !u!65 &65998605390063834
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1148965119341262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 464.59393, y: 1102.7045, z: 494.9072}
+  m_Center: {x: -199.64578, y: 3267.6013, z: -0.8364843}

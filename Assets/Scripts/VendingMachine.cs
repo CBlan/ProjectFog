@@ -34,7 +34,7 @@ public class VendingMachine : MonoBehaviour {
             else
             {
                 lookingAt = null;
-                displayText.text = "Please Select an item\n <b>↓            ↓            ↓            ↓</b>";
+                displayText.text = "Please Select an item\n <b>↓      ↓      ↓      ↓</b>";
             }
 
         }

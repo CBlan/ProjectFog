@@ -111,7 +111,7 @@ public class Unit_Scout : MonoBehaviour {
             {
                 target = patArea.GetPatrolPoint();
                 PathRequestManager.RequestPath(new PathRequest(transform.position, target, OnPathFound));
-                print(target);
+                //print(target);
                 targetPosOld = target;
             }
 
