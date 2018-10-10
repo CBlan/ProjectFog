@@ -22670,7 +22670,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 20
+  far clip plane: 100
   field of view: 60
   orthographic: 0
   orthographic size: 100
@@ -53097,7 +53097,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   gravity: 20
-  maxVelocityChange: 10
+  maxVelocityChange: 100
   antiBumpFactor: 0.6
   slopeLimit: 60
   jumpHeight: 1.5
