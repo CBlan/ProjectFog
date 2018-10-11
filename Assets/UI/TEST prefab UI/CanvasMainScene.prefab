@@ -141,7 +141,7 @@ GameObject:
   - component: {fileID: 222868939691379088}
   - component: {fileID: 114534240918249440}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2182,7 +2182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.93829894, g: 1, b: 0, a: 0.5254902}
+  m_Color: {r: 0.93829894, g: 1, b: 0, a: 0.3137255}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
