@@ -16864,8 +16864,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1421893006876788}
-  m_LocalRotation: {x: -0.000000017571754, y: 0.99999243, z: 0.0000000025774496, w: -0.0038937074}
-  m_LocalPosition: {x: 9, y: -34.8, z: 18.25}
+  m_LocalRotation: {x: -0.0000000025240292, y: 0.0008540885, z: -0.00000001757953,
+    w: 0.99999964}
+  m_LocalPosition: {x: -1.6, y: -53.19, z: -6.0400004}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4318878262822982}
@@ -16873,7 +16874,7 @@ Transform:
   - {fileID: 4756491861041746}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180.44598, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0.098000005, z: 0}
 --- !u!4 &4440761342404452
 Transform:
   m_ObjectHideFlags: 1
@@ -53109,7 +53110,7 @@ MonoBehaviour:
   dash: 0
   dashForce: 200
   dashLength: 0.2
-  dashCooldown: 3
+  dashCooldown: 6
   fallDamageThreshold: 19
 --- !u!114 &114060412861832048
 MonoBehaviour:
@@ -53310,7 +53311,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 8
   airSpeed: 3
-  gravity: 15
+  gravity: 10
   maxVelocityChange: 10
   canJump: 1
   jumpHeight: 4

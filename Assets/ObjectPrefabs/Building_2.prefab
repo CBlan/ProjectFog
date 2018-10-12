@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 65447348227786372}
   - component: {fileID: 65451211533751964}
   - component: {fileID: 64839833701562662}
+  - component: {fileID: 65728976550474610}
+  - component: {fileID: 65580586067032920}
   m_Layer: 11
   m_Name: Building_2
   m_TagString: Untagged
@@ -37,9 +39,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1901118066705196}
-  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -44.800003, y: -952.99994, z: -312.4}
-  m_LocalScale: {x: 0.030545551, y: 0.03054554, z: 0.030545533}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 363.6, y: -953.1, z: -348.6}
+  m_LocalScale: {x: 0.030545522, y: 0.03054554, z: 0.03054554}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -124,3 +126,27 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 157.73792, y: 323.3592, z: 362.9878}
   m_Center: {x: -349.1629, y: 165.31912, z: -229.67236}
+--- !u!65 &65580586067032920
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901118066705196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 676.5918, y: 245.02672, z: 730.535}
+  m_Center: {x: 42.01084, y: 605.5199, z: -151.04259}
+--- !u!65 &65728976550474610
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1901118066705196}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 676.59186, y: 479.94946, z: 1076.5693}
+  m_Center: {x: 42.010853, y: 243.61429, z: 21.973959}
