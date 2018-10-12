@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Chris Test.unity
     guid: 0e0983b1a8f03c9468e45195e8fbdfc3
   - enabled: 1
+    path: Assets/Scenes/Menus.unity
+    guid: fd4becaeeebf6314b91d4a9fa04d4a67
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: ec73cce8b8c148847b2397851a0c0003
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 5e2e8efce1cb81341a006bd83bcb28e3
   m_configObjects: {}

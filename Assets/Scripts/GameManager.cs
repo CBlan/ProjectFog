@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour {
 
@@ -64,6 +65,11 @@ public class GameManager : MonoBehaviour {
             oxygenCooldown = 0;
         }
         oxygenCooldown += Time.deltaTime;
+
+        if (oxygen <= 0 || playerHP <= 0)
+        {
+            SceneManager.LoadScene("GameOver");
+        }
     }
 
     public void DamagePlayer(float amount)
