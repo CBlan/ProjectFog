@@ -40,18 +40,20 @@ public class StickyGrenade : MonoBehaviour {
         AddDescendantsWithTag(gameObject.transform);
         damage = damage * (grenadeCount + 1);
         Vector3 explosionPos = transform.position;
-        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius);
+        Collider[] colliders = Physics.OverlapSphere(explosionPos, radius, Physics.AllLayers);
         foreach (Collider hit in colliders)
         {
             Rigidbody rB;
             EnemyHealth hP;
 
-            if (rB = hit.GetComponent<Rigidbody>())
+            if (rB = hit.gameObject.GetComponent<Rigidbody>())
             {
+                print(hit.gameObject);
                 rB.AddExplosionForce(power, explosionPos, radius, 0.0F);
-                if (hP = hit.GetComponent<EnemyHealth>())
+                if (hP = hit.gameObject.GetComponent<EnemyHealth>())
                 {
                     hP.health -= damage;
+                    print("here2");
                 }
             }
         }

@@ -162,6 +162,7 @@ GameObject:
   - component: {fileID: 114872328152047642}
   - component: {fileID: 114135225848712370}
   - component: {fileID: 108821135177156452}
+  - component: {fileID: 65489133206375524}
   m_Layer: 0
   m_Name: ScoutEnemy
   m_TagString: Scout
@@ -547,6 +548,18 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 5e3b151bc7584cc4c80e3966e489c83b, type: 3}
+--- !u!65 &65489133206375524
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1916942036870660}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.3, y: 0.3, z: 0.3}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65673668377047568
 BoxCollider:
   m_ObjectHideFlags: 1
