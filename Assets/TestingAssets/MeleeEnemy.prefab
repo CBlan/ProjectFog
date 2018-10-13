@@ -1662,10 +1662,10 @@ MonoBehaviour:
   - 0.3
   - 0.7
   player: {fileID: 0}
-  speed: 9
+  speed: 7
   turnDistance: 1
-  turnSpeed: 5
-  minPatrolDistance: 3
+  turnSpeed: 6
+  minPatrolDistance: 4
   alertDistance: 5
   sightRange: 20
   fieldOfView: 60
@@ -1757,7 +1757,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0447bb758792da444a6aa73e504e3e00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHP: 100
+  maxHP: 150
   health: 0
   CreditsValue: 125
   destroyEffect: {fileID: 100002, guid: 6ecf76dc4f268d340b2666896a954bcc, type: 2}

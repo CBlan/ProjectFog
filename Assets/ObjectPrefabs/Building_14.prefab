@@ -22,12 +22,14 @@ GameObject:
   - component: {fileID: 33733566509070710}
   - component: {fileID: 23054281234173346}
   - component: {fileID: 64532376732643386}
-  m_Layer: 0
+  - component: {fileID: 65247165886447578}
+  - component: {fileID: 65888437513747046}
+  m_Layer: 11
   m_Name: Building_14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &4345569501361714
 Transform:
@@ -35,13 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1266065041117528}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 540.4, y: -852.19995, z: -394.11444}
+  m_LocalScale: {x: 0.047246717, y: 0.047246695, z: 0.047246687}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!23 &23054281234173346
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -99,3 +101,27 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 885fe4ccec91fa34aa713544b34bb5d6, type: 3}
+--- !u!65 &65247165886447578
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266065041117528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 797.30945, y: 2382.2998, z: 814.9314}
+  m_Center: {x: 163.69762, y: 1750.1721, z: 3.7876382}
+--- !u!65 &65888437513747046
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1266065041117528}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 310.43808, y: 2140.8752, z: 278.81857}
+  m_Center: {x: -389.56635, y: 1685.7922, z: 72.36747}

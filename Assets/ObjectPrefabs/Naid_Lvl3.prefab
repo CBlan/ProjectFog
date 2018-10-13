@@ -116,9 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explodeTime: 3
-  damage: 60
-  radius: 15
-  power: 30
+  damage: 40
+  radius: 7
+  power: 20
   explosion: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 2}
 --- !u!114 &114910656673916972
 MonoBehaviour:

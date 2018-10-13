@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62bce39056188bf4d859dd9594b4d40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxIntensity: 10
+  maxIntensity: 8
   pulseTime: 10
 --- !u!114 &114871641123242788
 MonoBehaviour:
@@ -129,9 +129,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explodeTime: 1
-  damage: 100
-  radius: 30
-  power: 50
+  damage: 60
+  radius: 10
+  power: 30
   explosion: {fileID: 100008, guid: 1dbc518224e49f34095aab42fe05751a, type: 2}
 --- !u!135 &135043406512514906
 SphereCollider:

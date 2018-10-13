@@ -225,7 +225,7 @@ MonoBehaviour:
   maxOxygen: 100
   oxygen: 0
   oxygenDegenRate: 0.1
-  credits: 10000
+  credits: 5000
   playerDamaged: 0
   sM: {fileID: 114795522734143210}
   scoutPoints: {fileID: 0}
@@ -240,7 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12c3d32e027521d4ea4f18d3ba5a4373, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  meleeEnemies: 5
+  meleeEnemies: 20
   rangedEnemies: 0
   scoutEnemies: 1
   rangedPrefab: {fileID: 1875557290686298, guid: 4c1054dd693fcf045bf2da4d14b70191,

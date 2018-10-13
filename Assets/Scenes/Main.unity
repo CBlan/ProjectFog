@@ -14128,10 +14128,6 @@ Prefab:
       propertyPath: scoutPoints
       value: 
       objectReference: {fileID: 705816681}
-    - target: {fileID: 1442249519115234, guid: d6ba122514114ee4283242c06572173a, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d6ba122514114ee4283242c06572173a, type: 2}
   m_IsPrefabParent: 0
@@ -15686,7 +15682,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1623360447328956, guid: b36db99e148941843ba5a5cddf5081fa, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114933729573114654, guid: b36db99e148941843ba5a5cddf5081fa,
         type: 2}
@@ -48148,7 +48144,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1916942036870660, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2808504fa46cbed4d854c451153c09e7, type: 2}
