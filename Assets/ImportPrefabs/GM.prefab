@@ -225,7 +225,7 @@ MonoBehaviour:
   maxOxygen: 100
   oxygen: 0
   oxygenDegenRate: 0.1
-  credits: 5000
+  credits: 200
   playerDamaged: 0
   sM: {fileID: 114795522734143210}
   scoutPoints: {fileID: 0}
