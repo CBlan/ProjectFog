@@ -74,3 +74,4 @@ Thumbs.db
 # Light Bakes
 #*LightingData*
 #*ReflectionProbe-*
+*.meta
