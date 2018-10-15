@@ -7,12 +7,12 @@ public class collisionSparkSpawner : MonoBehaviour {
 	public GameObject sparks;
 	public float sparkThreshold = 5f;
 	private GameObject obj;
-	private Rigidbody rigidbody;
+	//private Rigidbody rigidbody;
 
 	void Start ()
 	{
-		rigidbody = GetComponent<Rigidbody>();
-        obj = Instantiate(sparks, transform.position, Quaternion.identity);
+		//rigidbody = GetComponent<Rigidbody>();
+        //obj = Instantiate(sparks, transform.position, Quaternion.identity);
     }
 	
 	void Update ()
@@ -31,15 +31,26 @@ public class collisionSparkSpawner : MonoBehaviour {
     //       	}
     //       }
     //}
+    //void OnCollisionEnter(Collision other)
+    //{
+    //    ContactPoint contact = other.contacts[0];
+    //    obj.SetActive(false);
+    //    if (other.relativeVelocity.magnitude > sparkThreshold)
+    //    {
+    //        obj.transform.position = contact.point;
+    //        obj.transform.rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
+    //        obj.SetActive(true);
+    //    }
+
+    //}
+
     void OnCollisionEnter(Collision other)
     {
         ContactPoint contact = other.contacts[0];
-        obj.SetActive(false);
+        //obj.SetActive(false);
         if (other.relativeVelocity.magnitude > sparkThreshold)
         {
-            obj.transform.position = contact.point;
-            obj.transform.rotation = Quaternion.FromToRotation(Vector3.up, contact.normal);
-            obj.SetActive(true);
+            obj = Instantiate(sparks, contact.point, Quaternion.FromToRotation(Vector3.up, contact.normal)) as GameObject;
         }
 
     }

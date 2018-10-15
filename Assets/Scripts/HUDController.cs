@@ -12,6 +12,7 @@ public class HUDController : MonoBehaviour {
     public Image dashCooldownBar1;
     public Image dashCooldownBar2;
     public Image grenadeCooldownBar;
+    public Image grenadeChargeBar;
     public Text credits;
 
     public Color lineColor;
@@ -54,6 +55,16 @@ public class HUDController : MonoBehaviour {
         oxygenBar.fillAmount = GameManager.instance.oxygen / GameManager.instance.maxOxygen;
 
         jetFuelBar.fillAmount = playerScript.jetFuel / playerScript.maxJetpackFuel;
+
+        if (Input.GetButton("Fire1") && grenadeCooldownBar.fillAmount == 1)
+        {
+            grenadeChargeBar.fillAmount = throwerScript.throwPower / throwerScript.maxThrowPower;
+        }
+        else
+        {
+            grenadeChargeBar.fillAmount = 0;
+        }
+
 
         credits.text = GameManager.instance.credits.ToString();
 

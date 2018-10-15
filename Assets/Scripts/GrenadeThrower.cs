@@ -8,7 +8,7 @@ public class GrenadeThrower : MonoBehaviour {
     public int currentGrenade;
     private GameObject thrownGrenade;
     public AnimationCurve powerCurve;
-    float throwPower;
+    public float throwPower;
     public float maxThrowPower;
     public float cooldown;
     private float timer;
@@ -45,6 +45,7 @@ public class GrenadeThrower : MonoBehaviour {
         thrownGrenadeRB = thrownGrenade.GetComponent<Rigidbody>();
         thrownGrenadeRB.AddForce(transform.forward * throwPower, ForceMode.Impulse);
         thrownGrenadeRB.angularVelocity = new Vector3(Random.Range(-500, 500), Random.Range(-500, 500), Random.Range(-500, 500));
+        throwPower = 0f;
 
         yield break;
     }
