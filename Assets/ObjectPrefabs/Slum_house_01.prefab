@@ -22,6 +22,15 @@ GameObject:
   - component: {fileID: 33063624167144408}
   - component: {fileID: 23175865641434596}
   - component: {fileID: 64271998442885200}
+  - component: {fileID: 65954489142910534}
+  - component: {fileID: 65393147198818068}
+  - component: {fileID: 65794688716348614}
+  - component: {fileID: 65696394118759054}
+  - component: {fileID: 65147940617871226}
+  - component: {fileID: 65611813675808464}
+  - component: {fileID: 65097132315181550}
+  - component: {fileID: 65247722059543484}
+  - component: {fileID: 65679214090491698}
   m_Layer: 0
   m_Name: Slum_house_01
   m_TagString: Untagged
@@ -98,3 +107,111 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 703eebb51cd83a047a6ef5a52705c450, type: 3}
+--- !u!65 &65097132315181550
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757786479390412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 907.84436, y: 6.822937, z: 289.6177}
+  m_Center: {x: -9.180237, y: 286.76724, z: 16.913818}
+--- !u!65 &65147940617871226
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757786479390412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 907.84436, y: 2.2677002, z: 289.6177}
+  m_Center: {x: -9.180237, y: 10.777466, z: 16.913818}
+--- !u!65 &65247722059543484
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757786479390412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 190.42969, y: 282.62833, z: 21.027176}
+  m_Center: {x: 349.5271, y: 148.86458, z: -117.38145}
+--- !u!65 &65393147198818068
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757786479390412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 51.194427, y: 60.407104, z: 68.4669}
+  m_Center: {x: 57.88394, y: 320.36145, z: 28.521896}
+--- !u!65 &65611813675808464
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757786479390412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 17.749237, y: 282.62833, z: 287.12732}
+  m_Center: {x: -446.91467, y: 148.86458, z: 15.66861}
+--- !u!65 &65679214090491698
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757786479390412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 509.37292, y: 282.62833, z: 21.027176}
+  m_Center: {x: -198.76874, y: 148.86458, z: -117.38145}
+--- !u!65 &65696394118759054
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757786479390412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 16.674713, y: 282.62833, z: 15.474762}
+  m_Center: {x: 436.4046, y: 148.86458, z: 149.37648}
+--- !u!65 &65794688716348614
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757786479390412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 51.40399, y: 60.407104, z: 68.4669}
+  m_Center: {x: -117.445175, y: 320.36145, z: 28.521894}
+--- !u!65 &65954489142910534
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1757786479390412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 91.60284, y: 59.656128, z: 50.793274}
+  m_Center: {x: -29.344807, y: 320.73694, z: -88.49866}
