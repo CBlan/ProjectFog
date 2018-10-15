@@ -16,12 +16,15 @@ public class GrenadeThrower : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Input.GetButtonDown("Fire1") && timer <= 0)
+        if (Time.timeSinceLevelLoad > 1f)
         {
-            StartCoroutine(CalculateThrowStrength());
+            if (Input.GetButtonDown("Fire1") && timer <= 0)
+            {
+                StartCoroutine(CalculateThrowStrength());
+            }
+            timer -= Time.deltaTime;
+            transform.LookAt(TargetObject.tarObj.hitPoint);
         }
-        timer -= Time.deltaTime;
-        transform.LookAt(TargetObject.tarObj.hitPoint);
     }
 
     IEnumerator CalculateThrowStrength() //increases hitpower overtime.

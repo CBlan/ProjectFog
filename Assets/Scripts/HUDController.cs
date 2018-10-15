@@ -26,10 +26,13 @@ public class HUDController : MonoBehaviour {
     private bool ignoreButtonUp;
 
     public UIMaskScroll uiScroll;
+    public float scrollSpeed = 0.01f;
+    public float warningScrollSpeed = 0.1f;
 
     private void Start()
     {
         uiScroll.imageColor = lineColor;
+        uiScroll.scrollSpeed = scrollSpeed;
     }
 
     private void Update()
@@ -37,13 +40,15 @@ public class HUDController : MonoBehaviour {
         healthBar1.fillAmount = GameManager.instance.playerHP / GameManager.instance.maxPlayerHP;
         healthBar2.fillAmount = GameManager.instance.playerHP / GameManager.instance.maxPlayerHP;
 
-        if (GameManager.instance.playerHP / GameManager.instance.maxPlayerHP < 0.3)
+        if (GameManager.instance.playerHP / GameManager.instance.maxPlayerHP < 0.3 || GameManager.instance.oxygen / GameManager.instance.maxOxygen < 0.2)
         {
             uiScroll.imageColor = flashColour;
+            uiScroll.scrollSpeed = warningScrollSpeed;
         }
         else
         {
             uiScroll.imageColor = lineColor;
+            uiScroll.scrollSpeed = scrollSpeed;
         }
 
         oxygenBar.fillAmount = GameManager.instance.oxygen / GameManager.instance.maxOxygen;
