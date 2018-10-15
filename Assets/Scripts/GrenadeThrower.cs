@@ -37,6 +37,7 @@ public class GrenadeThrower : MonoBehaviour {
             CurveTime += Time.deltaTime *0.1f;
             CurvePosition = powerCurve.Evaluate(CurveTime);
             throwPower = maxThrowPower * CurvePosition;
+            print(throwPower);
             yield return null;
         }
         timer = cooldown;
