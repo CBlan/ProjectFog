@@ -14,7 +14,7 @@ public class HUDController : MonoBehaviour {
     public Image grenadeCooldownBar;
     public Text credits;
 
-    public Image damageImage;
+    public Color lineColor;
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public float flashSpeed = 5f;
 
@@ -25,15 +25,26 @@ public class HUDController : MonoBehaviour {
     private bool dashed;
     private bool ignoreButtonUp;
 
-    //private void Start()
-    //{
-    //    StartCoroutine(DashCooldownBar());
-    //}
+    public UIMaskScroll uiScroll;
+
+    private void Start()
+    {
+        uiScroll.imageColor = lineColor;
+    }
 
     private void Update()
     {
         healthBar1.fillAmount = GameManager.instance.playerHP / GameManager.instance.maxPlayerHP;
         healthBar2.fillAmount = GameManager.instance.playerHP / GameManager.instance.maxPlayerHP;
+
+        if (GameManager.instance.playerHP / GameManager.instance.maxPlayerHP < 0.3)
+        {
+            uiScroll.imageColor = flashColour;
+        }
+        else
+        {
+            uiScroll.imageColor = lineColor;
+        }
 
         oxygenBar.fillAmount = GameManager.instance.oxygen / GameManager.instance.maxOxygen;
 
@@ -49,11 +60,11 @@ public class HUDController : MonoBehaviour {
 
         if (GameManager.instance.playerDamaged)
         {
-            damageImage.color = flashColour;
+            uiScroll.imageColor = flashColour;
         }
         else
         {
-            damageImage.color = Color.Lerp(damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            uiScroll.imageColor = Color.Lerp(uiScroll.imageColor, lineColor, flashSpeed * Time.deltaTime);
         }
 
         if (Input.GetButtonDown("Fire1") && grenadeCooldownBar.fillAmount < 1)

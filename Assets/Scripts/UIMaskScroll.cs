@@ -7,10 +7,13 @@ public class UIMaskScroll : MonoBehaviour {
 
     private Image image;
     private float x = 0;
-    public float scrollSpeed = 0.1f;
+
+    public float scrollSpeed = 0.01f;
+    public Color imageColor;
 
 	// Use this for initialization
 	void Start () {
+
         image = GetComponent<Image>();
         image.material.SetTextureOffset("_Mask", new Vector2(1,0));
         StartCoroutine(Scroll());
@@ -26,7 +29,10 @@ public class UIMaskScroll : MonoBehaviour {
                 x = 0;
             }
             image.material.SetTextureOffset("_Mask", new Vector2(x, 0));
-            yield return null;
+            image.material.SetColor("_Color", imageColor);
+            //yield return null;
+            yield return new WaitForSeconds(0.01f);
         }
     }
+
 }

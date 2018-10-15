@@ -17812,6 +17812,31 @@ Prefab:
       propertyPath: m_PreserveAspect
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114819291429183282, guid: 8355fc786aea85b4aa13ae8648c470ea,
+        type: 2}
+      propertyPath: uiScroll
+      value: 
+      objectReference: {fileID: 1623569899}
+    - target: {fileID: 114819291429183282, guid: 8355fc786aea85b4aa13ae8648c470ea,
+        type: 2}
+      propertyPath: lineColor.r
+      value: 0.27450982
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819291429183282, guid: 8355fc786aea85b4aa13ae8648c470ea,
+        type: 2}
+      propertyPath: lineColor.g
+      value: 0.7254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819291429183282, guid: 8355fc786aea85b4aa13ae8648c470ea,
+        type: 2}
+      propertyPath: lineColor.b
+      value: 0.9254902
+      objectReference: {fileID: 0}
+    - target: {fileID: 114819291429183282, guid: 8355fc786aea85b4aa13ae8648c470ea,
+        type: 2}
+      propertyPath: lineColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8355fc786aea85b4aa13ae8648c470ea, type: 2}
   m_IsPrefabParent: 0
@@ -39539,6 +39564,12 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1621382136}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1623569899 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114539362273761326, guid: 8355fc786aea85b4aa13ae8648c470ea,
+    type: 2}
+  m_PrefabInternal: {fileID: 679697310}
+  m_Script: {fileID: 11500000, guid: b964c7a494bc3d144b36dc1dee668d4e, type: 3}
 --- !u!1 &1624118400
 GameObject:
   m_ObjectHideFlags: 0
