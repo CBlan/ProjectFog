@@ -20360,23 +20360,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 24
       objectReference: {fileID: 0}
-    - target: {fileID: 114332353354888062, guid: 4c1054dd693fcf045bf2da4d14b70191,
-        type: 2}
-      propertyPath: CreditsValue
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 114483147456960426, guid: 4c1054dd693fcf045bf2da4d14b70191,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1090072344578004, guid: 4c1054dd693fcf045bf2da4d14b70191, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 114410713608311414, guid: 4c1054dd693fcf045bf2da4d14b70191, type: 2}
-    - {fileID: 114789919083888874, guid: 4c1054dd693fcf045bf2da4d14b70191, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c1054dd693fcf045bf2da4d14b70191, type: 2}
   m_IsPrefabParent: 0
 --- !u!4 &750513594 stripped
@@ -26955,31 +26939,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1049588748}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1053659736 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1875557290686298, guid: 4c1054dd693fcf045bf2da4d14b70191,
-    type: 2}
-  m_PrefabInternal: {fileID: 745689085}
---- !u!114 &1053659737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1053659736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cee4ad5b99301540bcec0de66f373b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pathUpdateMoveThreshhold: 0.5
-  minPathUpdateTime:
-  - 0.5
-  - 2
-  player: {fileID: 0}
-  speed: 7
-  turnDistance: 1
-  turnSpeed: 5
-  minPatrolDistance: 3
 --- !u!1 &1055269870
 GameObject:
   m_ObjectHideFlags: 0
@@ -39003,10 +38962,10 @@ MonoBehaviour:
   target: {fileID: 0}
   gun: {fileID: 1447906018}
   muzzle: {fileID: 906085032}
-  turretDegreesPerSecond: 45
-  gunDegreesPerSecond: 45
+  turretDegreesPerSecond: 80
+  gunDegreesPerSecond: 80
   maxGunAngle: 180
-  attackRange: 10
+  attackRange: 100
   bulletInterval: 1
   fireingCone: 10
   damage: 5
@@ -45778,7 +45737,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 620bd8dfa9d46f046a45aeb6033bacc6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -22.35
+      value: -17.67
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 620bd8dfa9d46f046a45aeb6033bacc6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -45786,7 +45745,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 620bd8dfa9d46f046a45aeb6033bacc6, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 28.474
+      value: 22.4
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 620bd8dfa9d46f046a45aeb6033bacc6, type: 3}
       propertyPath: m_LocalRotation.x
