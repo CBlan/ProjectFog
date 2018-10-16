@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: 01be07f4464f89347a5173c1384b70f2
+guid: 315bdd6d523e3e440abe547fa2837d5f
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2100000: lambert2
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: polySurface433
+    100000: polySurface87_scoutProp_Recon_body_scoutProp_Recon_unit_OG_polySurface455
+    100002: //RootNode
+    400000: polySurface87_scoutProp_Recon_body_scoutProp_Recon_unit_OG_polySurface455
+    400002: //RootNode
+    2100000: scoutProp_initialShadingGroup
+    2300000: polySurface87_scoutProp_Recon_body_scoutProp_Recon_unit_OG_polySurface455
+    3300000: polySurface87_scoutProp_Recon_body_scoutProp_Recon_unit_OG_polySurface455
+    4300000: polySurface87_scoutProp_Recon_body_scoutProp_Recon_unit_OG_polySurface455
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -40,7 +42,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 250
+    globalScale: 0.07
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
