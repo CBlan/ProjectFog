@@ -6,11 +6,11 @@ public class RangedSpot : MonoBehaviour {
 
     private GameObject spotLight;
     private Light lightComp;
-    private Unit_Ranged unitScript;
+    private Unit_RangedOLD unitScript;
 
     // Use this for initialization
     void Start () {
-        unitScript = GetComponent<Unit_Ranged>();
+        unitScript = GetComponent<Unit_RangedOLD>();
         spotLight = new GameObject("Spot Light");
         lightComp = spotLight.AddComponent<Light>();
         lightComp.type = LightType.Spot;

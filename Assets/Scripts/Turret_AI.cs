@@ -19,7 +19,7 @@ public class Turret_AI : MonoBehaviour
     public float fireingCone;
     public float damage;
 
-    public GameObject particle;
+    //public GameObject particle;
 
     private float targetHP;
 
@@ -111,10 +111,11 @@ public class Turret_AI : MonoBehaviour
             if (Time.time >= cooldown)
             {
                 //Fire(turretBullet);
-                Instantiate(particle, muzzle.transform);
+                //Instantiate(particle, muzzle.transform);
                 //target.GetComponent<Enemy_HP>().HP -= damage;
 
-                //print("Fireing at " + target.transform.name);
+                print("Fireing at " + target.transform.name);
+
                 cooldown = bulletInterval + Time.time;
             }
 
@@ -128,12 +129,13 @@ public class Turret_AI : MonoBehaviour
     {
         //print(target);
         //removes layer 8 and 9 (bullet layers) and player from linecast with a layermask so that bullets do not interfere with if it can see the target
-        int layerMask1 = 1 << 8;
-        int layerMask2 = 1 << 9;
-        int layerMask3 = 1 << 10;
-        int layerMask4 = 1 << 13;
-        int layerMask = layerMask1 | layerMask2 | layerMask3 | layerMask4;
-        layerMask = ~layerMask;
+        //int layerMask1 = 1 << 8;
+        //int layerMask2 = 1 << 9;
+        //int layerMask3 = 1 << 10;
+        //int layerMask4 = 1 << 13;
+        //int layerMask = layerMask1 | layerMask2 | layerMask3 | layerMask4;
+        //layerMask = ~layerMask;
+        int layerMask = ~(1 << 16);
 
         if (target != null)
         {
