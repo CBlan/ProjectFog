@@ -72,6 +72,6 @@ ehthumbs.db
 Thumbs.db
 
 # Light Bakes
-#*LightingData*
-#*ReflectionProbe-*
-*.meta
+*LightingData*
+*ReflectionProbe-*
+#*.meta
