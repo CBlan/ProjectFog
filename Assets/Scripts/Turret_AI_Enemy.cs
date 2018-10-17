@@ -18,6 +18,9 @@ public class Turret_AI_Enemy : MonoBehaviour
     public float bulletInterval;
     public float fireingCone;
     public float damage;
+    public GameObject bullet;
+    public int bulletSpeed = 100;
+    private GameObject firedBullet;
 
     //public GameObject particle;
 
@@ -113,6 +116,9 @@ public class Turret_AI_Enemy : MonoBehaviour
                 //target.GetComponent<Enemy_HP>().HP -= damage;
 
                 //print("Fireing at " + target.transform.name);
+                firedBullet = Instantiate(bullet, muzzle.transform.position, muzzle.transform.rotation);
+                firedBullet.GetComponent<Rigidbody>().AddForce(muzzle.transform.forward * bulletSpeed);
+                firedBullet.GetComponent<EnemyBullet>().bulletDamage = damage;
 
                 cooldown = bulletInterval + Time.time;
             }
