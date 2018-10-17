@@ -260,7 +260,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 0cf3062f9d68b4b42b1d55f602aa4382, type: 2}
+  - {fileID: 2100000, guid: 6fd44ee84b654c147b0ab35a879d62d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 37c9e7061d9a4874bbd8c22a4e0c82e2, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 1
@@ -398,7 +398,7 @@ MonoBehaviour:
   display: {fileID: 1159915776837654}
   displayText: {fileID: 114415107121810628}
   button: {fileID: 1154855903234522}
-  buttonMaterial: {fileID: 2100000, guid: de565219734edf84daee7fd822791e4e, type: 2}
+  buttonMaterial: {fileID: 2100000, guid: 6fd44ee84b654c147b0ab35a879d62d1, type: 2}
   TWScript: {fileID: 114621935961467928}
   normal: {r: 0.95686275, g: 1, b: 0, a: 1}
   mouseOver: {r: 0, g: 0.8509804, b: 1, a: 1}
