@@ -244,7 +244,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1377927455155146}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.613}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4707051616317340}
@@ -297,7 +297,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1575707292917618}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.61300087}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4682271545673308}
@@ -310,7 +310,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875557290686298}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.35, y: 21.6, z: 26.23}
+  m_LocalPosition: {x: 17.23, y: 23.59, z: -13.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4665019243727836}
@@ -842,10 +842,12 @@ MonoBehaviour:
   turretDegreesPerSecond: 80
   gunDegreesPerSecond: 80
   maxGunAngle: 180
-  attackRange: 100
+  attackRange: 16
   bulletInterval: 1
-  fireingCone: 10
+  fireingCone: 5
   damage: 5
+  bullet: {fileID: 1219541082243880, guid: 5546545b3c210304b985c53800f13a59, type: 2}
+  bulletSpeed: 150
 --- !u!114 &114314343724630632
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -862,7 +864,7 @@ MonoBehaviour:
   - 0.5
   - 2
   player: {fileID: 0}
-  speed: 7
+  speed: 5
   turnDistance: 1
   turnSpeed: 5
   minPatrolDistance: 3
@@ -910,10 +912,12 @@ MonoBehaviour:
   turretDegreesPerSecond: 80
   gunDegreesPerSecond: 80
   maxGunAngle: 180
-  attackRange: 100
+  attackRange: 16
   bulletInterval: 1
-  fireingCone: 10
+  fireingCone: 5
   damage: 5
+  bullet: {fileID: 1219541082243880, guid: 5546545b3c210304b985c53800f13a59, type: 2}
+  bulletSpeed: 150
 --- !u!114 &114587064258552378
 MonoBehaviour:
   m_ObjectHideFlags: 1

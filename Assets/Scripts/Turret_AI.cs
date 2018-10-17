@@ -114,7 +114,7 @@ public class Turret_AI : MonoBehaviour
                 //Instantiate(particle, muzzle.transform);
                 //target.GetComponent<Enemy_HP>().HP -= damage;
 
-                print("Fireing at " + target.transform.name);
+                //print("Fireing at " + target.transform.name);
 
                 cooldown = bulletInterval + Time.time;
             }
