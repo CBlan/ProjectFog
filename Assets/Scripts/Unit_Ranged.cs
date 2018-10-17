@@ -139,6 +139,7 @@ public class Unit_Ranged : MonoBehaviour {
             yield return new WaitForSeconds(3f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
+                hP.CreditsValue = 0;
                 hP.DestroySelf();
             }
             yield return null;

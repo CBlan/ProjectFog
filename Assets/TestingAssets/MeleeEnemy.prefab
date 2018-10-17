@@ -1659,8 +1659,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pathUpdateMoveThreshhold: 0.5
   minPathUpdateTime:
-  - 0.5
-  - 2
+  - 0.4
+  - 0.7
   player: {fileID: 0}
   speed: 7
   turnDistance: 1
