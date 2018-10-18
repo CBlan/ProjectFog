@@ -7,10 +7,12 @@ public class Tutorial_Movment : MonoBehaviour {
     private bool buttonPressed;
 
     public GameObject indicator;
+    private GameObject indi;
 
     private void Start()
     {
-        Instantiate(indicator, Tutorial.controller.player.transform.position, Tutorial.controller.player.transform.rotation);
+        indi = Instantiate(indicator, Tutorial.controller.player.transform.position, Tutorial.controller.player.transform.rotation);
+        indi.transform.parent = this.transform;
     }
 
     void Update () {

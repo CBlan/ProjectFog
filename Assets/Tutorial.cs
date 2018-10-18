@@ -7,6 +7,7 @@ public class Tutorial : MonoBehaviour {
     public GameObject player;
     public GameObject[] tutorialPannels;
     private int activeTutorialPannel;
+    private CanvasGroup canvasGroup;
     public static Tutorial controller;
 
     private void Awake()
@@ -28,9 +29,28 @@ public class Tutorial : MonoBehaviour {
 	
     public void NextPannel()
     {
+        StopCoroutine(ChangePannel());
+        StartCoroutine(ChangePannel());
+    }
+
+    IEnumerator ChangePannel()
+    {
+        if (activeTutorialPannel > tutorialPannels.Length - 1)
+        {
+            print("Tutorial Finished");
+            yield break;
+        }
+        canvasGroup = tutorialPannels[activeTutorialPannel].GetComponent<CanvasGroup>();
+        while (canvasGroup.alpha > 0)
+        {
+            canvasGroup.alpha -= 0.05f;
+            yield return new WaitForSeconds(0.1f);
+
+        }
+        //yield return new WaitForSeconds(5f);
         tutorialPannels[activeTutorialPannel].SetActive(false);
         activeTutorialPannel++;
-        if (activeTutorialPannel > tutorialPannels.Length-1)
+        if (activeTutorialPannel > tutorialPannels.Length - 1)
         {
             print("Tutorial Finished");
         }
@@ -38,6 +58,7 @@ public class Tutorial : MonoBehaviour {
         {
             tutorialPannels[activeTutorialPannel].SetActive(true);
         }
+        yield break;
     }
 
 }
