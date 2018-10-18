@@ -25,7 +25,11 @@ Material:
     - _Mask:
         m_Texture: {fileID: 2800000, guid: fa77fb87976c28f4e9a5d6245c490263, type: 3}
         m_Scale: {x: 1, y: 5}
+<<<<<<< HEAD
+        m_Offset: {x: 0.30999997, y: 0}
+=======
         m_Offset: {x: 0.35999992, y: 0}
+>>>>>>> 6aaca63ad655e10e04dd719d45badafaaaae9398
     m_Floats:
     - PixelSnap: 0
     - _MaskOpacity: 0.1
