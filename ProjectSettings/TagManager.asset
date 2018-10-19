@@ -11,6 +11,7 @@ TagManager:
   - Ranged
   - Scout
   - Upgrade
+  - Tutorial
   layers:
   - Default
   - TransparentFX

@@ -19,7 +19,7 @@ public class HUDController : MonoBehaviour {
     public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
     public float flashSpeed = 5f;
 
-    public PlayerMoveV3 playerScript;
+    private PlayerMoveV3 playerScript;
     public GrenadeThrower throwerScript;
 
     private float grenadeTimer;
@@ -32,6 +32,7 @@ public class HUDController : MonoBehaviour {
 
     private void Start()
     {
+        playerScript = GameManager.instance.player.GetComponent<PlayerMoveV3>();
         uiScroll.imageColor = lineColor;
         uiScroll.scrollSpeed = scrollSpeed;
     }
