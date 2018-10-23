@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tutorial : MonoBehaviour {
 
@@ -26,7 +27,15 @@ public class Tutorial : MonoBehaviour {
         tutorialPannels[0].SetActive(true);
         activeTutorialPannel = 0;
     }
-	
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SceneManager.LoadScene("Main");
+        }
+    }
+
     public void NextPannel()
     {
         StopCoroutine(ChangePannel());
@@ -37,7 +46,7 @@ public class Tutorial : MonoBehaviour {
     {
         if (activeTutorialPannel > tutorialPannels.Length - 1)
         {
-            print("Tutorial Finished");
+            SceneManager.LoadScene("Main");
             yield break;
         }
         canvasGroup = tutorialPannels[activeTutorialPannel].GetComponent<CanvasGroup>();
@@ -52,7 +61,8 @@ public class Tutorial : MonoBehaviour {
         activeTutorialPannel++;
         if (activeTutorialPannel > tutorialPannels.Length - 1)
         {
-            print("Tutorial Finished");
+            SceneManager.LoadScene("Main");
+            yield break;
         }
         else
         {

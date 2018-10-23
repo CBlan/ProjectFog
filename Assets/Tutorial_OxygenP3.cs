@@ -19,7 +19,7 @@ public class Tutorial_OxygenP3 : MonoBehaviour {
 
     void Update()
     {
-        if (GameManager.instance.oxygen == 100 && !buttonPressed)
+        if (GameManager.instance.credits == 0 && !buttonPressed)
         {
             Tutorial.controller.NextPannel();
             buttonPressed = true;
