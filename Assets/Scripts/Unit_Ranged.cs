@@ -40,15 +40,6 @@ public class Unit_Ranged : MonoBehaviour {
         hP = GetComponent<EnemyHealth>();
     }
 
-    private void Update()
-    {
-        if (Vector3.Distance(transform.position, player.position) < 2f)
-        {
-            transform.LookAt(player);
-            transform.Translate(Vector3.forward * Time.deltaTime * speed, Space.Self);
-        }
-    }
-
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
     {
         if (pathSuccessful)
@@ -139,6 +130,7 @@ public class Unit_Ranged : MonoBehaviour {
             yield return new WaitForSeconds(3f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
+                hP.enemyKilled = 0;
                 hP.CreditsValue = 0;
                 hP.DestroySelf();
             }

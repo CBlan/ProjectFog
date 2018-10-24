@@ -7,6 +7,7 @@ public class EnemyHealth : MonoBehaviour {
     public float maxHP = 100;
     public float health;
     public float CreditsValue;
+    public int enemyKilled = 1;
     public GameObject destroyEffect;
 
     private void Start()
@@ -39,6 +40,7 @@ public class EnemyHealth : MonoBehaviour {
         }
         Instantiate(destroyEffect, transform.position, transform.rotation);
         GameManager.instance.credits += CreditsValue;
+        ScoreCollector.score.enemiesKilled += enemyKilled;
         Destroy(gameObject);
     }
 }

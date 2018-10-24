@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour {
 
     public SpawnManager sM;
     public ScoutPoints scoutPoints;
+
+    private float playtime;
     // Use this for initialization
     void Awake () {
         instance = this;
@@ -43,6 +45,8 @@ public class GameManager : MonoBehaviour {
 
     void Update()
     {
+        playtime += Time.deltaTime;
+
         if (regenCooldown > 0.1)
         {
             playerHP += regenRate;
@@ -66,8 +70,11 @@ public class GameManager : MonoBehaviour {
         }
         oxygenCooldown += Time.deltaTime;
 
+        //gameover
         if (oxygen <= 0 || playerHP <= 0)
         {
+            ScoreCollector.score.credits = credits;
+            ScoreCollector.score.time = playtime;
             SceneManager.LoadScene("GameOver");
         }
     }

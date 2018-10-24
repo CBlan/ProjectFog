@@ -193,6 +193,7 @@ public class Unit_Melee : MonoBehaviour {
             yield return new WaitForSeconds(3f);
             if (Vector3.Distance(checkPos, transform.position) < 0.1f)
             {
+                hP.enemyKilled = 0;
                 hP.CreditsValue = 0;
                 hP.DestroySelf();
             }
