@@ -111,7 +111,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1880371942109846}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 33.38, y: 22.56, z: -0}
+  m_LocalPosition: {x: 30.24, y: 12.93, z: 1.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4628150111506406}
@@ -124,7 +124,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1977712616101540}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.25, y: 23.71, z: 29.82}
+  m_LocalPosition: {x: 16.97, y: 6.49, z: 30.07}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4628150111506406}
@@ -137,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238946485596238}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -22.17, y: 29.7, z: -0.85}
+  m_LocalPosition: {x: -27.38, y: 4.89, z: -16.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4628150111506406}
@@ -241,8 +241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeEnemies: 20
-  rangedEnemies: 0
-  scoutEnemies: 1
+  rangedEnemies: 20
+  scoutEnemies: 0
   rangedPrefab: {fileID: 1875557290686298, guid: 4c1054dd693fcf045bf2da4d14b70191,
     type: 2}
   meleePrefab: {fileID: 1781625977368912, guid: 0d81062068b838944866a37a0d2df248,
