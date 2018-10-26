@@ -67,7 +67,7 @@ public class SpawnManager : MonoBehaviour {
             {
                 for (int i = currentRanged; i < rangedEnemies; i++)
                 {
-                    SpawnEnemy(rangedPrefab);
+                    SpawnEnemy("Ranged");
                     yield return new WaitForSeconds(timeBetweenSpawns);
                 }
             }
@@ -75,7 +75,7 @@ public class SpawnManager : MonoBehaviour {
             {
                 for (int i = currentMelee; i < meleeEnemies; i++)
                 {
-                    SpawnEnemy(meleePrefab);
+                    SpawnEnemy("Melee");
                     yield return new WaitForSeconds(timeBetweenSpawns);
                 }
             }
@@ -83,7 +83,7 @@ public class SpawnManager : MonoBehaviour {
             {
                 for (int i = currentScout; i < scoutEnemies; i++)
                 {
-                    SpawnEnemy(scoutPrefab);
+                    SpawnEnemy("Scout");
                     yield return new WaitForSeconds(timeBetweenSpawns);
                 }
             }
@@ -91,9 +91,22 @@ public class SpawnManager : MonoBehaviour {
         }
     }
 
-    void SpawnEnemy(GameObject enemy)
+    //void SpawnEnemy(GameObject enemy)
+    //{
+    //    Transform point = spawnPositions[Random.Range(0, spawnPositions.Length-1)];
+    //    Instantiate(enemy, point.position, point.rotation);
+    //}
+
+    void SpawnEnemy(string type)
     {
-        Transform point = spawnPositions[Random.Range(0, spawnPositions.Length-1)];
-        Instantiate(enemy, point.position, point.rotation);
+        for (int i = 0; i < GameManager.instance.enemies.Count; i++)
+        {
+            if (GameManager.instance.enemies[i].CompareTag(type) && !GameManager.instance.enemies[i].activeSelf)
+            {
+                GameManager.instance.enemies[i].transform.position = spawnPositions[Random.Range(0, spawnPositions.Length - 1)].position;
+                GameManager.instance.enemies[i].SetActive(true);
+                break;
+            }
+        }
     }
 }

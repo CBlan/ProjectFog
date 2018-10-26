@@ -14,7 +14,7 @@ public class Unit_Ranged : MonoBehaviour {
     public float turnSpeed = 5;
 
     public float minPatrolDistance = 3;
-    private PatrolArea patArea;
+    private PatrolArea_Ranged patArea;
 
     Vector3[] path;
     int targetIndex;
@@ -27,10 +27,10 @@ public class Unit_Ranged : MonoBehaviour {
     private EnemyHealth hP;
     //private Vector3 pathCheck;
 
-    private void Start()
+    private void OnEnable()
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
-        GameManager.instance.enemies.Add(gameObject);
+        //GameManager.instance.enemies.Add(gameObject);
         GameManager.instance.sM.currentRanged++;
         player = GameManager.instance.player.transform;
         rB = GetComponent<Rigidbody>();
@@ -70,7 +70,7 @@ public class Unit_Ranged : MonoBehaviour {
             if (Vector3.Distance(transform.position, newPatPoint) < minPatrolDistance || newPatPoint == Vector3.zero)
             {
                 //print("here");
-                newPatPoint = patArea.GetPatrolPoint();
+                newPatPoint = patArea.GetPatrolPoint(transform.position);
                 PathRequestManager.RequestPath(new PathRequest(transform.position, newPatPoint, OnPathFound));
                 targetPosOld = newPatPoint;
                 //pathCheck = newPatPoint;
@@ -136,6 +136,13 @@ public class Unit_Ranged : MonoBehaviour {
             }
             yield return null;
         }
+    }
+
+    private void OnDisable()
+    {
+        StopCoroutine(UpdatePath());
+        StopCoroutine(CheckIfStuck());
+        StopCoroutine(FollowPath());
     }
 
 }

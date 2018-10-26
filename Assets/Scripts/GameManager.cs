@@ -10,8 +10,8 @@ public class GameManager : MonoBehaviour {
     public PlayerMoveV3 playerScript;
     public List<GameObject> enemies;
 
-    public PatrolArea rangedPatArea;
-    public PatrolArea meleePatArea;
+    public PatrolArea_Ranged rangedPatArea;
+    public PatrolArea_Melee meleePatArea;
 
     public float playerHP;
     public float maxPlayerHP = 100;

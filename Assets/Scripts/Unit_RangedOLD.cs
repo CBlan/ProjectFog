@@ -15,7 +15,7 @@ public class Unit_RangedOLD : MonoBehaviour {
 
     public GameObject patrolArea;
     public float minPatrolDistance = 3;
-    private PatrolArea patArea;
+    private PatrolArea_Ranged patArea;
 
     public float alertDistance = 5;
     public float sightRange = 50;
@@ -173,7 +173,7 @@ public class Unit_RangedOLD : MonoBehaviour {
             if (Vector3.Distance(transform.position, newPatPoint) < minPatrolDistance || newPatPoint == Vector3.zero)
             {
                 //print("here");
-                newPatPoint = patArea.GetPatrolPoint();
+                newPatPoint = patArea.GetPatrolPoint(transform.position);
                 PathRequestManager.RequestPath(new PathRequest(transform.position, newPatPoint, OnPathFound));
                 targetPosOld = newPatPoint;
                 //pathCheck = newPatPoint;

@@ -7,12 +7,14 @@ public class EnemyHealth : MonoBehaviour {
     public float maxHP = 100;
     public float health;
     public float CreditsValue;
+    private float creditsValueStart;
     public int enemyKilled = 1;
     public GameObject destroyEffect;
 
     private void Start()
     {
         health = maxHP;
+        creditsValueStart = CreditsValue;
     }
 
     private void Update()
@@ -25,7 +27,7 @@ public class EnemyHealth : MonoBehaviour {
 
     public void DestroySelf()
     {
-        GameManager.instance.enemies.Remove(gameObject);
+        //GameManager.instance.enemies.Remove(gameObject);
         if (gameObject.CompareTag("Melee") && GameManager.instance.sM != null)
         {
             GameManager.instance.sM.currentMelee--;
@@ -41,6 +43,10 @@ public class EnemyHealth : MonoBehaviour {
         Instantiate(destroyEffect, transform.position, transform.rotation);
         GameManager.instance.credits += CreditsValue;
         ScoreCollector.score.enemiesKilled += enemyKilled;
-        Destroy(gameObject);
+        health = maxHP;
+        enemyKilled = 1;
+        CreditsValue = creditsValueStart;
+        gameObject.SetActive(false);
+        //Destroy(gameObject);
     }
 }

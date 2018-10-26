@@ -49,7 +49,7 @@ public class ScoreDisplay : MonoBehaviour {
                 done = true;
             }
         }
-        total = (Mathf.RoundToInt(currentTime) * Mathf.RoundToInt(currentEnemies)) + Mathf.RoundToInt(currentCredits);
+        total = (Mathf.RoundToInt(currentTime) * Mathf.RoundToInt(currentEnemies)) + (Mathf.RoundToInt(currentCredits) * 15);
         StartCoroutine(TotalScoreUpdate());
         yield break;
 
