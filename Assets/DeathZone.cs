@@ -8,7 +8,7 @@ public class DeathZone : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            GameManager.instance.playerHP = 0;
+            GameManager.instance.playerHP = -1;
         }
     }
 }
