@@ -14,14 +14,13 @@ public class ScoreCollector : MonoBehaviour {
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
-        score = this;
-    }
-
-    private void Start()
-    {
-        if (score != this)
+        if (score != this  && score != null)
         {
             Destroy(gameObject);
+        }
+        else
+        {
+            score = this;
         }
     }
 
