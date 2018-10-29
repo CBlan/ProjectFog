@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ScoreCollector : MonoBehaviour {
 
@@ -15,4 +16,13 @@ public class ScoreCollector : MonoBehaviour {
         DontDestroyOnLoad(this.gameObject);
         score = this;
     }
+
+    private void Start()
+    {
+        if (score != this)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

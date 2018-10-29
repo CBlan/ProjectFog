@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour {
     public SpawnManager sM;
     public ScoutPoints scoutPoints;
 
+    public GameObject[] startingEnemies;
+
     private float playtime;
     // Use this for initialization
     void Awake () {
@@ -41,6 +43,11 @@ public class GameManager : MonoBehaviour {
         oxygen = maxOxygen;
         playerHP = maxPlayerHP;
         playerScript = player.GetComponent<PlayerMoveV3>();
+
+        foreach (GameObject enemy in startingEnemies)
+        {
+            enemy.SetActive(true);
+        }
     }
 
     void Update()
