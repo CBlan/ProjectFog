@@ -126,6 +126,21 @@ public class PlayerMoveV3 : MonoBehaviour
                 regenCooldown = -2;
             }
 
+            else
+            {
+                Vector3 targetVelocity = new Vector3(inputX, 0, inputY);
+                targetVelocity = transform.TransformDirection(targetVelocity);
+                targetVelocity *= speed/1.5f;
+
+                // Apply a force that attempts to reach our target velocity
+                Vector3 velocity = rB.velocity;
+                Vector3 velocityChange = (targetVelocity - velocity);
+                velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
+                velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
+                velocityChange.y = -antiBumpFactor;
+                rB.AddForce(new Vector3(velocityChange.x, 0, velocityChange.z), ForceMode.VelocityChange);
+            }
+
         }
 
         if (regenCooldown > 0.1)
