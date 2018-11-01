@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4712332717394960}
   - component: {fileID: 108699680312679196}
+  - component: {fileID: 114516989004039336}
   m_Layer: 0
   m_Name: Spot Light
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Transform:
   m_GameObject: {fileID: 1235329197397820}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.67, y: -35.913, z: -4.89}
-  m_LocalScale: {x: 0.0045343502, y: 0.0045343526, z: 0.0045343526}
+  m_LocalScale: {x: 0.00453, y: 0.00453, z: 0.00453}
   m_Children:
   - {fileID: 4712332717394960}
   m_Father: {fileID: 0}
@@ -123,12 +124,12 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.48584908, g: 0.5723099, b: 1, a: 1}
-  m_Intensity: 5
+  m_Intensity: 3.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -149,3 +150,28 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114516989004039336
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1471866772864270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 8
+  ScatteringCoef: 0.5
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.26
+  HeightFog: 1
+  HeightScale: 0.011
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.025
+  NoiseIntensity: 0.49
+  NoiseIntensityOffset: 0.35
+  NoiseVelocity: {x: 3, y: 3}
+  MaxRayLength: 400
