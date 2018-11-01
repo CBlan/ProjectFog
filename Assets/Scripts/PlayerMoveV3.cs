@@ -101,7 +101,7 @@ public class PlayerMoveV3 : MonoBehaviour
             if (Input.GetButton("Jump") && jetFuel > 0)
             {
                 // Calculate how fast we should be moving
-                Vector3 targetVelocity = new Vector3(inputX, 0, inputY);
+                Vector3 targetVelocity = new Vector3(inputX, 1, inputY);
                 targetVelocity = transform.TransformDirection(targetVelocity);
                 targetVelocity *= speed;
 
@@ -110,10 +110,11 @@ public class PlayerMoveV3 : MonoBehaviour
                 Vector3 velocityChange = (targetVelocity - velocity);
                 velocityChange.x = Mathf.Clamp(velocityChange.x, -maxVelocityChange, maxVelocityChange);
                 velocityChange.z = Mathf.Clamp(velocityChange.z, -maxVelocityChange, maxVelocityChange);
-                velocityChange.y = -antiBumpFactor;
-                rB.AddForce(new Vector3(velocityChange.x, 0, velocityChange.z), ForceMode.VelocityChange);
+                velocityChange.y = Mathf.Clamp(velocityChange.y, -maxVelocityChange, maxVelocityChange);
+                //rB.AddForce(new Vector3(velocityChange.x, 0, velocityChange.z), ForceMode.VelocityChange);
+                rB.AddForce(velocityChange, ForceMode.VelocityChange);
 
-                rB.AddForce(new Vector3(0, jetpackThrust, 0), ForceMode.Acceleration);
+                //rB.AddForce(new Vector3(0, jetpackThrust, 0), ForceMode.Acceleration);
                 //rB.velocity = new Vector3(velocity.x, CalculateJumpVerticalSpeed() + antiBumpFactor, velocity.z);
 
                 if (cooldown > 0.1)

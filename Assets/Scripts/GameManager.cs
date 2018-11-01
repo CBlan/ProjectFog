@@ -44,9 +44,12 @@ public class GameManager : MonoBehaviour {
         playerHP = maxPlayerHP;
         playerScript = player.GetComponent<PlayerMoveV3>();
 
-        foreach (GameObject enemy in startingEnemies)
+        if (startingEnemies != null)
         {
-            enemy.SetActive(true);
+            foreach (GameObject enemy in startingEnemies)
+            {
+                enemy.SetActive(true);
+            }
         }
     }
 

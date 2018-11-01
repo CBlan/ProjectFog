@@ -12,6 +12,11 @@ public class MenuFunctions : MonoBehaviour {
         Cursor.lockState = CursorLockMode.None;
     }
 
+    public void StartTutorial()
+    {
+        SceneManager.LoadScene("Tutorial");
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("Loading");

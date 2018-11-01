@@ -42,7 +42,10 @@ public class EnemyHealth : MonoBehaviour {
         }
         Instantiate(destroyEffect, transform.position, transform.rotation);
         GameManager.instance.credits += CreditsValue;
-        ScoreCollector.score.enemiesKilled += enemyKilled;
+        if (ScoreCollector.score != null)
+        {
+            ScoreCollector.score.enemiesKilled += enemyKilled;
+        }
         health = maxHP;
         enemyKilled = 1;
         CreditsValue = creditsValueStart;

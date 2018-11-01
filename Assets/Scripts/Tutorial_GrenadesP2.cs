@@ -17,7 +17,7 @@ public class Tutorial_GrenadesP2 : MonoBehaviour {
 
     void Update()
     {
-        if (ene.transform.childCount == 0 && !destroyed)
+        if (!ene.transform.GetChild(0).gameObject.activeSelf && !destroyed)
         {
             Tutorial.controller.NextPannel();
             destroyed = true;

@@ -32,7 +32,7 @@ public class Tutorial : MonoBehaviour {
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("Loading");
         }
     }
 
