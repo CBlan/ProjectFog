@@ -9,7 +9,7 @@ public class OxygenMachine : MonoBehaviour {
     public Text displayText;
     public GameObject button;
     public Material buttonMaterial;
-    public TW_Regular TWScript;
+    //public TW_Regular TWScript;
     private bool machineActive;
     private float maxDistance = 50;
 
@@ -18,7 +18,7 @@ public class OxygenMachine : MonoBehaviour {
     public Color clicked;
     public Color disabled;
     public Color noCredits;
-    private bool TWStarted;
+    //private bool TWStarted;
 
     public float oxygenCost = 100;
 
@@ -36,12 +36,13 @@ public class OxygenMachine : MonoBehaviour {
             {
 
                 buttonMaterial.SetColor("_EmissionColor", mouseOver * Mathf.PingPong(Time.time * 3, 3));
-                if (!TWStarted)
-                {
-                    displayText.text = "Refill <b>Oxygen</b> tanks\n ---------------\n " + oxygenCost + " Units";
-                    TWScript.StartTypewriter();
-                    TWStarted = true;
-                }
+                displayText.text = "Refill <b>Oxygen</b> tanks\n ---------------\n " + oxygenCost + " Units";
+                //if (!TWStarted)
+                //{
+                //    displayText.text = "Refill <b>Oxygen</b> tanks\n ---------------\n " + oxygenCost + " Units";
+                //    TWScript.StartTypewriter();
+                //    TWStarted = true;
+                //}
 
                 if (Input.GetKey(KeyCode.E))
                 {
@@ -63,14 +64,14 @@ public class OxygenMachine : MonoBehaviour {
                         GameManager.instance.oxygen = GameManager.instance.maxOxygen;
                         GameManager.instance.credits -= oxygenCost;
 
-
-                        TWStarted = false;
-                        if (!TWStarted)
-                        {
-                            displayText.text = "Refill <b>Oxygen</b> tanks\n ---------------\n " + oxygenCost + " Units";
-                            TWScript.StartTypewriter();
-                            TWStarted = true;
-                        }
+                        displayText.text = "Refill <b>Oxygen</b> tanks\n ---------------\n " + oxygenCost + " Units";
+                        //TWStarted = false;
+                        //if (!TWStarted)
+                        //{
+                        //    displayText.text = "Refill <b>Oxygen</b> tanks\n ---------------\n " + oxygenCost + " Units";
+                        //    TWScript.StartTypewriter();
+                        //    TWStarted = true;
+                        //}
                     }
                 }
 
@@ -78,7 +79,7 @@ public class OxygenMachine : MonoBehaviour {
             else
             {
                 buttonMaterial.SetColor("_EmissionColor", normal * Mathf.PingPong(Time.time * 3, 3));
-                TWStarted = false;
+                //TWStarted = false;
                 displayText.text = "Please Select an item\n <b>↓</b>";
             }
 

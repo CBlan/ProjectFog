@@ -156,7 +156,6 @@ GameObject:
   - component: {fileID: 224890398802922170}
   - component: {fileID: 222931427795355324}
   - component: {fileID: 114801910036256104}
-  - component: {fileID: 114844437719625526}
   m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
@@ -287,7 +286,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1964778003960496}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.35, y: -36.024, z: 2.599}
+  m_LocalPosition: {x: 23.43581, y: -66.164, z: 41.34926}
   m_LocalScale: {x: 0.5239545, y: 0.5239545, z: 0.5239545}
   m_Children:
   - {fileID: 4012968618892842}
@@ -766,7 +765,6 @@ MonoBehaviour:
   disabled: {r: 0, g: 0, b: 0, a: 0}
   noCredits: {r: 1, g: 0, b: 0, a: 1}
   display: {fileID: 114801910036256104}
-  TWScript: {fileID: 114844437719625526}
 --- !u!114 &114295877070682044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -839,7 +837,6 @@ MonoBehaviour:
   disabled: {r: 0, g: 0, b: 0, a: 0}
   noCredits: {r: 1, g: 0, b: 0, a: 1}
   display: {fileID: 114801910036256104}
-  TWScript: {fileID: 114844437719625526}
 --- !u!114 &114532810284160264
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -861,7 +858,6 @@ MonoBehaviour:
   disabled: {r: 0, g: 0, b: 0, a: 0}
   noCredits: {r: 1, g: 0.1503219, b: 0, a: 1}
   display: {fileID: 114801910036256104}
-  TWScript: {fileID: 114844437719625526}
 --- !u!114 &114798343305011760
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -882,7 +878,6 @@ MonoBehaviour:
   disabled: {r: 0, g: 0, b: 0, a: 0}
   noCredits: {r: 1, g: 0, b: 0, a: 1}
   display: {fileID: 114801910036256104}
-  TWScript: {fileID: 114844437719625526}
 --- !u!114 &114801910036256104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -916,21 +911,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: New Text
---- !u!114 &114844437719625526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1855754009959800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014f715cfa5c0e2478e44ae3559f6fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LaunchOnStart: 0
-  timeOut: 1
-  pointer: 2
-  ORIGINAL_TEXT: 
 --- !u!114 &114922583121297322
 MonoBehaviour:
   m_ObjectHideFlags: 1

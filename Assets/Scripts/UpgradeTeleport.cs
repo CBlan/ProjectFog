@@ -15,8 +15,8 @@ public class UpgradeTeleport : MonoBehaviour {
     public Color disabled;
     public Color noCredits;
     public Text display;
-    public TW_Regular TWScript;
-    private bool TWStarted;
+    //public TW_Regular TWScript;
+    //private bool TWStarted;
     private int upgradesUsed;
 
 
@@ -29,12 +29,13 @@ public class UpgradeTeleport : MonoBehaviour {
             {
                 
                 buttonMaterial.SetColor("_EmissionColor", mouseOver * Mathf.PingPong(Time.time * 3, 3));
-                if (!TWStarted)
-                {
-                    display.text = "Upgrade <b>Teleport</b> cooldown\n ---------------\n" + upgradeCost + " Units";
-                    TWScript.StartTypewriter();
-                    TWStarted = true;
-                }
+                display.text = "Upgrade <b>Dash</b> cooldown\n ---------------\n" + upgradeCost + " Units";
+                //if (!TWStarted)
+                //{
+                //    display.text = "Upgrade <b>Teleport</b> cooldown\n ---------------\n" + upgradeCost + " Units";
+                //    TWScript.StartTypewriter();
+                //    TWStarted = true;
+                //}
 
                 if (Input.GetKey(KeyCode.E))
                 {
@@ -61,21 +62,21 @@ public class UpgradeTeleport : MonoBehaviour {
                             buttonMaterial.SetColor("_EmissionColor", disabled);
                             this.enabled = false;
                         }
-
-                        TWStarted = false;
-                        if (!TWStarted)
-                        {
-                            display.text = "Upgrade <b>Teleport</b> cooldown\n ---------------\n" + upgradeCost + " Units";
-                            TWScript.StartTypewriter();
-                            TWStarted = true;
-                        }
+                        display.text = "Upgrade <b>Dash</b> cooldown\n ---------------\n" + upgradeCost + " Units";
+                        //TWStarted = false;
+                        //if (!TWStarted)
+                        //{
+                        //    display.text = "Upgrade <b>Teleport</b> cooldown\n ---------------\n" + upgradeCost + " Units";
+                        //    TWScript.StartTypewriter();
+                        //    TWStarted = true;
+                        //}
                     }
                 }
             }
             else
             {
                 buttonMaterial.SetColor("_EmissionColor", normal * Mathf.PingPong(Time.time * 3, 3));
-                TWStarted = false;
+                //TWStarted = false;
             }
         }
         //else buttonMaterial.SetColor("_EmissionColor", disabled);

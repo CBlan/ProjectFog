@@ -15,8 +15,8 @@ public class UpgradeGrenade : MonoBehaviour {
     public Color disabled;
     public Color noCredits;
     public Text display;
-    public TW_Regular TWScript;
-    private bool TWStarted;
+    //public TW_Regular TWScript;
+    //private bool TWStarted;
     private int upgradesUsed;
 
     private void Start()
@@ -32,12 +32,13 @@ public class UpgradeGrenade : MonoBehaviour {
             {
                 
                 buttonMaterial.SetColor("_EmissionColor", mouseOver * Mathf.PingPong(Time.time * 3, 3));
-                if (!TWStarted)
-                {
-                    display.text = "Upgrade <b>Grenade</b> damage\n ---------------\n " + upgradeCost + " Units";
-                    TWScript.StartTypewriter();
-                    TWStarted = true;
-                }
+                display.text = "Upgrade <b>Grenade</b> damage\n ---------------\n " + upgradeCost + " Units";
+                //if (!TWStarted)
+                //{
+                //    display.text = "Upgrade <b>Grenade</b> damage\n ---------------\n " + upgradeCost + " Units";
+                //    TWScript.StartTypewriter();
+                //    TWStarted = true;
+                //}
 
 
                 if (Input.GetKey(KeyCode.E))
@@ -63,13 +64,14 @@ public class UpgradeGrenade : MonoBehaviour {
                         upgradesUsed++;
                         upgradeCost += upgradeCost;
 
-                        TWStarted = false;
-                        if (!TWStarted)
-                        {
-                            display.text = "Upgrade <b>Grenade</b> damage\n ---------------\n" + upgradeCost + " Units";
-                            TWScript.StartTypewriter();
-                            TWStarted = true;
-                        }
+                        display.text = "Upgrade <b>Grenade</b> damage\n ---------------\n" + upgradeCost + " Units";
+                        //TWStarted = false;
+                        //if (!TWStarted)
+                        //{
+                        //    display.text = "Upgrade <b>Grenade</b> damage\n ---------------\n" + upgradeCost + " Units";
+                        //    TWScript.StartTypewriter();
+                        //    TWStarted = true;
+                        //}
 
                         if (upgradesUsed == 4)
                         {
@@ -82,7 +84,7 @@ public class UpgradeGrenade : MonoBehaviour {
             else
             {
                 buttonMaterial.SetColor("_EmissionColor", normal * Mathf.PingPong(Time.time * 3, 3));
-                TWStarted = false;
+                //TWStarted = false;
             }
         }
         //else buttonMaterial.SetColor("_EmissionColor", disabled);

@@ -57,7 +57,6 @@ GameObject:
   - component: {fileID: 224481170406904312}
   - component: {fileID: 222643626898417316}
   - component: {fileID: 114415107121810628}
-  - component: {fileID: 114621935961467928}
   m_Layer: 11
   m_Name: Text
   m_TagString: Untagged
@@ -124,8 +123,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1802055507807316}
-  m_LocalRotation: {x: -0, y: 0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.746, y: -34.635, z: 5.598}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 26.45, y: -64.635, z: 41.72}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4778040134297746}
@@ -399,28 +398,12 @@ MonoBehaviour:
   displayText: {fileID: 114415107121810628}
   button: {fileID: 1154855903234522}
   buttonMaterial: {fileID: 2100000, guid: 6fd44ee84b654c147b0ab35a879d62d1, type: 2}
-  TWScript: {fileID: 114621935961467928}
   normal: {r: 0.95686275, g: 1, b: 0, a: 1}
   mouseOver: {r: 0, g: 0.8509804, b: 1, a: 1}
   clicked: {r: 1, g: 1, b: 1, a: 1}
   disabled: {r: 0, g: 0, b: 0, a: 1}
   noCredits: {r: 1, g: 0, b: 0, a: 1}
   oxygenCost: 100
---- !u!114 &114621935961467928
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1196675670390950}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 014f715cfa5c0e2478e44ae3559f6fc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LaunchOnStart: 1
-  timeOut: 1
-  pointer: 2
-  ORIGINAL_TEXT: 
 --- !u!114 &114887436803854190
 MonoBehaviour:
   m_ObjectHideFlags: 1
