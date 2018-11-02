@@ -11,13 +11,13 @@ public class UIMaskScroll : MonoBehaviour {
     public float scrollSpeed = 0.01f;
     public Color imageColor;
 
-	// Use this for initialization
-	void Start () {
-
+    // Use this for initialization
+    private void OnEnable()
+    {
         image = GetComponent<Image>();
-        image.material.SetTextureOffset("_Mask", new Vector2(1,0));
+        image.material.SetTextureOffset("_Mask", new Vector2(1, 0));
         StartCoroutine(Scroll());
-	}
+    }
 
     IEnumerator Scroll()
     {
