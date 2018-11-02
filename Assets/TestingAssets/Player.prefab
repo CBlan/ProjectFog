@@ -6783,9 +6783,10 @@ GameObject:
   - component: {fileID: 114246748033492482}
   - component: {fileID: 114346407488526678}
   - component: {fileID: 114425745244963650}
-  - component: {fileID: 114320510497091526}
-  - component: {fileID: 114336294482955722}
-  - component: {fileID: 114590887434031440}
+  - component: {fileID: 114197052221671956}
+  - component: {fileID: 114806714764508988}
+  - component: {fileID: 114947940403023680}
+  - component: {fileID: 114545554490249972}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -16867,8 +16868,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1421893006876788}
-  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 28.9, y: 17.06, z: -13.85}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 16.63, y: -12.701, z: -13.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4318878262822982}
@@ -16876,7 +16877,7 @@ Transform:
   - {fileID: 4756491861041746}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: -90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4440761342404452
 Transform:
   m_ObjectHideFlags: 1
@@ -22681,11 +22682,11 @@ Camera:
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_RenderingPath: -1
+  m_RenderingPath: 3
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 0
+  m_HDR: 1
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
@@ -31448,7 +31449,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1421893006876788}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -53106,7 +53107,7 @@ MonoBehaviour:
   jumpHeight: 1.5
   grounded: 0
   jetpackThrust: 25
-  maxJetpackFuel: 50
+  maxJetpackFuel: 1000
   jetFuelRegenRate: 1
   jetFuel: 0
   dash: 0
@@ -53183,6 +53184,17 @@ MonoBehaviour:
   throwPower: 0
   maxThrowPower: 50
   cooldown: 2
+--- !u!114 &114197052221671956
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519782827407206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89f7a9dff312e44e5abe7eda9ffd31dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114246748033492482
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53197,17 +53209,6 @@ MonoBehaviour:
   shakeEnabled: 1
   shake: 0
   shakeAmount: 0.5
---- !u!114 &114320510497091526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519782827407206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2838e0cbd5a124a0ab52bbe6b14c5ac0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114329568103362184
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53221,7 +53222,187 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zoomFOV: 40
   zoomSpeed: 9
---- !u!114 &114336294482955722
+--- !u!114 &114346407488526678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519782827407206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80aba3ee069e0094e9ab8a163fb7eadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  hitPoint: {x: 0, y: 0, z: 0}
+--- !u!114 &114425745244963650
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519782827407206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  volumeTrigger: {fileID: 4318878262822982}
+  volumeLayer:
+    serializedVersion: 2
+    m_Bits: 32768
+  stopNaNPropagation: 1
+  antialiasingMode: 2
+  temporalAntialiasing:
+    jitterSpread: 0.75
+    sharpness: 0.25
+    stationaryBlending: 0.95
+    motionBlending: 0.85
+  subpixelMorphologicalAntialiasing:
+    quality: 2
+  fastApproximateAntialiasing:
+    fastMode: 0
+    keepAlpha: 0
+  fog:
+    enabled: 1
+    excludeSkybox: 1
+  debugLayer:
+    lightMeter:
+      width: 512
+      height: 256
+      showCurves: 1
+    histogram:
+      width: 512
+      height: 256
+      channel: 3
+    waveform:
+      exposure: 0.12
+      height: 256
+    vectorscope:
+      size: 256
+      exposure: 0.12
+    overlaySettings:
+      linearDepth: 0
+      motionColorIntensity: 4
+      motionGridSize: 64
+      colorBlindnessType: 0
+      colorBlindnessStrength: 1
+  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
+  m_ShowToolkit: 0
+  m_ShowCustomSorter: 0
+  breakBeforeColorGrading: 0
+  m_BeforeTransparentBundles: []
+  m_BeforeStackBundles: []
+  m_AfterStackBundles: []
+--- !u!114 &114544639280684784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1421893006876788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd97f032c69e48f4a551aec475d5e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 1
+  invertY: 0
+  sensitivityX: 8
+  sensitivityY: 8
+  minimumX: -360
+  maximumX: 360
+  minimumY: -85
+  maximumY: 85
+  framesOfSmoothing: 5
+--- !u!114 &114545554490249972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519782827407206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e50e925fb93c78246bf995d9dc3a2330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  adaptiveTextureSize: 256
+  remapCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  exposureAdjustment: 1.5
+  middleGrey: 0.4
+  white: 2
+  adaptionSpeed: 1.5
+  tonemapper: {fileID: 4800000, guid: 003377fc2620a44939dadde6fe3f8190, type: 3}
+  validRenderTextureFormat: 1
+--- !u!114 &114607242243005514
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1421893006876788}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01d6fbfeb67ae074c955e1aec2b0f90b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 8
+  airSpeed: 3
+  gravity: 10
+  maxVelocityChange: 10
+  canJump: 1
+  jumpHeight: 4
+  slopeLimit: 45
+  antiBumpFactor: 0.6
+  dashForce: 500
+  dashLength: 0.1
+  dashCooldown: 0
+  bulletTime: 10
+  bulletTimeCooldown: 5
+  dashTrail: {fileID: 198998602343009502}
+  dashCameraEffect: {fileID: 198441875286766176}
+--- !u!114 &114740941460751280
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519782827407206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cd97f032c69e48f4a551aec475d5e88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  axes: 2
+  invertY: 0
+  sensitivityX: 8
+  sensitivityY: 8
+  minimumX: -360
+  maximumX: 360
+  minimumY: -85
+  maximumY: 85
+  framesOfSmoothing: 5
+--- !u!114 &114806714764508988
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -53234,53 +53415,53 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDirty: 0
   _preset: 1000
-  _profile: {fileID: 0}
-  _useFogVolumes: 0
+  _profile: {fileID: 11400000, guid: 5e078d0e04bd4ae4189c7db34de98b11, type: 2}
+  _useFogVolumes: 1
   _debugPass: 0
-  _transparencyBlendMode: 1
+  _transparencyBlendMode: 0
   _transparencyBlendPower: 1
   _transparencyLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
   _lightingModel: 0
   _enableMultipleCameras: 0
-  _computeDepth: 0
+  _computeDepth: 1
   _computeDepthScope: 0
   _transparencyCutOff: 0.1
-  _renderBeforeTransparent: 0
+  _renderBeforeTransparent: 1
   _sun: {fileID: 0}
   _timeBetweenTextureUpdates: 0.2
   _sunCopyColor: 1
-  _density: 0.6
-  _noiseStrength: 0.722
+  _density: 1
+  _noiseStrength: 0.407
   _noiseFinalMultiplier: 1
   _noiseSparse: 0
-  _distance: 0
-  _maxFogLength: 1000
-  _maxFogLengthFallOff: 0
-  _distanceFallOff: 0
-  _height: 210
-  _baselineHeight: -70
+  _distance: 38
+  _maxFogLength: 1014
+  _maxFogLengthFallOff: 0.424
+  _distanceFallOff: 2.49
+  _height: 342
+  _baselineHeight: 0
   _baselineRelativeToCamera: 0
   _baselineRelativeToCameraDelay: 0
-  _noiseScale: 1
-  _alpha: 1
-  _color: {r: 0.89, g: 0.89, b: 0.89, a: 1}
+  _noiseScale: 1.67
+  _alpha: 1.031
+  _color: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 1}
   _specularColor: {r: 1, g: 1, b: 0.8, a: 1}
-  _specularThreshold: 0.6
-  _specularIntensity: 0.1
+  _specularThreshold: 0.637
+  _specularIntensity: 0.395
   _lightDirection: {x: 0.017314848, y: -0.20283169, z: -0.9790606}
-  _lightIntensity: 0.12
+  _lightIntensity: 0.1
   _lightColor: {r: 0.9921569, g: 0.9450981, b: 0.81568635, a: 1}
   _updateTextureSpread: 1
-  _speed: 0.01
-  _windDirection: {x: -1, y: 0, z: 0}
-  _useRealTime: 0
-  _skyColor: {r: 0.89, g: 0.89, b: 0.89, a: 0.8}
-  _skyHaze: 15
-  _skySpeed: 0.3
-  _skyNoiseStrength: 0.1
-  _skyAlpha: 0.8
+  _speed: 0.013
+  _windDirection: {x: 0, y: 0, z: 1}
+  _useRealTime: 1
+  _skyColor: {r: 0.91, g: 0.91, b: 0.91, a: 1}
+  _skyHaze: 500
+  _skySpeed: 0.05
+  _skyNoiseStrength: 0.896
+  _skyAlpha: 1
   _skyDepth: 0.999
   _character: {fileID: 0}
   _fogVoidTopology: 0
@@ -53392,10 +53573,10 @@ MonoBehaviour:
   _forceComposition: 0
   _edgeImprove: 0
   _edgeThreshold: 0.0005
-  _stepping: 8
+  _stepping: 6
   _steppingNear: 0
-  _dithering: 0
-  _ditherStrength: 0.75
+  _dithering: 1
+  _ditherStrength: 1
   _jitterStrength: 0.5
   _lightScatteringEnabled: 0
   _lightScatteringDiffusion: 0.7
@@ -53420,7 +53601,7 @@ MonoBehaviour:
   _sunShadowsBakeMode: 1
   _sunShadowsRefreshInterval: 0
   _sunShadowsCancellation: 0
-  _turbulenceStrength: 0
+  _turbulenceStrength: 0.15
   _useXYPlane: 0
   _useSinglePassStereoRenderingMatrix: 0
   _spsrBehaviour: 0
@@ -53429,161 +53610,13 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8388608
   _maskDownsampling: 1
-  fogRenderer: {fileID: 114336294482955722}
+  fogRenderer: {fileID: 114806714764508988}
   _fogOfWarEnabled: 0
   _fogOfWarCenter: {x: 0, y: 0, z: 0}
   _fogOfWarSize: {x: 1024, y: 0, z: 1024}
   _fogOfWarTextureSize: 256
   _fogOfWarRestoreDelay: 0
   _fogOfWarRestoreDuration: 2
---- !u!114 &114346407488526678
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519782827407206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80aba3ee069e0094e9ab8a163fb7eadb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  hitPoint: {x: 0, y: 0, z: 0}
---- !u!114 &114425745244963650
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519782827407206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 948f4100a11a5c24981795d21301da5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  volumeTrigger: {fileID: 4318878262822982}
-  volumeLayer:
-    serializedVersion: 2
-    m_Bits: 32768
-  stopNaNPropagation: 1
-  antialiasingMode: 2
-  temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
-  subpixelMorphologicalAntialiasing:
-    quality: 2
-  fastApproximateAntialiasing:
-    fastMode: 0
-    keepAlpha: 0
-  fog:
-    enabled: 1
-    excludeSkybox: 1
-  debugLayer:
-    lightMeter:
-      width: 512
-      height: 256
-      showCurves: 1
-    histogram:
-      width: 512
-      height: 256
-      channel: 3
-    waveform:
-      exposure: 0.12
-      height: 256
-    vectorscope:
-      size: 256
-      exposure: 0.12
-    overlaySettings:
-      linearDepth: 0
-      motionColorIntensity: 4
-      motionGridSize: 64
-      colorBlindnessType: 0
-      colorBlindnessStrength: 1
-  m_Resources: {fileID: 11400000, guid: d82512f9c8e5d4a4d938b575d47f88d4, type: 2}
-  m_ShowToolkit: 0
-  m_ShowCustomSorter: 0
-  breakBeforeColorGrading: 0
-  m_BeforeTransparentBundles: []
-  m_BeforeStackBundles: []
-  m_AfterStackBundles: []
---- !u!114 &114544639280684784
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1421893006876788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd97f032c69e48f4a551aec475d5e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axes: 1
-  invertY: 0
-  sensitivityX: 8
-  sensitivityY: 8
-  minimumX: -360
-  maximumX: 360
-  minimumY: -85
-  maximumY: 85
-  framesOfSmoothing: 5
---- !u!114 &114590887434031440
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519782827407206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89f7a9dff312e44e5abe7eda9ffd31dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &114607242243005514
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1421893006876788}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01d6fbfeb67ae074c955e1aec2b0f90b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 8
-  airSpeed: 3
-  gravity: 10
-  maxVelocityChange: 10
-  canJump: 1
-  jumpHeight: 4
-  slopeLimit: 45
-  antiBumpFactor: 0.6
-  dashForce: 500
-  dashLength: 0.1
-  dashCooldown: 0
-  bulletTime: 10
-  bulletTimeCooldown: 5
-  dashTrail: {fileID: 198998602343009502}
-  dashCameraEffect: {fileID: 198441875286766176}
---- !u!114 &114740941460751280
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1519782827407206}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cd97f032c69e48f4a551aec475d5e88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  axes: 2
-  invertY: 0
-  sensitivityX: 8
-  sensitivityY: 8
-  minimumX: -360
-  maximumX: 360
-  minimumY: -85
-  maximumY: 85
-  framesOfSmoothing: 5
 --- !u!114 &114830130244921250
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -53610,6 +53643,19 @@ MonoBehaviour:
   fadeInWhenSceneStarts: 1
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
   fadeTime: 5
+--- !u!114 &114947940403023680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1519782827407206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed1d9cbe64423499f1fefc0ce50417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Resolution: 1
+  DefaultSpotCookie: {fileID: 2800000, guid: 5157bf6d690b6df458f6c0ce0c06d329, type: 3}
 --- !u!124 &124798698523240410
 Behaviour:
   m_ObjectHideFlags: 1
