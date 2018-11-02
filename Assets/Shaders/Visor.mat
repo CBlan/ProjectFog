@@ -25,20 +25,6 @@ Material:
     - _Mask:
         m_Texture: {fileID: 2800000, guid: fa77fb87976c28f4e9a5d6245c490263, type: 3}
         m_Scale: {x: 1, y: 5}
-<<<<<<< Updated upstream
         m_Offset: {x: 0.6, y: 0}
-=======
-        m_Offset: {x: 0.35999992, y: 0}
->>>>>>> Stashed changes
-    m_Floats:
-    - PixelSnap: 0
-    - _MaskOpacity: 0.1
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilOpFail: 0
-    - _StencilOpZFail: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    m_Colors:
-    - _Color: {r: 0.9399035, g: 0.06009652, b: 0.076663665, a: 1}
+
+
