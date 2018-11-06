@@ -116,6 +116,7 @@ public class Turret_AI_Enemy : MonoBehaviour
                 //target.GetComponent<Enemy_HP>().HP -= damage;
 
                 //print("Fireing at " + target.transform.name);
+                Fabric.EventManager.Instance.PostEvent("Enemy/Ranged/Shot", Fabric.EventAction.PlaySound, gameObject);
                 firedBullet = Instantiate(bullet, muzzle.transform.position, muzzle.transform.rotation);
                 firedBullet.GetComponent<Rigidbody>().AddForce(muzzle.transform.forward * bulletSpeed);
                 firedBullet.GetComponent<EnemyBullet>().bulletDamage = damage;

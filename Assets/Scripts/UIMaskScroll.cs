@@ -31,7 +31,7 @@ public class UIMaskScroll : MonoBehaviour {
             image.material.SetTextureOffset("_Mask", new Vector2(x, 0));
             image.material.SetColor("_Color", imageColor);
             //yield return null;
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSecondsRealtime(0.01f);
         }
     }
 

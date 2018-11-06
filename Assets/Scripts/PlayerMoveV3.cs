@@ -45,6 +45,7 @@ public class PlayerMoveV3 : MonoBehaviour
         rB.freezeRotation = true;
         rB.useGravity = false;
         dashReady = true;
+        Fabric.EventManager.Instance.PostEvent("Player/Footsteps", Fabric.EventAction.PlaySound, gameObject);
         //StartCoroutine(JetFuelRegen());
         //StartCoroutine(JetFuelDepletion());
     }
@@ -53,6 +54,14 @@ public class PlayerMoveV3 : MonoBehaviour
     {
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
+        if (inputY != 0 && grounded || inputX != 0 && grounded)
+        {
+            Fabric.EventManager.Instance.PostEvent("Player/Footsteps", Fabric.EventAction.UnpauseSound, gameObject);
+        }
+        else
+        {
+            Fabric.EventManager.Instance.PostEvent("Player/Footsteps", Fabric.EventAction.PauseSound, gameObject);
+        }
 
     }
 
@@ -101,7 +110,7 @@ public class PlayerMoveV3 : MonoBehaviour
             if (Input.GetButton("Jump") && jetFuel > 0)
             {
                 // Calculate how fast we should be moving
-                Vector3 targetVelocity = new Vector3(inputX, 1, inputY);
+                Vector3 targetVelocity = new Vector3(inputX * 0.8f, 0.8f, inputY * 0.8f);
                 targetVelocity = transform.TransformDirection(targetVelocity);
                 targetVelocity *= speed;
 
@@ -180,6 +189,7 @@ public class PlayerMoveV3 : MonoBehaviour
             if (rB.velocity.y < -fallDamageThreshold)
             {
                 GameManager.instance.DamagePlayer(20);
+                Fabric.EventManager.Instance.PostEvent("Player/Hit", gameObject);
             }
             falling = false;
         }

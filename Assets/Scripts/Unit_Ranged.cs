@@ -27,6 +27,11 @@ public class Unit_Ranged : MonoBehaviour {
     private EnemyHealth hP;
     //private Vector3 pathCheck;
 
+    private void Start()
+    {
+        //Fabric.EventManager.Instance.PostEvent("Enemy/Ranged/Unit", gameObject);
+    }
+
     private void OnEnable()
     {
         //PathRequestManager.RequestPath(transform.position, target.position, OnPathFound);
@@ -38,6 +43,7 @@ public class Unit_Ranged : MonoBehaviour {
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
         hP = GetComponent<EnemyHealth>();
+        Fabric.EventManager.Instance.PostEvent("Enemy/Ranged/Unit", Fabric.EventAction.PlaySound, gameObject);
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -140,6 +146,7 @@ public class Unit_Ranged : MonoBehaviour {
 
     private void OnDisable()
     {
+        Fabric.EventManager.Instance.PostEvent("Enemy/Ranged/Unit", Fabric.EventAction.StopSound, gameObject);
         StopCoroutine(UpdatePath());
         StopCoroutine(CheckIfStuck());
         StopCoroutine(FollowPath());

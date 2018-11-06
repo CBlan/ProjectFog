@@ -47,6 +47,7 @@ public class Unit_Melee : MonoBehaviour {
         StartCoroutine(CheckIfStuck());
         StartCoroutine(CheckIfAlerted());
         hP = GetComponent<EnemyHealth>();
+        Fabric.EventManager.Instance.PostEvent("Enemy/Melee/Unit", Fabric.EventAction.PlaySound, gameObject);
     }
 
     private void Update()
@@ -235,6 +236,7 @@ public class Unit_Melee : MonoBehaviour {
 
     private void OnDisable()
     {
+        Fabric.EventManager.Instance.PostEvent("Enemy/Melee/Unit", Fabric.EventAction.StopSound, gameObject);
         StopCoroutine(UpdatePath());
         StopCoroutine(CheckIfStuck());
         StopCoroutine(FollowPath());

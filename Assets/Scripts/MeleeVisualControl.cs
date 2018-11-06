@@ -29,6 +29,7 @@ public class MeleeVisualControl : MonoBehaviour {
                 //open
                 if (!anim.GetBool("Open 0"))
                 {
+                    Fabric.EventManager.Instance.PostEvent("Enemy/Melee/Drill", Fabric.EventAction.PlaySound, gameObject);
                     anim.SetBool("Open 0", true);
                 }
             }
@@ -40,6 +41,7 @@ public class MeleeVisualControl : MonoBehaviour {
                 //}
                 if (anim.GetBool("Open 0"))
                 {
+                    Fabric.EventManager.Instance.PostEvent("Enemy/Melee/Drill", Fabric.EventAction.StopSound, gameObject);
                     anim.SetBool("Open 0", false);
                 }
             }

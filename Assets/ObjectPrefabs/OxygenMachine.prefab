@@ -354,7 +354,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e1fe6bc575732174c9b8ff0acaf813e2, type: 2}
+  - {fileID: 2100000, guid: 6fd44ee84b654c147b0ab35a879d62d1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -499,7 +499,7 @@ MonoBehaviour:
   display: {fileID: 1159915776837654}
   displayText: {fileID: 114415107121810628}
   button: {fileID: 1154855903234522}
-  buttonMaterial: {fileID: 2100000, guid: da7003fefcb854c48a65d98a19a114b9, type: 2}
+  buttonMaterial: {fileID: 2100000, guid: 6fd44ee84b654c147b0ab35a879d62d1, type: 2}
   normal: {r: 0.95686275, g: 1, b: 0, a: 1}
   mouseOver: {r: 0, g: 0.8509804, b: 1, a: 1}
   clicked: {r: 1, g: 1, b: 1, a: 1}
