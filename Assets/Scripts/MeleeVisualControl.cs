@@ -47,4 +47,9 @@ public class MeleeVisualControl : MonoBehaviour {
             }
         }
 	}
+
+    private void OnDisable()
+    {
+        Fabric.EventManager.Instance.PostEvent("Enemy/Melee/Drill", Fabric.EventAction.StopSound, gameObject);
+    }
 }
