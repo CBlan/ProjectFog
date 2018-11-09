@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1251012259}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.4122685, g: 0.48923123, b: 0.6032841, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3d446f7ff644b70a8daaa5525fcf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDirty: 1
+  isDirty: 0
   _preset: 1000
   _profile: {fileID: 11400000, guid: 5e078d0e04bd4ae4189c7db34de98b11, type: 2}
   _useFogVolumes: 1
@@ -2166,35 +2166,35 @@ MonoBehaviour:
   _sun: {fileID: 1401233988}
   _timeBetweenTextureUpdates: 0.2
   _sunCopyColor: 0
-  _density: 0.307
-  _noiseStrength: 0.1
-  _noiseFinalMultiplier: 1.022
-  _noiseSparse: 0
-  _distance: 3
-  _maxFogLength: 119
-  _maxFogLengthFallOff: 0.424
-  _distanceFallOff: 0.8
-  _height: 100
+  _density: 1
+  _noiseStrength: 0.8
+  _noiseFinalMultiplier: 1.5
+  _noiseSparse: -0.02
+  _distance: 185
+  _maxFogLength: 1500
+  _maxFogLengthFallOff: 0
+  _distanceFallOff: 0.14
+  _height: 282
   _baselineHeight: 0
-  _baselineRelativeToCamera: 0
+  _baselineRelativeToCamera: 1
   _baselineRelativeToCameraDelay: 0
-  _noiseScale: 1
-  _alpha: 1.05
-  _color: {r: 0.6320754, g: 0.6320754, b: 0.6320754, a: 1}
-  _specularColor: {r: 0.9617558, g: 0.9622642, b: 0.87602353, a: 1}
+  _noiseScale: 0.95
+  _alpha: 0.946
+  _color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
+  _specularColor: {r: 1, g: 1, b: 0.8, a: 0.5882353}
   _specularThreshold: 0.6
-  _specularIntensity: 0.035
+  _specularIntensity: 0.318
   _lightDirection: {x: -0.3213938, y: -0.76604444, z: 0.5566705}
-  _lightIntensity: 0
-  _lightColor: {r: 1, g: 1, b: 1, a: 1}
+  _lightIntensity: -0.05
+  _lightColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
   _updateTextureSpread: 1
-  _speed: 0.017
-  _windDirection: {x: 0.19611613, y: 0, z: 0.9805807}
+  _speed: 0.01
+  _windDirection: {x: -1, y: 0, z: 0}
   _useRealTime: 1
-  _skyColor: {r: 1, g: 1, b: 1, a: 1}
-  _skyHaze: 500
-  _skySpeed: 0.427
-  _skyNoiseStrength: 0.96
+  _skyColor: {r: 0.89, g: 0.89, b: 0.89, a: 1}
+  _skyHaze: 50
+  _skySpeed: 0.3
+  _skyNoiseStrength: 0.1
   _skyAlpha: 1
   _skyDepth: 0.838
   _character: {fileID: 0}
@@ -2305,12 +2305,12 @@ MonoBehaviour:
   _pointLightIntensity: 1
   _downsampling: 1
   _forceComposition: 0
-  _edgeImprove: 0
+  _edgeImprove: 1
   _edgeThreshold: 0.0005
-  _stepping: 6
-  _steppingNear: 0
-  _dithering: 1
-  _ditherStrength: 1
+  _stepping: 12
+  _steppingNear: 1
+  _dithering: 0
+  _ditherStrength: 0.75
   _jitterStrength: 0.5
   _lightScatteringEnabled: 0
   _lightScatteringDiffusion: 0.7
@@ -2335,7 +2335,7 @@ MonoBehaviour:
   _sunShadowsBakeMode: 1
   _sunShadowsRefreshInterval: 0
   _sunShadowsCancellation: 0
-  _turbulenceStrength: 0.14
+  _turbulenceStrength: 0
   _useXYPlane: 0
   _useSinglePassStereoRenderingMatrix: 0
   _spsrBehaviour: 0
@@ -2568,8 +2568,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 100
-  field of view: 75
+  far clip plane: 50
+  field of view: 80
   orthographic: 0
   orthographic size: 100
   m_Depth: -1
@@ -2581,7 +2581,7 @@ Camera:
   m_TargetDisplay: 0
   m_TargetEye: 3
   m_HDR: 0
-  m_AllowMSAA: 1
+  m_AllowMSAA: 0
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 1
   m_OcclusionCulling: 1
