@@ -9,49 +9,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 402b5b37641054d2aa7fd46be6c9bc67, type: 3}
-  m_Name: MainSceneFogProfile
+  m_Name: 
   m_EditorClassIdentifier: 
   lightingModel: 0
-  sunCopyColor: 0
-  density: 0.35
-  noiseStrength: 0.221
-  height: 109
+  sunCopyColor: 1
+  density: 0.85
+  noiseStrength: 0.75
+  height: 80
   baselineHeight: 0
-  distance: 36
-  distanceFallOff: 0.85
-  maxFogLength: 119
-  maxFogLengthFallOff: 0.163
-  baselineRelativeToCamera: 0
+  distance: 185.1
+  distanceFallOff: 0.16
+  maxFogLength: 99
+  maxFogLengthFallOff: 0.102
+  baselineRelativeToCamera: 1
   baselineRelativeToCameraDelay: 0
-  noiseScale: 1
-  noiseSparse: 0
-  noiseFinalMultiplier: 1.022
-  alpha: 1.05
-  color: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
-  specularColor: {r: 0.75, g: 0.80655426, b: 1, a: 1}
-  specularThreshold: 0.6
-  specularIntensity: 0.035
-  lightDirection: {x: -0.5530933, y: 0.095105134, z: 0.8276731}
-  lightIntensity: 0.45
-  lightColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 0.5882353}
-  speed: 0.6
-  useRealTime: 1
-  windDirection: {x: 0.7071068, y: 0, z: 0.7071068}
-  turbulenceStrength: 5
+  noiseScale: 2.16
+  noiseSparse: 0.35
+  noiseFinalMultiplier: 1
+  alpha: 1
+  color: {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 1}
+  specularColor: {r: 0.8000612, g: 0.8, b: 1, a: 1}
+  specularThreshold: 0.567
+  specularIntensity: 0.3
+  lightDirection: {x: 1, y: 0, z: -1}
+  lightIntensity: 0.15
+  lightColor: {r: 0.6415094, g: 0.6415094, b: 0.6415094, a: 0.5882353}
+  speed: 0.01
+  useRealTime: 0
+  windDirection: {x: 0, y: 0, z: 0}
+  turbulenceStrength: 0.01
   useXYPlane: 0
-  skyColor: {r: 0.006487552, g: 0.0018689969, b: 0.3962264, a: 0.394}
-  skyHaze: 439
-  skySpeed: 0.427
-  skyNoiseStrength: 0.96
-  skyAlpha: 0.394
-  stepping: 6
-  steppingNear: 0
-  dithering: 1
-  ditherStrength: 0.5
-  downsamplingOverride: 1
-  downsampling: 3
+  skyColor: {r: 0.89, g: 0.89, b: 0.89, a: 1}
+  skyHaze: 50
+  skySpeed: 0.3
+  skyNoiseStrength: 0.1
+  skyAlpha: 1
+  stepping: 12
+  steppingNear: 1
+  dithering: 0
+  ditherStrength: 0.75
+  downsamplingOverride: 0
+  downsampling: 1
   forceComposition: 0
-  edgeImprove: 1
+  edgeImprove: 0
   edgeThreshold: 0.0005
   lightScatteringOverride: 0
   lightScatteringEnabled: 0
