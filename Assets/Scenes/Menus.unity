@@ -57782,7 +57782,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isDirty: 1
   _preset: 1000
-  _profile: {fileID: 11400000, guid: 5e078d0e04bd4ae4189c7db34de98b11, type: 2}
+  _profile: {fileID: 11400000, guid: bf8c3291cc199d04f8375a7771df56a6, type: 2}
   _useFogVolumes: 0
   _debugPass: 0
   _transparencyBlendMode: 0
@@ -57798,38 +57798,38 @@ MonoBehaviour:
   _renderBeforeTransparent: 0
   _sun: {fileID: 668829410}
   _timeBetweenTextureUpdates: 0.2
-  _sunCopyColor: 1
-  _density: 0.89
-  _noiseStrength: 0.358
+  _sunCopyColor: 0
+  _density: 0.35
+  _noiseStrength: 0.221
   _noiseFinalMultiplier: 1.022
-  _noiseSparse: 0.57
-  _distance: 46
-  _maxFogLength: 1014
-  _maxFogLengthFallOff: 0.424
-  _distanceFallOff: 2.1
-  _height: 177
+  _noiseSparse: 0
+  _distance: 36
+  _maxFogLength: 119
+  _maxFogLengthFallOff: 0.163
+  _distanceFallOff: 0.85
+  _height: 109
   _baselineHeight: 0
-  _baselineRelativeToCamera: 1
+  _baselineRelativeToCamera: 0
   _baselineRelativeToCameraDelay: 0
-  _noiseScale: 1.67
-  _alpha: 0.945
-  _color: {r: 0.4811321, g: 0.4788626, b: 0.4788626, a: 0.78431374}
-  _specularColor: {r: 1, g: 1, b: 1, a: 1}
-  _specularThreshold: 0.8
-  _specularIntensity: 0.552
+  _noiseScale: 1
+  _alpha: 1.05
+  _color: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
+  _specularColor: {r: 0.75, g: 0.80655426, b: 1, a: 1}
+  _specularThreshold: 0.6
+  _specularIntensity: 0.035
   _lightDirection: {x: -0.5530933, y: 0.095105134, z: 0.8276731}
-  _lightIntensity: -0.3
-  _lightColor: {r: 0.9811321, g: 0.87646854, b: 0.754361, a: 1}
+  _lightIntensity: 0.45
+  _lightColor: {r: 0.6981132, g: 0.6981132, b: 0.6981132, a: 0.5882353}
   _updateTextureSpread: 1
-  _speed: 0.015
-  _windDirection: {x: 0.5, y: 1, z: 2.5}
+  _speed: 0.6
+  _windDirection: {x: 0.7071068, y: 0, z: 0.7071068}
   _useRealTime: 1
-  _skyColor: {r: 0.5566038, g: 0.5566038, b: 0.5566038, a: 1}
-  _skyHaze: 500
-  _skySpeed: 0.05
-  _skyNoiseStrength: 0.896
-  _skyAlpha: 1
-  _skyDepth: 0.552
+  _skyColor: {r: 0.006487552, g: 0.0018689969, b: 0.3962264, a: 0.394}
+  _skyHaze: 439
+  _skySpeed: 0.427
+  _skyNoiseStrength: 0.96
+  _skyAlpha: 0.394
+  _skyDepth: 0.035
   _character: {fileID: 0}
   _fogVoidTopology: 0
   _fogVoidFallOff: 1
@@ -57936,14 +57936,14 @@ MonoBehaviour:
   _pointLightTrackingNewLightsCheckInterval: 3
   _pointLightInscattering: 1
   _pointLightIntensity: 1
-  _downsampling: 2
+  _downsampling: 3
   _forceComposition: 0
   _edgeImprove: 1
   _edgeThreshold: 0.0005
-  _stepping: 1
-  _steppingNear: 4.5
+  _stepping: 6
+  _steppingNear: 0
   _dithering: 1
-  _ditherStrength: 0.49
+  _ditherStrength: 0.5
   _jitterStrength: 0.724
   _lightScatteringEnabled: 0
   _lightScatteringDiffusion: 0.7
@@ -57968,7 +57968,7 @@ MonoBehaviour:
   _sunShadowsBakeMode: 1
   _sunShadowsRefreshInterval: 0
   _sunShadowsCancellation: 0
-  _turbulenceStrength: 0.012
+  _turbulenceStrength: 5
   _useXYPlane: 0
   _useSinglePassStereoRenderingMatrix: 1
   _spsrBehaviour: 1
