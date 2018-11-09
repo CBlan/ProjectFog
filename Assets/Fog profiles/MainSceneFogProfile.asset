@@ -9,7 +9,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 402b5b37641054d2aa7fd46be6c9bc67, type: 3}
-  m_Name: 
+  m_Name: MainSceneFogProfile
   m_EditorClassIdentifier: 
   lightingModel: 0
   sunCopyColor: 1
@@ -17,7 +17,7 @@ MonoBehaviour:
   noiseStrength: 0.75
   height: 80
   baselineHeight: 0
-  distance: 185.1
+  distance: 185
   distanceFallOff: 0.16
   maxFogLength: 99
   maxFogLengthFallOff: 0.102

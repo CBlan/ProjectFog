@@ -53,6 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4490340568900240}
   - component: {fileID: 108400089874862354}
+  - component: {fileID: 114525405815321734}
   m_Layer: 13
   m_Name: Point Light
   m_TagString: Untagged
@@ -468,8 +469,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1781625977368912}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.5, y: -23.4, z: -30.49}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -27.66, y: -18.35, z: -32.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4038641340044710}
@@ -1459,9 +1460,9 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 0.8396226, g: 0.13861692, b: 0.13861692, a: 1}
-  m_Intensity: 4
-  m_Range: 0.7113552
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Intensity: 5
+  m_Range: 2
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -1681,6 +1682,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   alerted: 0
+--- !u!114 &114525405815321734
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1068367776487326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 8
+  ScatteringCoef: 0.5
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.26
+  HeightFog: 1
+  HeightScale: 0.011
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.025
+  NoiseIntensity: 0.49
+  NoiseIntensityOffset: 0.35
+  NoiseVelocity: {x: 3, y: 3}
+  MaxRayLength: 400
 --- !u!114 &114652947441087596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1760,6 +1786,7 @@ MonoBehaviour:
   maxHP: 85
   health: 0
   CreditsValue: 125
+  enemyKilled: 1
   destroyEffect: {fileID: 100002, guid: 6ecf76dc4f268d340b2666896a954bcc, type: 2}
 --- !u!136 &136679509656293584
 CapsuleCollider:

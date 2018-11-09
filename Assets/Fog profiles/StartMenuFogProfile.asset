@@ -17,7 +17,7 @@ MonoBehaviour:
   noiseStrength: 0.221
   height: 109
   baselineHeight: 0
-  distance: 36.1
+  distance: 36
   distanceFallOff: 0.85
   maxFogLength: 119
   maxFogLengthFallOff: 0.163

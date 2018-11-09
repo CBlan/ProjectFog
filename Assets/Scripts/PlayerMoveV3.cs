@@ -56,7 +56,8 @@ public class PlayerMoveV3 : MonoBehaviour
     {
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
-        if (inputY != 0 && grounded || inputX != 0 && grounded)
+        //print(rB.velocity.sqrMagnitude);
+        if (inputY != 0 && grounded && rB.velocity.sqrMagnitude > 5 || inputX != 0 && grounded && rB.velocity.sqrMagnitude > 5)
         {
             Fabric.EventManager.Instance.PostEvent("Player/Footsteps", Fabric.EventAction.UnpauseSound, gameObject);
         }
