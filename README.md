@@ -1,2 +1,2 @@
-# Presskit
-Primitive game presskit web page generator.
+# Project fog
+repository for Project Fog game and Presskit.

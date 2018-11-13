@@ -83,7 +83,7 @@ h2 { font-size: 1.2em; font-weight: bold; margin-bottom: 4px; }
 #sidebar a:hover { text-decoration: underline; }
 
 #footer { display: block; position:absolute; bottom: 0; width: 100%; padding: 0px 40px; }
-#footerwrap { display: inline-block; width: 100%; padding: 40px 0px; margin: 0px; max-width: 100%; font-size: 20px; color: #fff; }
+#footerwrap { display: inline-block; width: 100%; padding: 40px 0px; margin: 0px; max-width: 100%; font-size: 20px; }
 #footerwrap .credit { color: var(--b1); display: inline-block; font-size: 14px; }
 
 
