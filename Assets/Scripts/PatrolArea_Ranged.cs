@@ -45,7 +45,7 @@ public class PatrolArea_Ranged : MonoBehaviour {
     public Vector3 GetPatrolPoint(Vector3 position)
     {
         Vector3 patPoint;
-        Collider[] hitColliders = Physics.OverlapSphere(position, 20, 1 << LayerMask.NameToLayer("RangedPatPoints"), QueryTriggerInteraction.Collide);
+        Collider[] hitColliders = Physics.OverlapSphere(position, 20, 1 << LayerMask.NameToLayer("RangedPatPoints"));
         if (hitColliders.Length > 0)
         {
             patPoint = hitColliders[Random.Range(0, hitColliders.Length)].transform.position;
