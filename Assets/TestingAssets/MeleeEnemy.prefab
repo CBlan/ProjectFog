@@ -265,7 +265,6 @@ GameObject:
   - component: {fileID: 4187223320068070}
   - component: {fileID: 54771973994819546}
   - component: {fileID: 114193895991206046}
-  - component: {fileID: 114733877010809226}
   - component: {fileID: 114284893387338246}
   - component: {fileID: 114807813365703670}
   - component: {fileID: 65073834375772700}
@@ -1733,19 +1732,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 0.02
   frequency: 0.9
---- !u!114 &114733877010809226
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1781625977368912}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a09eaf154d84eba418a58dd63e187162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sparks: {fileID: 1770982383872832, guid: 55df09ae14193964f9d207257c403cb5, type: 2}
-  sparkThreshold: 3
 --- !u!114 &114742934734767600
 MonoBehaviour:
   m_ObjectHideFlags: 1
