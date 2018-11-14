@@ -3353,7 +3353,6 @@ Transform:
   - {fileID: 2077458824}
   - {fileID: 1227642668}
   - {fileID: 1730062630}
-  - {fileID: 1488965080}
   - {fileID: 1056499882}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -25816,7 +25815,7 @@ Transform:
   - {fileID: 209433848}
   - {fileID: 1758994477}
   m_Father: {fileID: 185033024}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1079712545
 GameObject:
@@ -33853,88 +33852,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1480750920}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1001 &1485754093
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 185033024}
-    m_Modifications:
-    - target: {fileID: 4385687999313044, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 3.35
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385687999313044, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -20.223999
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385687999313044, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 3.699
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385687999313044, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385687999313044, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385687999313044, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385687999313044, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4385687999313044, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_RootOrder
-      value: 9
-      objectReference: {fileID: 0}
-    - target: {fileID: 114801910036256104, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: m_FontData.m_Font
-      value: 
-      objectReference: {fileID: 12800000, guid: 37c9e7061d9a4874bbd8c22a4e0c82e2,
-        type: 3}
-    - target: {fileID: 114844437719625526, guid: 050bce282e307fc4aa52fc923382f6cc,
-        type: 2}
-      propertyPath: timeOut
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1444384243372410, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1114850073620936, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1831188570670022, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1969693623038148, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1182454535211220, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    - target: {fileID: 1308895925975146, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-      propertyPath: m_Layer
-      value: 11
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 050bce282e307fc4aa52fc923382f6cc, type: 2}
-  m_IsPrefabParent: 0
---- !u!4 &1488965080 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 4385687999313044, guid: 050bce282e307fc4aa52fc923382f6cc,
-    type: 2}
-  m_PrefabInternal: {fileID: 1485754093}
 --- !u!1 &1493254504
 GameObject:
   m_ObjectHideFlags: 0
@@ -44699,7 +44616,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e3d446f7ff644b70a8daaa5525fcf56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDirty: 0
+  isDirty: 1
   _preset: 1000
   _profile: {fileID: 11400000, guid: 930f9167f6a37634196fa8fa36cea58e, type: 2}
   _useFogVolumes: 0
