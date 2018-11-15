@@ -12,15 +12,24 @@ public class StickyGrenade : MonoBehaviour {
     public GameObject explosion;
     private Rigidbody rB;
     private int grenadeCount;
+    private bool mineActive = false;
+    private Coroutine explodeRoutine = null;
 
     private void Start()
     {
         rB = GetComponent<Rigidbody>();
-        StartCoroutine(Explode());
+        explodeRoutine = StartCoroutine(Explode());
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+
+        if (!collision.gameObject.CompareTag("Ranged") || !collision.gameObject.CompareTag("Melee"))
+        {
+            StopCoroutine(explodeRoutine);
+            mineActive = true;
+        }
+
         if (!collision.gameObject.CompareTag("Player"))
         {
             if (!hasCollided)
@@ -30,6 +39,18 @@ public class StickyGrenade : MonoBehaviour {
                 gameObject.transform.SetParent(emptyObject.transform);
                 rB.isKinematic = true;
                 hasCollided = true;
+            }
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (mineActive)
+        {
+            if (other.gameObject.CompareTag("Ranged") || other.gameObject.CompareTag("Melee"))
+            {
+                explodeTime = 0;
+                StartCoroutine(Explode());
             }
         }
     }

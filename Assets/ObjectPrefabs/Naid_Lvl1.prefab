@@ -27,6 +27,7 @@ GameObject:
   - component: {fileID: 114335434215618744}
   - component: {fileID: 108163570085122830}
   - component: {fileID: 114045203977933752}
+  - component: {fileID: 135357519372520640}
   m_Layer: 0
   m_Name: Naid_Lvl1
   m_TagString: Untagged
@@ -41,7 +42,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1943538124625288}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.8920563, y: -14.332419, z: 7.514652}
+  m_LocalPosition: {x: 3.9233336, y: -14.332419, z: 4.224304}
   m_LocalScale: {x: 0.001, y: 0.001, z: 0.001}
   m_Children: []
   m_Father: {fileID: 0}
@@ -205,4 +206,16 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 97.31068
+  m_Center: {x: -0.3399124, y: 95.153625, z: 0.05450821}
+--- !u!135 &135357519372520640
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1943538124625288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 3000
   m_Center: {x: -0.3399124, y: 95.153625, z: 0.05450821}
