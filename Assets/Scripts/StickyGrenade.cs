@@ -5,7 +5,7 @@ using UnityEngine;
 public class StickyGrenade : MonoBehaviour {
 
     private bool hasCollided = false;
-    //public float explodeTime = 5;
+    public float explodeTime = 5;
     public float damage = 20;
     public float radius = 5.0F;
     public float power = 10.0F;
@@ -13,7 +13,7 @@ public class StickyGrenade : MonoBehaviour {
     private Rigidbody rB;
     private int grenadeCount;
     private bool mineActive = false;
-    //private Coroutine explodeRoutine = null;
+    private Coroutine explodeRoutine = null;
 
     private void Start()
     {
@@ -27,7 +27,8 @@ public class StickyGrenade : MonoBehaviour {
         //if (!collision.gameObject.CompareTag("Ranged") || !collision.gameObject.CompareTag("Melee"))
         //{
             //StopCoroutine(explodeRoutine);
-            mineActive = true;
+        mineActive = true;
+        explodeRoutine = StartCoroutine(Explode());
         //}
 
         if (!collision.gameObject.CompareTag("Player"))
@@ -49,7 +50,8 @@ public class StickyGrenade : MonoBehaviour {
         {
             if (other.gameObject.CompareTag("Ranged") || other.gameObject.CompareTag("Melee"))
             {
-                //explodeTime = 0;
+                StopCoroutine(explodeRoutine);
+                explodeTime = 0;
                 StartCoroutine(Explode());
             }
         }
@@ -57,7 +59,7 @@ public class StickyGrenade : MonoBehaviour {
 
     IEnumerator Explode()
     {
-        //yield return new WaitForSeconds(explodeTime);
+        yield return new WaitForSeconds(explodeTime);
         AddDescendantsWithTag(gameObject.transform);
         damage = damage * (grenadeCount + 1);
         Vector3 explosionPos = transform.position;

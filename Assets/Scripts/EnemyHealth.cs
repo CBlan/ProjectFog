@@ -43,9 +43,10 @@ public class EnemyHealth : MonoBehaviour {
         Instantiate(destroyEffect, transform.position, transform.rotation);
         Fabric.EventManager.Instance.PostEvent("Enemy/Explosion", Fabric.EventAction.PlaySound, gameObject);
         GameManager.instance.credits += CreditsValue;
-        if (ScoreCollector.score != null)
+        GameManager.instance.enemiesKilled += enemyKilled;
+        if (GameManager.instance.enemiesKilled !=0 && GameManager.instance.enemiesKilled % 5 == 0)
         {
-            ScoreCollector.score.enemiesKilled += enemyKilled;
+            Instantiate(GameManager.instance.oxygenPickup, transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
         }
         health = maxHP;
         enemyKilled = 1;

@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour {
     public static GameManager instance;
     public GameObject player;
     public PlayerMoveV3 playerScript;
+    public GrenadeThrower grenadeThrowerScript;
     public List<GameObject> enemies;
 
     public PatrolArea_Ranged rangedPatArea;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour {
     private float oxygenCooldown;
 
     public float credits = 100;
+    public int enemiesKilled;
 
     public bool playerDamaged;
 
@@ -31,6 +33,8 @@ public class GameManager : MonoBehaviour {
     public ScoutPoints scoutPoints;
 
     public GameObject[] startingEnemies;
+
+    public GameObject oxygenPickup;
 
     private float playtime;
     // Use this for initialization
@@ -43,6 +47,7 @@ public class GameManager : MonoBehaviour {
         oxygen = maxOxygen;
         playerHP = maxPlayerHP;
         playerScript = player.GetComponent<PlayerMoveV3>();
+        grenadeThrowerScript = player.GetComponentInChildren<GrenadeThrower>();
 
         if (startingEnemies != null)
         {
@@ -85,6 +90,7 @@ public class GameManager : MonoBehaviour {
         {
             ScoreCollector.score.credits = credits;
             ScoreCollector.score.time = playtime;
+            ScoreCollector.score.enemiesKilled = enemiesKilled;
             SceneManager.LoadScene("GameOver");
         }
     }
