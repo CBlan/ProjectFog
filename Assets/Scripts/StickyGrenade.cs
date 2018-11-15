@@ -5,7 +5,7 @@ using UnityEngine;
 public class StickyGrenade : MonoBehaviour {
 
     private bool hasCollided = false;
-    public float explodeTime = 5;
+    //public float explodeTime = 5;
     public float damage = 20;
     public float radius = 5.0F;
     public float power = 10.0F;
@@ -13,22 +13,22 @@ public class StickyGrenade : MonoBehaviour {
     private Rigidbody rB;
     private int grenadeCount;
     private bool mineActive = false;
-    private Coroutine explodeRoutine = null;
+    //private Coroutine explodeRoutine = null;
 
     private void Start()
     {
         rB = GetComponent<Rigidbody>();
-        explodeRoutine = StartCoroutine(Explode());
+        //explodeRoutine = StartCoroutine(Explode());
     }
 
     private void OnCollisionEnter(Collision collision)
     {
 
-        if (!collision.gameObject.CompareTag("Ranged") || !collision.gameObject.CompareTag("Melee"))
-        {
-            StopCoroutine(explodeRoutine);
+        //if (!collision.gameObject.CompareTag("Ranged") || !collision.gameObject.CompareTag("Melee"))
+        //{
+            //StopCoroutine(explodeRoutine);
             mineActive = true;
-        }
+        //}
 
         if (!collision.gameObject.CompareTag("Player"))
         {
@@ -43,13 +43,13 @@ public class StickyGrenade : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (mineActive)
         {
             if (other.gameObject.CompareTag("Ranged") || other.gameObject.CompareTag("Melee"))
             {
-                explodeTime = 0;
+                //explodeTime = 0;
                 StartCoroutine(Explode());
             }
         }
@@ -57,7 +57,7 @@ public class StickyGrenade : MonoBehaviour {
 
     IEnumerator Explode()
     {
-        yield return new WaitForSeconds(explodeTime);
+        //yield return new WaitForSeconds(explodeTime);
         AddDescendantsWithTag(gameObject.transform);
         damage = damage * (grenadeCount + 1);
         Vector3 explosionPos = transform.position;
