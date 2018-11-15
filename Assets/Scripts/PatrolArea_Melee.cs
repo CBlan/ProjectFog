@@ -21,7 +21,7 @@ public class PatrolArea_Melee : MonoBehaviour {
     public Vector3 GetPatrolPoint(Vector3 position)
     {
         Vector3 patPoint;
-        Collider[] hitColliders = Physics.OverlapSphere(position, 30, 1 << LayerMask.NameToLayer("MeleePatPoints"));
+        Collider[] hitColliders = Physics.OverlapSphere(position, 30, 1 << LayerMask.NameToLayer("MeleePatPoints"), QueryTriggerInteraction.Collide);
         if (hitColliders.Length > 0)
         {
             patPoint = hitColliders[Random.Range(0, hitColliders.Length)].transform.position;

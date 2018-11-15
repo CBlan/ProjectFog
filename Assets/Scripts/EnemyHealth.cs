@@ -41,6 +41,7 @@ public class EnemyHealth : MonoBehaviour {
             GameManager.instance.sM.currentScout--;
         }
         Instantiate(destroyEffect, transform.position, transform.rotation);
+        Fabric.EventManager.Instance.PostEvent("Enemy/Explosion", Fabric.EventAction.PlaySound, gameObject);
         GameManager.instance.credits += CreditsValue;
         if (ScoreCollector.score != null)
         {

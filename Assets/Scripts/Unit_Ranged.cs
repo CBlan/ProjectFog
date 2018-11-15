@@ -43,7 +43,7 @@ public class Unit_Ranged : MonoBehaviour {
         StartCoroutine(UpdatePath());
         StartCoroutine(CheckIfStuck());
         hP = GetComponent<EnemyHealth>();
-        Fabric.EventManager.Instance.PostEvent("Enemy/Ranged/Unit", Fabric.EventAction.PlaySound, gameObject);
+        //Fabric.EventManager.Instance.PostEvent("Enemy/Ranged/Unit", Fabric.EventAction.PlaySound, gameObject);
     }
 
     public void OnPathFound(Vector3[] newPath, bool pathSuccessful)
@@ -146,7 +146,7 @@ public class Unit_Ranged : MonoBehaviour {
 
     private void OnDisable()
     {
-        Fabric.EventManager.Instance.PostEvent("Enemy/Ranged/Unit", Fabric.EventAction.StopSound, gameObject);
+        //Fabric.EventManager.Instance.PostEvent("Enemy/Ranged/Unit", Fabric.EventAction.StopSound, gameObject);
         StopCoroutine(UpdatePath());
         StopCoroutine(CheckIfStuck());
         StopCoroutine(FollowPath());
