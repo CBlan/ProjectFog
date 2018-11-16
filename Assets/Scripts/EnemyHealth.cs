@@ -47,8 +47,15 @@ public class EnemyHealth : MonoBehaviour {
         GameManager.instance.enemiesKilled += enemyKilled;
         if (GameManager.instance.enemiesKilled !=0 && GameManager.instance.enemiesKilled % 5 == 0)
         {
-            droppedItem = Instantiate(GameManager.instance.upgradePickups[Random.Range(0, GameManager.instance.upgradePickups.Count)], transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
-            GameManager.instance.upgradePickups.Remove(droppedItem);
+            if (GameManager.instance.upgradePickups.Count > 0)
+            {
+                droppedItem = Instantiate(GameManager.instance.upgradePickups[Random.Range(0, GameManager.instance.upgradePickups.Count)], transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
+                GameManager.instance.upgradePickups.Remove(droppedItem);
+            }
+            else if(GameManager.instance.enemiesKilled % 10 == 0)
+            {
+                Instantiate(GameManager.instance.tempPickups[Random.Range(0, GameManager.instance.tempPickups.Count)], transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
+            }
         }
         health = maxHP;
         enemyKilled = 1;

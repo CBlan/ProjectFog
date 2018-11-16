@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
     public int enemiesKilled;
 
     public bool playerDamaged;
+    private bool infiniteHP;
 
     public SpawnManager sM;
     public ScoutPoints scoutPoints;
@@ -35,6 +36,7 @@ public class GameManager : MonoBehaviour {
     public GameObject[] startingEnemies;
 
     public List<GameObject> upgradePickups;
+    public List<GameObject> tempPickups;
 
     private float playtime;
     // Use this for initialization
@@ -93,14 +95,29 @@ public class GameManager : MonoBehaviour {
             ScoreCollector.score.enemiesKilled = enemiesKilled;
             SceneManager.LoadScene("GameOver");
         }
+
     }
 
     public void DamagePlayer(float amount)
     {
-        playerDamaged = true;
-        playerHP -= amount;
+        if (!infiniteHP)
+        {
+            playerDamaged = true;
+            playerHP -= amount;
+        }
     }
 
+    public void StartInfiniteHP()
+    {
+        StartCoroutine(InfiniteHP());
+    }
 
+    IEnumerator InfiniteHP()
+    {
+        infiniteHP = true;
+        yield return new WaitForSeconds(10f);
+        infiniteHP = false;
+        yield break;
+    }
 
 }

@@ -19,6 +19,7 @@ public class StickyGrenade : MonoBehaviour {
     {
         rB = GetComponent<Rigidbody>();
         //explodeRoutine = StartCoroutine(Explode());
+        Destroy(gameObject, 20);
     }
 
     private void OnCollisionEnter(Collision collision)
