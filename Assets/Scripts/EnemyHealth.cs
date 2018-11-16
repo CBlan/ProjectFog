@@ -10,6 +10,7 @@ public class EnemyHealth : MonoBehaviour {
     private float creditsValueStart;
     public int enemyKilled = 1;
     public GameObject destroyEffect;
+    private GameObject droppedItem;
 
     private void Start()
     {
@@ -46,7 +47,8 @@ public class EnemyHealth : MonoBehaviour {
         GameManager.instance.enemiesKilled += enemyKilled;
         if (GameManager.instance.enemiesKilled !=0 && GameManager.instance.enemiesKilled % 5 == 0)
         {
-            Instantiate(GameManager.instance.oxygenPickup, transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
+            droppedItem = Instantiate(GameManager.instance.upgradePickups[Random.Range(0, GameManager.instance.upgradePickups.Count)], transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
+            GameManager.instance.upgradePickups.Remove(droppedItem);
         }
         health = maxHP;
         enemyKilled = 1;

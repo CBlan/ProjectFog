@@ -239,7 +239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4010325060526396
 Transform:
   m_ObjectHideFlags: 1
@@ -312,8 +312,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1875557290686298}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.42, y: -8.8, z: -26.26}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.04, y: -14.61, z: -2.29}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children:
   - {fileID: 4665019243727836}
@@ -897,7 +897,7 @@ MonoBehaviour:
   maxGunAngle: 180
   attackRange: 16
   bulletInterval: 1
-  fireingCone: 5
+  fireingCone: 2
   damage: 5
   bullet: {fileID: 1219541082243880, guid: 5546545b3c210304b985c53800f13a59, type: 2}
   bulletSpeed: 150
@@ -968,7 +968,7 @@ MonoBehaviour:
   maxGunAngle: 180
   attackRange: 16
   bulletInterval: 1
-  fireingCone: 5
+  fireingCone: 2
   damage: 5
   bullet: {fileID: 1219541082243880, guid: 5546545b3c210304b985c53800f13a59, type: 2}
   bulletSpeed: 150

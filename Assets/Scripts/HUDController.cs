@@ -67,7 +67,7 @@ public class HUDController : MonoBehaviour {
         }
 
 
-        credits.text = GameManager.instance.credits.ToString();
+        credits.text = GameManager.instance.enemiesKilled.ToString();
 
         if (playerScript.dash && !dashed)
         {

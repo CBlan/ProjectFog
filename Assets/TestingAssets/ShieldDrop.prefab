@@ -23,6 +23,8 @@ GameObject:
   - component: {fileID: 23130331992838270}
   - component: {fileID: 65454419760582572}
   - component: {fileID: 114561339004757794}
+  - component: {fileID: 108278742986331846}
+  - component: {fileID: 114886697933920864}
   m_Layer: 9
   m_Name: ShieldDrop
   m_TagString: Untagged
@@ -97,6 +99,42 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!108 &108278742986331846
+Light:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1505387415105126}
+  m_Enabled: 1
+  serializedVersion: 8
+  m_Type: 2
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 3
+  m_Range: 3
+  m_SpotAngle: 30
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 4
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!114 &114561339004757794
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,3 +148,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 1783251021505282, guid: 4b76e61146dd7b648917b12f54f1766e, type: 2}
   upgradeAmmount: 10
+--- !u!114 &114886697933920864
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1505387415105126}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dafc90245bfe9e2408e358f71deace2a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SampleCount: 8
+  ScatteringCoef: 0.5
+  ExtinctionCoef: 0.01
+  SkyboxExtinctionCoef: 0.9
+  MieG: 0.26
+  HeightFog: 1
+  HeightScale: 0.011
+  GroundLevel: 0
+  Noise: 1
+  NoiseScale: 0.025
+  NoiseIntensity: 0.49
+  NoiseIntensityOffset: 0.35
+  NoiseVelocity: {x: 3, y: 3}
+  MaxRayLength: 400

@@ -12,6 +12,7 @@ public class JetpackDrop : MonoBehaviour {
         if (other.gameObject.CompareTag("Player"))
         {
             GameManager.instance.playerScript.maxJetpackFuel += upgradeAmmount;
+            GameManager.instance.oxygen = GameManager.instance.maxOxygen;
             Instantiate(particles, transform.position, transform.rotation);
             Destroy(gameObject);
         }

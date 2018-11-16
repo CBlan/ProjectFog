@@ -13,6 +13,7 @@ public class ShieldDrop : MonoBehaviour {
         {
             GameManager.instance.maxPlayerHP += upgradeAmmount;
             GameManager.instance.regenRate += upgradeAmmount / 50;
+            GameManager.instance.oxygen = GameManager.instance.maxOxygen;
             Instantiate(particles, transform.position, transform.rotation);
             Destroy(gameObject);
         }
