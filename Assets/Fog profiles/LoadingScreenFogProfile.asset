@@ -13,34 +13,34 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightingModel: 0
   sunCopyColor: 0
-  density: 1
-  noiseStrength: 0.8
+  density: 0.655
+  noiseStrength: 0.598
   height: 282
   baselineHeight: 0
   distance: 185
   distanceFallOff: 0.14
-  maxFogLength: 1500
+  maxFogLength: 750
   maxFogLengthFallOff: 0
   baselineRelativeToCamera: 1
   baselineRelativeToCameraDelay: 0
   noiseScale: 0.95
   noiseSparse: -0.02
-  noiseFinalMultiplier: 1.5
-  alpha: 0.946
+  noiseFinalMultiplier: 1.292
+  alpha: 0.65
   color: {r: 0.8584906, g: 0.8584906, b: 0.8584906, a: 1}
   specularColor: {r: 1, g: 1, b: 0.8, a: 0.5882353}
   specularThreshold: 0.6
   specularIntensity: 0.318
   lightDirection: {x: -0.3213938, y: -0.76604444, z: 0.5566705}
   lightIntensity: -0.05
-  lightColor: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 1}
+  lightColor: {r: 0.5754717, g: 0.5754717, b: 0.5754717, a: 0.5882353}
   speed: 0.01
   useRealTime: 1
   windDirection: {x: -1, y: 0, z: 0}
   turbulenceStrength: 0
   useXYPlane: 0
   skyColor: {r: 0.89, g: 0.89, b: 0.89, a: 1}
-  skyHaze: 50
+  skyHaze: 0
   skySpeed: 0.3
   skyNoiseStrength: 0.1
   skyAlpha: 1
