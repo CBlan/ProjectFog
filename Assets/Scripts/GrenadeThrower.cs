@@ -13,6 +13,7 @@ public class GrenadeThrower : MonoBehaviour {
     public float cooldown;
     private float timer;
     private Rigidbody thrownGrenadeRB;
+    private bool superGrenadeThrower;
 	
 	// Update is called once per frame
 	void Update () {
@@ -25,6 +26,21 @@ public class GrenadeThrower : MonoBehaviour {
             timer -= Time.deltaTime;
             transform.LookAt(TargetObject.tarObj.hitPoint);
         }
+    }
+
+    public void ActivateSuperThrower()
+    {
+        StartCoroutine(SuperThrower());
+    }
+
+    IEnumerator SuperThrower()
+    {
+        cooldown = 0.1f;
+        superGrenadeThrower = true;
+        yield return new WaitForSeconds(10f);
+        cooldown = 0.8f;
+        superGrenadeThrower = false;
+        yield break;
     }
 
     IEnumerator CalculateThrowStrength() //increases hitpower overtime.
@@ -41,6 +57,10 @@ public class GrenadeThrower : MonoBehaviour {
             yield return null;
         }
         timer = cooldown;
+        if (superGrenadeThrower)
+        {
+            throwPower = maxThrowPower;
+        }
         thrownGrenade = Instantiate(grenades[currentGrenade], transform.position, Quaternion.identity);
         thrownGrenadeRB = thrownGrenade.GetComponent<Rigidbody>();
         thrownGrenadeRB.AddForce(transform.forward * throwPower, ForceMode.Impulse);
