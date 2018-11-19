@@ -72,10 +72,23 @@ public class StickyGrenade : MonoBehaviour
 
         foreach (Collider hit in colliders)
         {
-            //if(!thingsHit.Contains(hit.gameObject))
+            //if (thingsHit == null)
             //{
-            //    print("adding " + hit.gameObject.name);
-            //    thingsHit.Add(hit.gameObject);
+            //    thingsHit.Add(hit.gameObject.transform.root.gameObject);
+            //}
+
+            //foreach (GameObject thing in thingsHit)
+            //{
+            //    if (!thing == hit.gameObject.transform.root.gameObject)
+            //    {
+            //        print("adding " + hit.gameObject.transform.root.gameObject.name);
+            //        thingsHit.Add(hit.gameObject.transform.root.gameObject);
+            //    }
+            //}
+            //if (!thingsHit.Contains(hit.gameObject.transform.root.gameObject))
+            //{
+            //    print("adding " + hit.gameObject.transform.root.gameObject.name);
+            //    thingsHit.Add(hit.gameObject.transform.root.gameObject);
             //}
             Rigidbody rB;
             EnemyHealth hP;

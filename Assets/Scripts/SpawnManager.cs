@@ -17,8 +17,8 @@ public class SpawnManager : MonoBehaviour {
     // Use this for initialization
     void Start () {
         //totalEnemies = meleeEnemies + scoutEnemies + rangedEnemies;
-        //StartCoroutine(IncreaseRangedEnemies());
-        //StartCoroutine(IncreaseMeleeEnemies());
+        StartCoroutine(IncreaseRangedEnemies());
+        StartCoroutine(IncreaseMeleeEnemies());
         //StartCoroutine(IncreaseScoutEnemies());
         StartCoroutine(SpawnEnemies());
     }
@@ -30,6 +30,10 @@ public class SpawnManager : MonoBehaviour {
         {
             yield return new WaitForSeconds(timeIncreaseRanged);
             rangedEnemies++;
+            if (rangedEnemies == 30)
+            {
+                yield break;
+            }
             //totalEnemies++;
             yield return null;
         }
@@ -41,6 +45,10 @@ public class SpawnManager : MonoBehaviour {
         {
             yield return new WaitForSeconds(timeIncreaseMelee);
             meleeEnemies++;
+            if (meleeEnemies == 30)
+            {
+                yield break;
+            }
             //totalEnemies++;
             yield return null;
         }

@@ -105,7 +105,6 @@ GameObject:
   - component: {fileID: 4118577286475770}
   - component: {fileID: 114788211165582628}
   - component: {fileID: 114498827789144508}
-  - component: {fileID: 114525170865911322}
   m_Layer: 0
   m_Name: Audio
   m_TagString: Untagged
@@ -2304,7 +2303,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 1
+  _volume: 0.56234133
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -2313,15 +2312,15 @@ MonoBehaviour:
   _override2DProperties: 0
   _pan2D: 0
   _pan2DRandomization: 0
-  _override3DProperties: 0
+  _override3DProperties: 1
   _priority: 128
   _panLevel: 1
   _spreadLevel: 0
   _spatialize: 0
   _dopplerLevel: 1
-  _maxDistance: 500
-  _minDistance: 1
-  _rolloffMode: 0
+  _maxDistance: 50
+  _minDistance: 0.5
+  _rolloffMode: 1
   _customCurvesType: 0
   _customCurvesName: 
   _overrideFadeProperties: 0
@@ -3072,13 +3071,13 @@ MonoBehaviour:
     _eventNames: []
     _eventList: []
   profiler:
-    totalMS: 0
-    recordedMS: 0
-    percent: 0
-    msPerFrame: 0
-    maxMsPerFrame: 0
-    msPerCall: 0
-    timesPerFrame: 0
+    totalMS: 524.98376
+    recordedMS: 0.15258789
+    percent: 0.029065259
+    msPerFrame: 0.0006935813
+    maxMsPerFrame: 0.36621094
+    msPerCall: 0.0006935813
+    timesPerFrame: 1
   _eventMenuListFoldout: 1
   _eventListFoldout: 1
   _forceQueueAllEvents: 0
@@ -3103,7 +3102,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 1
+  _volume: 0.56234133
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -3407,21 +3406,6 @@ MonoBehaviour:
   _syncRegionsWithTempo: 0
   _audioClipTempo: 120
   _regions: []
---- !u!114 &114525170865911322
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1111782669725752}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1301988256, guid: 4b4e8768ed04d6a4f98af6f4f83be984, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _breakOnError: 0
-  _enableErrors: 0
-  _enableWarnings: 0
-  _enableInfos: 0
 --- !u!114 &114546623976444528
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3687,7 +3671,7 @@ MonoBehaviour:
   _pan2DRandomization: 0
   _override3DProperties: 0
   _priority: 128
-  _panLevel: 1
+  _panLevel: 0
   _spreadLevel: 0
   _spatialize: 0
   _dopplerLevel: 1
@@ -4155,7 +4139,7 @@ MonoBehaviour:
     _audioBuses: []
   _customCurvesManager:
     _customCurveList: []
-  _enableDebugLog: 1
+  _enableDebugLog: 0
   _bakeComponentInstances: 0
   _allowExternalGroupComponents: 1
   _forceAxisVector: {x: 0, y: 0, z: 0}
@@ -4192,7 +4176,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 1
+  _volume: 0.38459176
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
