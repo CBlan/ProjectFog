@@ -10,7 +10,7 @@ public class EnemyHealth : MonoBehaviour {
     private float creditsValueStart;
     public int enemyKilled = 1;
     public GameObject destroyEffect;
-    private GameObject droppedItem;
+    private int droppedItem;
 
     private void Start()
     {
@@ -49,13 +49,18 @@ public class EnemyHealth : MonoBehaviour {
         {
             if (GameManager.instance.upgradePickups.Count > 0)
             {
-                droppedItem = Instantiate(GameManager.instance.upgradePickups[Random.Range(0, GameManager.instance.upgradePickups.Count)], transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
-                GameManager.instance.upgradePickups.Remove(droppedItem);
+                droppedItem = Random.Range(0, GameManager.instance.upgradePickups.Count);
+                Instantiate(GameManager.instance.upgradePickups[droppedItem], transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
+                GameManager.instance.upgradePickups.RemoveAt(droppedItem);
             }
-            else if(GameManager.instance.enemiesKilled % 10 == 0)
+            else
             {
-                Instantiate(GameManager.instance.tempPickups[Random.Range(0, GameManager.instance.tempPickups.Count)], transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
+                Instantiate(GameManager.instance.oxygenPickup, transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
             }
+            //else if(GameManager.instance.enemiesKilled % 10 == 0)
+            //{
+            //    Instantiate(GameManager.instance.tempPickups[Random.Range(0, GameManager.instance.tempPickups.Count)], transform.position, Quaternion.LookRotation(Vector3.forward, Vector3.up));
+            //}
         }
         health = maxHP;
         enemyKilled = 1;

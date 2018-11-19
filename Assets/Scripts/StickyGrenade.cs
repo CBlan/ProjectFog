@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StickyGrenade : MonoBehaviour {
+public class StickyGrenade : MonoBehaviour
+{
 
     private bool hasCollided = false;
     public float explodeTime = 5;
@@ -14,6 +15,7 @@ public class StickyGrenade : MonoBehaviour {
     private int grenadeCount;
     private bool mineActive = false;
     private Coroutine explodeRoutine = null;
+    private List<GameObject> thingsHit;
 
     private void Start()
     {
@@ -27,7 +29,7 @@ public class StickyGrenade : MonoBehaviour {
 
         //if (!collision.gameObject.CompareTag("Ranged") || !collision.gameObject.CompareTag("Melee"))
         //{
-            //StopCoroutine(explodeRoutine);
+        //StopCoroutine(explodeRoutine);
         mineActive = true;
         explodeRoutine = StartCoroutine(Explode());
         //}
@@ -64,23 +66,53 @@ public class StickyGrenade : MonoBehaviour {
         AddDescendantsWithTag(gameObject.transform);
         damage = damage * (grenadeCount + 1);
         Vector3 explosionPos = transform.position;
+
         Collider[] colliders = Physics.OverlapSphere(explosionPos, radius, Physics.AllLayers);
+        thingsHit = new List<GameObject>();
+
         foreach (Collider hit in colliders)
         {
+            //if(!thingsHit.Contains(hit.gameObject))
+            //{
+            //    print("adding " + hit.gameObject.name);
+            //    thingsHit.Add(hit.gameObject);
+            //}
             Rigidbody rB;
             EnemyHealth hP;
 
-            if (rB = hit.gameObject.GetComponent<Rigidbody>())
+            if (!thingsHit.Contains(hit.gameObject.transform.root.gameObject))
             {
-                //print(hit.gameObject);
-                rB.AddExplosionForce(power, explosionPos, radius, 0.0F);
-                if (hP = hit.gameObject.GetComponent<EnemyHealth>())
+                if (rB = hit.gameObject.GetComponent<Rigidbody>())
                 {
-                    hP.health -= damage;
-                    //print("here2");
+                    print(hit.gameObject);
+                    rB.AddExplosionForce(power, explosionPos, radius, 0.0F);
+                    thingsHit.Add(hit.gameObject.transform.root.gameObject);
+                    if (hP = hit.gameObject.GetComponent<EnemyHealth>())
+                    {
+                        hP.health -= damage;
+                        //print("here2");
+                    }
                 }
             }
         }
+
+        //foreach (GameObject i in thingsHit)
+        //{
+        //    Rigidbody rB;
+        //    EnemyHealth hP;
+
+        //    if (rB = i.GetComponent<Rigidbody>())
+        //    {
+        //        print(i);
+        //        rB.AddExplosionForce(power, explosionPos, radius, 0.0F);
+        //        thingsHit.Add(i);
+        //        if (hP = i.GetComponent<EnemyHealth>())
+        //        {
+        //            hP.health -= damage;
+        //            //print("here2");
+        //        }
+        //    }
+        //}
         //print(damage);
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(gameObject);

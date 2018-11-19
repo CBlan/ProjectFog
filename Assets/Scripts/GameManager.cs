@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour {
 
     public List<GameObject> upgradePickups;
     public List<GameObject> tempPickups;
+    public GameObject oxygenPickup;
 
     private float playtime;
     // Use this for initialization
