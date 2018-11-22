@@ -5,7 +5,7 @@ using UnityEngine;
 public class MenuMusic : MonoBehaviour {
 
 	void Start () {
-        Fabric.EventManager.Instance.PostEvent("Ambient/Music");
+        Fabric.EventManager.Instance.PostEvent("Ambient/MenuMusic");
     }
 	
 }

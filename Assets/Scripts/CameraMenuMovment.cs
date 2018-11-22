@@ -50,6 +50,7 @@ public class CameraMenuMovment : MonoBehaviour {
             if (_length < 0.01)
             {
                 transform.position = cameraPositions[movePoint].position;
+                cameraPositions[movePoint].GetChild(0).gameObject.SetActive(true);
                 currentPoint = movePoint;
                 yield break;
             }
