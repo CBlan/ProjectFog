@@ -46,7 +46,7 @@ public class Tutorial : MonoBehaviour {
     {
         if (activeTutorialPannel > tutorialPannels.Length - 1)
         {
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("Loading");
             yield break;
         }
         canvasGroup = tutorialPannels[activeTutorialPannel].GetComponent<CanvasGroup>();

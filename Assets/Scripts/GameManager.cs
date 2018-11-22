@@ -91,10 +91,13 @@ public class GameManager : MonoBehaviour {
         //gameover
         if (oxygen <= 0 || playerHP <= 0)
         {
-            ScoreCollector.score.credits = credits;
-            ScoreCollector.score.time = playtime;
-            ScoreCollector.score.enemiesKilled = enemiesKilled;
-            SceneManager.LoadScene("GameOver");
+            if (SceneManager.GetActiveScene().name == "Main")
+            {
+                ScoreCollector.score.credits = credits;
+                ScoreCollector.score.time = playtime;
+                ScoreCollector.score.enemiesKilled = enemiesKilled;
+                SceneManager.LoadScene("GameOver");
+            }
         }
 
     }

@@ -97,7 +97,7 @@ public class StickyGrenade : MonoBehaviour
             {
                 if (rB = hit.gameObject.GetComponent<Rigidbody>())
                 {
-                    print(hit.gameObject);
+                    //print(hit.gameObject);
                     rB.AddExplosionForce(power, explosionPos, radius, 0.0F);
                     thingsHit.Add(hit.gameObject.transform.root.gameObject);
                     if (hP = hit.gameObject.GetComponent<EnemyHealth>())
