@@ -51,6 +51,7 @@ public class CameraMenuMovment : MonoBehaviour {
             {
                 transform.position = cameraPositions[movePoint].position;
                 currentPoint = movePoint;
+                yield break;
             }
             yield return null;
         }
