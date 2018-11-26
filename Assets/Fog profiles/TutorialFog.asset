@@ -13,7 +13,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lightingModel: 0
   sunCopyColor: 1
-  density: 0.35
+  density: 0.45
   noiseStrength: 0.1
   height: 18
   baselineHeight: 0
@@ -27,41 +27,41 @@ MonoBehaviour:
   noiseSparse: 0
   noiseFinalMultiplier: 1
   alpha: 1
-  color: {r: 0.91, g: 0.91, b: 0.91, a: 1}
+  color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   specularColor: {r: 1, g: 1, b: 0.8, a: 1}
   specularThreshold: 0.6
   specularIntensity: 0
   lightDirection: {x: -1, y: 0, z: -1}
   lightIntensity: 0
-  lightColor: {r: 1, g: 1, b: 1, a: 1}
+  lightColor: {r: 0.7075472, g: 0.7075472, b: 0.7075472, a: 0.5882353}
   speed: 0.015
   useRealTime: 0
   windDirection: {x: 1, y: 0, z: 0}
   turbulenceStrength: 0
   useXYPlane: 0
-  skyColor: {r: 0.91, g: 0.91, b: 0.91, a: 1}
+  skyColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0.5}
   skyHaze: 500
   skySpeed: 0.05
   skyNoiseStrength: 0.96
-  skyAlpha: 1
+  skyAlpha: 0.5
   stepping: 6
   steppingNear: 0
   dithering: 1
   ditherStrength: 1
   downsamplingOverride: 0
-  downsampling: 1
+  downsampling: 3
   forceComposition: 0
-  edgeImprove: 0
+  edgeImprove: 1
   edgeThreshold: 0.0005
   lightScatteringOverride: 0
   lightScatteringEnabled: 0
-  lightScatteringDiffusion: 0.7
-  lightScatteringSpread: 0.686
+  lightScatteringDiffusion: 0.482
+  lightScatteringSpread: 0.337
   lightScatteringSamples: 16
-  lightScatteringWeight: 1.9
-  lightScatteringIllumination: 18
-  lightScatteringDecay: 0.986
-  lightScatteringExposure: 0
+  lightScatteringWeight: 0.8
+  lightScatteringIllumination: 23.1
+  lightScatteringDecay: 0.9124
+  lightScatteringExposure: 0.0085
   lightScatteringJittering: 0.5
   fogVoidOverride: 0
   fogVoidTopology: 0
