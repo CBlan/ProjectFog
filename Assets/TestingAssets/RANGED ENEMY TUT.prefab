@@ -870,12 +870,12 @@ MonoBehaviour:
   turretDegreesPerSecond: 80
   gunDegreesPerSecond: 80
   maxGunAngle: 180
-  attackRange: 16
-  bulletInterval: 1
+  attackRange: 18
+  bulletInterval: 0.5
   fireingCone: 5
   damage: 0
   bullet: {fileID: 1219541082243880, guid: 5546545b3c210304b985c53800f13a59, type: 2}
-  bulletSpeed: 150
+  bulletSpeed: 200
 --- !u!114 &114420226550398220
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -907,12 +907,12 @@ MonoBehaviour:
   turretDegreesPerSecond: 80
   gunDegreesPerSecond: 80
   maxGunAngle: 180
-  attackRange: 16
-  bulletInterval: 1
+  attackRange: 18
+  bulletInterval: 0.5
   fireingCone: 5
   damage: 0
   bullet: {fileID: 1219541082243880, guid: 5546545b3c210304b985c53800f13a59, type: 2}
-  bulletSpeed: 150
+  bulletSpeed: 200
 --- !u!114 &114533433653621900
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -997,6 +997,7 @@ MonoBehaviour:
   maxHP: 5
   health: 0
   CreditsValue: 100
+  enemyKilled: 1
   destroyEffect: {fileID: 100002, guid: 6ecf76dc4f268d340b2666896a954bcc, type: 2}
 --- !u!135 &135350422534791240
 SphereCollider:

@@ -2481,7 +2481,7 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 0.56234133
+  _volume: 0.4466836
   _volumeRandomization: 0
   _mute: 0
   _overrideParentPitch: 0
@@ -3284,12 +3284,12 @@ MonoBehaviour:
     _eventNames: []
     _eventList: []
   profiler:
-    totalMS: 20
-    recordedMS: 0.002861023
-    percent: 0.014305115
-    msPerFrame: 0.0009536743
+    totalMS: 586.0939
+    recordedMS: 0.46539307
+    percent: 0.07940589
+    msPerFrame: 0.00050807104
     maxMsPerFrame: 0.36621094
-    msPerCall: 0.0009536743
+    msPerCall: 0.00050807104
     timesPerFrame: 1
   _eventMenuListFoldout: 1
   _eventListFoldout: 1
@@ -4028,8 +4028,8 @@ MonoBehaviour:
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
-  _volume: 0.56234133
-  _volumeRandomization: 0
+  _volume: 1
+  _volumeRandomization: 0.29205424
   _mute: 0
   _overrideParentPitch: 0
   _pitch: 1
