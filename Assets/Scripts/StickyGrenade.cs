@@ -16,6 +16,7 @@ public class StickyGrenade : MonoBehaviour
     private bool mineActive = false;
     private Coroutine explodeRoutine = null;
     private List<GameObject> thingsHit;
+    private bool hasExploded = false;
 
     private void Start()
     {
@@ -51,11 +52,15 @@ public class StickyGrenade : MonoBehaviour
     {
         if (mineActive)
         {
-            if (other.gameObject.CompareTag("Ranged") || other.gameObject.CompareTag("Melee"))
+            if (!hasExploded)
             {
-                StopCoroutine(explodeRoutine);
-                explodeTime = 0;
-                StartCoroutine(Explode());
+                if (other.gameObject.CompareTag("Ranged") || other.gameObject.CompareTag("Melee"))
+                {
+                    StopCoroutine(explodeRoutine);
+                    explodeTime = 0;
+                    StartCoroutine(Explode());
+                    hasExploded = true;
+                }
             }
         }
     }

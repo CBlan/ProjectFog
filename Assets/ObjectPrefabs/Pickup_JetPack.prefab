@@ -136,7 +136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particles: {fileID: 1758624961828480, guid: 21a3957776177ad4b9cbe034a312fe53, type: 2}
-  upgradeAmmount: 10
+  upgradeAmmount: 50
+  regenUpAmmount: 0.25
 --- !u!114 &114391646662124436
 MonoBehaviour:
   m_ObjectHideFlags: 1

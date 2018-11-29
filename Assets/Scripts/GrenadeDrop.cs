@@ -14,6 +14,7 @@ public class GrenadeDrop : MonoBehaviour {
             GameManager.instance.grenadeThrowerScript.cooldown -= 0.3f;
             GameManager.instance.oxygen = GameManager.instance.maxOxygen;
             Instantiate(particles, transform.position, transform.rotation);
+            Fabric.EventManager.Instance.PostEvent("Player/Teleport/Lvl1", Fabric.EventAction.PlaySound, gameObject);
             Destroy(gameObject);
         }
     }

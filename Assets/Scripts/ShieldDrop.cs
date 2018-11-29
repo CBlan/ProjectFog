@@ -15,6 +15,7 @@ public class ShieldDrop : MonoBehaviour {
             GameManager.instance.regenRate += upgradeAmmount / 50;
             GameManager.instance.oxygen = GameManager.instance.maxOxygen;
             Instantiate(particles, transform.position, transform.rotation);
+            Fabric.EventManager.Instance.PostEvent("Player/Teleport/Lvl1", Fabric.EventAction.PlaySound, gameObject);
             Destroy(gameObject);
         }
     }

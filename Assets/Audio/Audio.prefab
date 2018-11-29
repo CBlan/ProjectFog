@@ -1218,7 +1218,7 @@ MonoBehaviour:
   _randomizeEndLoopMarkerIndex: 0
   _randomizeRegionIndex: 0
   _dontPlay: 0
-  _dontStopOnDestroy: 0
+  _dontStopOnDestroy: 1
   _ignoreVirtualization: 0
   _randomizePosition: 0
   _randomizeMinPosition: 0
@@ -1665,7 +1665,7 @@ MonoBehaviour:
   _randomizeEndLoopMarkerIndex: 0
   _randomizeRegionIndex: 0
   _dontPlay: 0
-  _dontStopOnDestroy: 0
+  _dontStopOnDestroy: 1
   _ignoreVirtualization: 0
   _randomizePosition: 0
   _randomizeMinPosition: 0
@@ -2218,7 +2218,7 @@ MonoBehaviour:
   _randomizeEndLoopMarkerIndex: 0
   _randomizeRegionIndex: 0
   _dontPlay: 0
-  _dontStopOnDestroy: 0
+  _dontStopOnDestroy: 1
   _ignoreVirtualization: 0
   _randomizePosition: 0
   _randomizeMinPosition: 0
@@ -3133,7 +3133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _numVirtualizationEvents: 100
-  _maxInstances: 1
+  _maxInstances: 5
   _stealingBehaviour: 0
   _minimumPlaybackInterval: 0
   _overrideParentVolume: 0
@@ -3227,7 +3227,7 @@ MonoBehaviour:
   _randomizeEndLoopMarkerIndex: 0
   _randomizeRegionIndex: 0
   _dontPlay: 0
-  _dontStopOnDestroy: 0
+  _dontStopOnDestroy: 1
   _ignoreVirtualization: 0
   _randomizePosition: 0
   _randomizeMinPosition: 0

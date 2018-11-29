@@ -19,6 +19,7 @@ public class PlayerMoveV3 : MonoBehaviour
     public float jetpackThrust = 100;
     public float maxJetpackFuel = 100;
     public float jetFuelRegenRate = 1f;
+    public float jetFuelDegenRate = 2f;
     public float jetFuel;
     float regenCooldown;
     float cooldown;
@@ -135,7 +136,7 @@ public class PlayerMoveV3 : MonoBehaviour
 
                 if (cooldown > 0.1)
                 {
-                    jetFuel -= jetFuelRegenRate * 2;
+                    jetFuel -= jetFuelDegenRate;
                     jetFuel = Mathf.Clamp(jetFuel, 0, maxJetpackFuel);
                     cooldown = 0;
                 }

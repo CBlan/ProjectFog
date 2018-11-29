@@ -27,19 +27,19 @@ public class ScoreDisplay : MonoBehaviour {
         {
             if (currentTime < ScoreCollector.score.time)
             {
-                currentTime += ScoreCollector.score.time / 50;
+                currentTime += ScoreCollector.score.time / 25f;
             }
             timeScore.text = Mathf.RoundToInt(currentTime).ToString();
 
             if (currentEnemies < ScoreCollector.score.enemiesKilled)
             {
-                currentEnemies += ScoreCollector.score.enemiesKilled / 50;
+                currentEnemies += ScoreCollector.score.enemiesKilled / 25f;
             }
             enemiesScore.text = Mathf.RoundToInt(currentEnemies).ToString();
 
             if (currentCredits < ScoreCollector.score.credits)
             {
-                currentCredits += ScoreCollector.score.credits / 50;
+                currentCredits += ScoreCollector.score.credits / 25f;
             }
             creditsScore.text = Mathf.RoundToInt(currentCredits).ToString();
             yield return new WaitForSecondsRealtime(0.1f);
@@ -59,7 +59,7 @@ public class ScoreDisplay : MonoBehaviour {
     {
         while (currentTotal < total)
         {
-            currentTotal += total / 50;
+            currentTotal += total / 25;
             totalScore.text = Mathf.RoundToInt(currentTotal).ToString();
             yield return new WaitForSecondsRealtime(0.1f);
         }
